@@ -3,16 +3,45 @@
 import { useEffect, useState } from "react";
 import data from "@/public/data/data.json";
 import Image from "next/image";
+import { Tooltip } from "@/components/ui/tooltip";
 
 export default function Home() {
   const [randomWord, setRandomWord] = useState("");
   const [wordType, setWordType] = useState("");
   const [history, setHistory] = useState<{ word: string; type: string }[]>([]);
   const [currentIndex, setCurrentIndex] = useState<number>(-1);
+  const [isTooltipVisible, setIsTooltipVisible] = useState<boolean>(false);
 
   useEffect(() => {
     generateRandomWord();
-  }, []);
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Control") {
+        setIsTooltipVisible(true);
+      } else if (event.key === " ") {
+        event.preventDefault();
+        handleNextWord();
+      } else if (event.key === "ArrowRight") {
+        handleNextWord();
+      } else if (event.key === "ArrowLeft") {
+        handlePreviousWord();
+      }
+    };
+
+    const handleKeyUp = (event: KeyboardEvent) => {
+      if (event.key === "Control") {
+        setIsTooltipVisible(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("keyup", handleKeyUp);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("keyup", handleKeyUp);
+    };
+  }, [currentIndex]);
 
   const generateRandomWord = () => {
     const words = data.words;
@@ -50,17 +79,39 @@ export default function Home() {
     }
   };
 
+  const getTranslations = () => {
+    if (!randomWord) return "";
+    const selectedWord = data.words.find(
+      (word) => Object.values(word).includes(randomWord)
+    );
+    if (!selectedWord) return "";
+
+    const translations = Object.entries(selectedWord)
+      .filter(([key]) => key !== wordType.toLowerCase() && ["francais", "hiragana", "romaji", "kanji"].includes(key))
+      .map(([key, value]) => `<strong>${key.charAt(0).toUpperCase() + key.slice(1)}</strong>: ${value}`)
+      .join("<br><div style='margin-top: 4px;'></div>");
+
+    return translations;
+  };
+
   return (
     <div className="flex justify-center min-h-screen">
       <div className="div_quiz w-[704px] h-[380px] rounded-[16px] bg-[var(--surface-primary)] p-8 flex flex-col justify-between">
         {randomWord && (
           <div className="header_quiz w-full flex flex-row justify-between items-center p-auto">
-            <div className="div_reponse w-6 h-6 bg-[var(--surface-secondary)] rounded-[6px] flex items-center justify-center hover:bg-[var(--surface-secondary-hover)] group">
-              <Image src="/filtre.svg" alt="Aide" width={12} height={12} />
+            <div className="div_filtre w-6 h-6 bg-[var(--surface-secondary)] rounded-[6px] flex items-center justify-center hover:bg-[var(--surface-secondary-hover)] group">
+              <Image src="/filtre.svg" alt="Filtrer" width={12} height={12} />
             </div>
             <div className="text-lg font-semibold">{wordType}</div>
-            <div className="div_reponse w-6 h-6 bg-[var(--surface-secondary)] rounded-[6px] flex items-center justify-center hover:bg-[var(--surface-secondary-hover)] group">
-              <Image src="/reponse.svg" alt="Aide" width={12} height={12} />
+            <div
+              className="div_reponse w-6 h-6 bg-[var(--surface-secondary)] rounded-[6px] flex items-center justify-center hover:bg-[var(--surface-secondary-hover)] group relative"
+              onMouseEnter={() => setIsTooltipVisible(true)}
+              onMouseLeave={() => setIsTooltipVisible(false)}
+            >
+              <Image src="/reponse.svg" alt="Aide" width={12} height={12} className="group-hover:text-[var(--icones-brand)]" />
+              {isTooltipVisible && (
+                <div className="absolute top-full mt-2 bg-[var(--surface-secondary)] text-[var(--text-white)] p-4 rounded opacity-100 transition-opacity w-auto" style={{ padding: '16px', whiteSpace: 'nowrap' }} dangerouslySetInnerHTML={{ __html: getTranslations() }} />
+              )}
             </div>
           </div>
         )}
