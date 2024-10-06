@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import data from "@/public/data/data.json";
+import Image from "next/image";
 
 export default function Home() {
   const [randomWord, setRandomWord] = useState("");
@@ -53,7 +54,15 @@ export default function Home() {
     <div className="flex justify-center min-h-screen">
       <div className="div_quiz w-[704px] h-[380px] rounded-[16px] bg-[var(--surface-primary)] p-8 flex flex-col justify-between">
         {randomWord && (
-          <div className="text-center text-lg font-semibold">{wordType}</div>
+          <div className="header_quiz w-full flex flex-row justify-between items-center p-auto">
+            <div className="div_reponse w-6 h-6 bg-[var(--surface-secondary)] rounded-[6px] flex items-center justify-center hover:bg-[var(--surface-secondary-hover)] group">
+              <Image src="/filtre.svg" alt="Aide" width={12} height={12} />
+            </div>
+            <div className="text-lg font-semibold">{wordType}</div>
+            <div className="div_reponse w-6 h-6 bg-[var(--surface-secondary)] rounded-[6px] flex items-center justify-center hover:bg-[var(--surface-secondary-hover)] group">
+              <Image src="/reponse.svg" alt="Aide" width={12} height={12} />
+            </div>
+          </div>
         )}
         {randomWord && (
           <div className="text-center text-[48px] font-bold self-center">{randomWord}</div>
