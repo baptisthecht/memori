@@ -15,6 +15,7 @@ const headerStyle = {
     display: 'flex',
     alignItems: 'center',
     padding: '0 240px', // Ajoute le padding horizontal
+    marginBottom: '120px', // Ajoute la marge inférieure
 };
 
 const logoStyle = {
