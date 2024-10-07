@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import data from "@/public/data/data.json";
 import Image from "next/image";
 import { HelpPopover } from "@/components/HelpPopover";
+import { FilterPopover } from "@/components/filter-popover";
 
 export default function Home() {
   const [randomWord, setRandomWord] = useState("");
@@ -11,7 +12,6 @@ export default function Home() {
   const [history, setHistory] = useState<{ word: string; type: string }[]>([]);
   const [currentIndex, setCurrentIndex] = useState<number>(-1);
 
-  // Traduction dans HelpPopover
   const getFilteredTranslations = () => {
     if (!randomWord) return {};
   
@@ -20,7 +20,6 @@ export default function Home() {
     );
     if (!selectedWord) return {};
   
-    // Inclure uniquement les traductions (francais, hiragana, romaji, kanji)
     const allowedKeys = ["francais", "hiragana", "romaji", "kanji"];
     const filteredTranslations = Object.entries(selectedWord).reduce(
       (acc, [key, value]) => {
@@ -120,14 +119,12 @@ export default function Home() {
       <div className="div_quiz w-[704px] h-[380px] rounded-[16px] bg-[var(--surface-primary)] p-8 flex flex-col justify-between">
         {randomWord && (
           <div className="header_quiz w-full flex flex-row justify-between items-center p-auto">
-            <div className="div_filtre w-6 h-6 bg-[var(--surface-secondary)] rounded-[6px] flex items-center justify-center hover:bg-[var(--surface-secondary-hover)] group">
-              <Image src="/filtre.svg" alt="Filtrer" width={12} height={12} />
-            </div>
+            <FilterPopover />
             <div className="text-lg font-semibold">{wordType}</div>
             <div
-              className="div_reponse w-6 h-6 bg-[var(--surface-secondary)]  cursor-pointer rounded-[6px] flex items-center justify-center hover:bg-[var(--surface-secondary-hover)] group relative"
+              className="div_reponse w-6 h-6 bg-[var(--surface-secondary)] cursor-pointer rounded-[6px] flex items-center justify-center hover:bg-[var(--surface-secondary-hover)] group relative"
             >
-            <HelpPopover translations={getFilteredTranslations()} />
+              <HelpPopover translations={getFilteredTranslations()} />
             </div>
           </div>
         )}
