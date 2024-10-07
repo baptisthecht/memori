@@ -1,26 +1,7 @@
-// components/Header.tsx
-
-const Header = () => {
+export const Header = () => {
     return (
-        <header style={headerStyle}>
-            <img src="/Logo_Memori.svg" alt="Logo Memori" style={logoStyle} />
+        <header className="h-20 w-full flex items-center px-60 mb-28 bg-surface-primary">
+            <img src="/Logo_Memori.svg" alt="Logo Memori" className="h-6 w-auto" />
         </header>
     );
 };
-
-const headerStyle = {
-    height: '80px',
-    width: '100%',
-    backgroundColor: 'var(--surface-primary)', // Applique la couleur
-    display: 'flex',
-    alignItems: 'center',
-    padding: '0 240px', // Ajoute le padding horizontal
-    marginBottom: '120px', // Ajoute la marge inférieure
-};
-
-const logoStyle = {
-    height: '24px',
-    width: 'auto',
-};
-
-export default Header;

@@ -3,21 +3,41 @@
 import { useEffect, useState } from "react";
 import data from "@/public/data/data.json";
 import Image from "next/image";
-import { Tooltip } from "@/components/ui/tooltip";
+import { HelpPopover } from "@/components/HelpPopover";
 
 export default function Home() {
   const [randomWord, setRandomWord] = useState("");
   const [wordType, setWordType] = useState("");
   const [history, setHistory] = useState<{ word: string; type: string }[]>([]);
   const [currentIndex, setCurrentIndex] = useState<number>(-1);
-  const [isTooltipVisible, setIsTooltipVisible] = useState<boolean>(false);
+
+  // Traduction dans HelpPopover
+  const getFilteredTranslations = () => {
+    if (!randomWord) return {};
+  
+    const selectedWord = data.words.find(
+      (word) => Object.values(word).includes(randomWord)
+    );
+    if (!selectedWord) return {};
+  
+    // Inclure uniquement les traductions (francais, hiragana, romaji, kanji)
+    const allowedKeys = ["francais", "hiragana", "romaji", "kanji"];
+    const filteredTranslations = Object.entries(selectedWord).reduce(
+      (acc, [key, value]) => {
+        if (key !== wordType.toLowerCase() && allowedKeys.includes(key)) {
+          acc[key] = value;
+        }
+        return acc;
+      },
+      {} as Record<string, string>
+    );
+  
+    return filteredTranslations;
+  };
 
   useEffect(() => {
-    generateRandomWord();
-
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Control") {
-        setIsTooltipVisible(true);
       } else if (event.key === " ") {
         event.preventDefault();
         handleNextWord();
@@ -30,7 +50,6 @@ export default function Home() {
 
     const handleKeyUp = (event: KeyboardEvent) => {
       if (event.key === "Control") {
-        setIsTooltipVisible(false);
       }
     };
 
@@ -42,6 +61,8 @@ export default function Home() {
       window.removeEventListener("keyup", handleKeyUp);
     };
   }, [currentIndex]);
+
+  useEffect(() => generateRandomWord(), [])
 
   const generateRandomWord = () => {
     const words = data.words;
@@ -104,14 +125,9 @@ export default function Home() {
             </div>
             <div className="text-lg font-semibold">{wordType}</div>
             <div
-              className="div_reponse w-6 h-6 bg-[var(--surface-secondary)] rounded-[6px] flex items-center justify-center hover:bg-[var(--surface-secondary-hover)] group relative"
-              onMouseEnter={() => setIsTooltipVisible(true)}
-              onMouseLeave={() => setIsTooltipVisible(false)}
+              className="div_reponse w-6 h-6 bg-[var(--surface-secondary)]  cursor-pointer rounded-[6px] flex items-center justify-center hover:bg-[var(--surface-secondary-hover)] group relative"
             >
-              <Image src="/reponse.svg" alt="Aide" width={12} height={12} className="group-hover:text-[var(--icones-brand)]" />
-              {isTooltipVisible && (
-                <div className="absolute top-full mt-2 bg-[var(--surface-secondary)] text-[var(--text-white)] p-4 rounded opacity-100 transition-opacity w-auto" style={{ padding: '16px', whiteSpace: 'nowrap' }} dangerouslySetInnerHTML={{ __html: getTranslations() }} />
-              )}
+            <HelpPopover translations={getFilteredTranslations()} />
             </div>
           </div>
         )}
