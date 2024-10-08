@@ -6,11 +6,19 @@ import Image from "next/image";
 import { HelpPopover } from "@/components/HelpPopover";
 import { FilterPopover } from "@/components/filter-popover";
 
+export type selectFiltersType = {
+  [key: string]: string[] | undefined; 
+  Type?: ("francais" | "hiragana" | "romaji" | "kanji")[],
+  Difficulty?: ("easy" | "medium" | "hard")[]
+}
+
 export default function Home() {
   const [randomWord, setRandomWord] = useState("");
   const [wordType, setWordType] = useState("");
   const [history, setHistory] = useState<{ word: string; type: string }[]>([]);
   const [currentIndex, setCurrentIndex] = useState<number>(-1);
+
+  const [selectedFilters, setSelectedFilters] = useState<selectFiltersType>({})
 
   const getFilteredTranslations = () => {
     if (!randomWord) return {};
@@ -61,13 +69,26 @@ export default function Home() {
     };
   }, [currentIndex]);
 
-  useEffect(() => generateRandomWord(), [])
+  useEffect(() => generateRandomWord(), [selectedFilters])
 
   const generateRandomWord = () => {
     
     const randomIndex = Math.floor(Math.random() * words.length);
     const selectedWord = words[randomIndex];
-    const properties: (keyof typeof selectedWord)[] = ["francais", "hiragana", "romaji", "kanji"];
+    
+    // const properties: (keyof typeof selectedWord)[] = ["francais", "hiragana", "romaji", "kanji"];
+    let properties: (keyof typeof selectedWord)[];
+
+    if(selectedFilters.Type && selectedFilters.Type.length > 0){
+      properties = selectedFilters.Type
+    }else{
+      properties = ["francais", "hiragana", "romaji", "kanji"];
+    }
+
+    // if(selectedFilters.Type === "verbe"){
+      // Enlever "animaux" de la liste des filtres
+    // }
+
     const randomProperty = properties[Math.floor(Math.random() * properties.length)];
     const newWord = selectedWord[randomProperty];
     const newWordType = randomProperty.charAt(0).toUpperCase() + randomProperty.slice(1);
@@ -119,7 +140,7 @@ export default function Home() {
       <div className="div_quiz w-[704px] h-[380px] rounded-[16px] bg-[var(--surface-primary)] p-8 flex flex-col justify-between">
         {randomWord && (
           <div className="header_quiz w-full flex flex-row justify-between items-center p-auto">
-            <FilterPopover />
+            <FilterPopover selectedFilters={selectedFilters} setSelectedFilters={setSelectedFilters} />
             <div className="text-lg font-semibold">{wordType}</div>
             <div
               className="div_reponse w-6 h-6 bg-[var(--surface-secondary)] cursor-pointer rounded-[6px] flex items-center justify-center hover:bg-[var(--surface-secondary-hover)] group relative"

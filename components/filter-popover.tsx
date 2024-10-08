@@ -6,6 +6,8 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { ChevronLeft, Filter, X } from "lucide-react"
 import { words } from '@/public/data/data'
+import React from 'react'
+import { selectFiltersType } from '@/app/page'
 
 
 
@@ -39,10 +41,15 @@ const filterCategories: FilterCategory[] = [
   },
 ]
 
-export function FilterPopover() {
+type FilterPopoverProps = {
+  selectedFilters: selectFiltersType, 
+  setSelectedFilters: Function
+}
+
+export const FilterPopover: React.FC<FilterPopoverProps> = ({selectedFilters, setSelectedFilters}) =>  {
   const [isOpen, setIsOpen] = useState(false)
   const [activeCategory, setActiveCategory] = useState<string | null>(null)
-  const [selectedFilters, setSelectedFilters] = useState<Record<string, string[]>>({})
+  // const [selectedFilters, setSelectedFilters] = useState<Record<string, string[]>>({})
   const [dataJson,setDataJson] = useState(null)
 
   const handleCategoryClick = (category: string) => {
@@ -50,7 +57,7 @@ export function FilterPopover() {
   }
 
   const handleCheckboxChange = (category: string, optionId: string) => {
-    setSelectedFilters(prev => {
+    setSelectedFilters((prev: selectFiltersType) => {
       const updatedFilters = { ...prev }
       if (!updatedFilters[category]) {
         updatedFilters[category] = []
