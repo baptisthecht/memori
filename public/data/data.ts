@@ -1,5 +1,5 @@
-{
-    "words": [
+
+ export const words = [
         {
             "francais": "Aimer",
             "hiragana": "あいする",
@@ -521,4 +521,3 @@
             "categorie 2": "Objet"
         }
     ]
-}

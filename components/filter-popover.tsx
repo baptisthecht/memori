@@ -1,10 +1,13 @@
 "use client"
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { ChevronLeft, Filter, X } from "lucide-react"
+import { words } from '@/public/data/data'
+
+
 
 interface FilterOption {
   id: string;
@@ -40,6 +43,7 @@ export function FilterPopover() {
   const [isOpen, setIsOpen] = useState(false)
   const [activeCategory, setActiveCategory] = useState<string | null>(null)
   const [selectedFilters, setSelectedFilters] = useState<Record<string, string[]>>({})
+  const [dataJson,setDataJson] = useState(null)
 
   const handleCategoryClick = (category: string) => {
     setActiveCategory(category)
@@ -65,6 +69,9 @@ export function FilterPopover() {
   }
 
   const totalSelectedFilters = Object.values(selectedFilters).flat().length
+
+
+  
 
   return (
     <Popover open={isOpen} onOpenChange={setIsOpen}>

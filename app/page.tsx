@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import data from "@/public/data/data.json";
+import {words } from "@/public/data/data";
 import Image from "next/image";
 import { HelpPopover } from "@/components/HelpPopover";
 import { FilterPopover } from "@/components/filter-popover";
@@ -15,7 +15,7 @@ export default function Home() {
   const getFilteredTranslations = () => {
     if (!randomWord) return {};
   
-    const selectedWord = data.words.find(
+    const selectedWord = words.find(
       (word) => Object.values(word).includes(randomWord)
     );
     if (!selectedWord) return {};
@@ -64,7 +64,7 @@ export default function Home() {
   useEffect(() => generateRandomWord(), [])
 
   const generateRandomWord = () => {
-    const words = data.words;
+    
     const randomIndex = Math.floor(Math.random() * words.length);
     const selectedWord = words[randomIndex];
     const properties: (keyof typeof selectedWord)[] = ["francais", "hiragana", "romaji", "kanji"];
@@ -101,7 +101,7 @@ export default function Home() {
 
   const getTranslations = () => {
     if (!randomWord) return "";
-    const selectedWord = data.words.find(
+    const selectedWord = words.find(
       (word) => Object.values(word).includes(randomWord)
     );
     if (!selectedWord) return "";
