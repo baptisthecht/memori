@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import {words } from "@/public/data/data";
-import Image from "next/image";
 import { HelpPopover } from "@/components/HelpPopover";
 import { FilterPopover } from "@/components/filter-popover";
 
@@ -120,20 +119,20 @@ export default function Home() {
     }
   };
 
-  const getTranslations = () => {
-    if (!randomWord) return "";
-    const selectedWord = words.find(
-      (word) => Object.values(word).includes(randomWord)
-    );
-    if (!selectedWord) return "";
+  // const getTranslations = () => {
+  //   if (!randomWord) return "";
+  //   const selectedWord = words.find(
+  //     (word) => Object.values(word).includes(randomWord)
+  //   );
+  //   if (!selectedWord) return "";
 
-    const translations = Object.entries(selectedWord)
-      .filter(([key]) => key !== wordType.toLowerCase() && ["francais", "hiragana", "romaji", "kanji"].includes(key))
-      .map(([key, value]) => `<strong>${key.charAt(0).toUpperCase() + key.slice(1)}</strong>: ${value}`)
-      .join("<br><div style='margin-top: 4px;'></div>");
+  //   const translations = Object.entries(selectedWord)
+  //     .filter(([key]) => key !== wordType.toLowerCase() && ["francais", "hiragana", "romaji", "kanji"].includes(key))
+  //     .map(([key, value]) => `<strong>${key.charAt(0).toUpperCase() + key.slice(1)}</strong>: ${value}`)
+  //     .join("<br><div style='margin-top: 4px;'></div>");
 
-    return translations;
-  };
+  //   return translations;
+  // };
 
   return (
     <div className="flex justify-center min-h-screen">
