@@ -7,8 +7,9 @@ import { FilterPopover } from "@/components/filter-popover";
 
 export type selectFiltersType = {
   [key: string]: string[] | undefined; 
-  Type?: ("francais" | "hiragana" | "romaji" | "kanji")[],
-  Difficulty?: ("easy" | "medium" | "hard")[]
+  Langues?: ("francais" | "hiragana" | "romaji" | "kanji")[], // Assurez-vous que cela correspond aux valeurs de "categorie 1"
+  Type?: ("Verbe" | "Nom" | "Adjectif")[], // Ajoutez cette ligne
+  Thèmes?: ("Action" | "Objet" | "Nature" | "Métiers" | "Animaux")[]
 }
 
 export default function Home() {
@@ -72,21 +73,38 @@ export default function Home() {
 
   const generateRandomWord = () => {
     
-    const randomIndex = Math.floor(Math.random() * words.length);
-    const selectedWord = words[randomIndex];
-    
-    // const properties: (keyof typeof selectedWord)[] = ["francais", "hiragana", "romaji", "kanji"];
-    let properties: (keyof typeof selectedWord)[];
+    const filteredWords = words.filter(word => {
+      // Vérification du filtre "Thèmes"
+      if (selectedFilters.Thèmes && selectedFilters.Thèmes.length > 0) {
+        if (!selectedFilters.Thèmes.includes(word["categorie 2"] as "Action" | "Objet" | "Nature" | "Métiers" | "Animaux")) {
+          return false;
+        }
+      }
+      // Vérification du filtre "Type"
+      if (selectedFilters.Type && selectedFilters.Type.length > 0) {
+        if (!selectedFilters.Type.includes(word["categorie 1"] as "Verbe" | "Nom" | "Adjectif")) {
+          return false;
+        }
+      }
+      return true;
+    });
 
-    if(selectedFilters.Type && selectedFilters.Type.length > 0){
-      properties = selectedFilters.Type
-    }else{
-      properties = ["francais", "hiragana", "romaji", "kanji"];
+    if (filteredWords.length === 0) {
+      setRandomWord("🦍"); // Assurez-vous que cette ligne est bien modifiée
+      setWordType("");
+      return;
     }
 
-    // if(selectedFilters.Type === "verbe"){
-      // Enlever "animaux" de la liste des filtres
-    // }
+    const randomIndex = Math.floor(Math.random() * filteredWords.length);
+    const selectedWord = filteredWords[randomIndex];
+    
+    let properties: (keyof typeof selectedWord)[];
+
+    if (selectedFilters.Langues && selectedFilters.Langues.length > 0) {
+      properties = selectedFilters.Langues;
+    } else {
+      properties = ["francais", "hiragana", "romaji", "kanji"];
+    }
 
     const randomProperty = properties[Math.floor(Math.random() * properties.length)];
     const newWord = selectedWord[randomProperty];
@@ -140,9 +158,11 @@ export default function Home() {
         {randomWord && (
           <div className="header_quiz w-full flex flex-row justify-between items-center p-auto">
             <FilterPopover selectedFilters={selectedFilters} setSelectedFilters={setSelectedFilters} />
-            <div className="text-lg font-semibold">{wordType}</div>
+            <div className="text-lg font-semibold">
+              {randomWord === "🦍" ? "Aucun mot trouvé" : wordType}
+            </div>
             <div
-              className="div_reponse w-6 h-6 bg-[var(--surface-secondary)] cursor-pointer rounded-[6px] flex items-center justify-center hover:bg-[var(--surface-secondary-hover)] group relative"
+              className="div_reponse w-8 h-8 bg-[var(--surface-secondary)] cursor-pointer rounded-[6px] flex items-center justify-center hover:bg-[var(--surface-secondary-hover)] group relative"
             >
               <HelpPopover translations={getFilteredTranslations()} />
             </div>

@@ -22,7 +22,7 @@ interface FilterCategory {
 
 const filterCategories: FilterCategory[] = [
   {
-    name: "Type",
+    name: "Langues", // Ajoutez cette ligne pour définir la propriété 'name'
     options: [
       { id: "francais", label: "Français" },
       { id: "hiragana", label: "Hiragana" },
@@ -31,11 +31,22 @@ const filterCategories: FilterCategory[] = [
     ],
   },
   {
-    name: "Difficulty",
+    name: "Type", // Nouvelle catégorie ajoutée
     options: [
-      { id: "easy", label: "Easy" },
-      { id: "medium", label: "Medium" },
-      { id: "hard", label: "Hard" },
+      { id: "Verbe", label: "Verbe" },
+      { id: "Nom", label: "Nom" },
+      { id: "Adjectif", label: "Adjectif" },
+    ],
+  },
+  // Supprimez la catégorie "Types" si elle était utilisée pour "Difficulty"
+  {
+    name: "Thèmes", // Nouvelle catégorie ajoutée
+    options: [
+      { id: "Action", label: "Action" },
+      { id: "Objet", label: "Objet" },
+      { id: "Nature", label: "Nature" },
+      { id: "Métiers", label: "Métiers" },
+      { id: "Animaux", label: "Animaux" },
     ],
   },
 ]
@@ -84,10 +95,10 @@ export const FilterPopover: React.FC<FilterPopoverProps> = ({selectedFilters, se
         <Button
           variant="outline"
           size="icon"
-          className="w-8 h-8 p-0 rounded-[6px] relative"
+          className="w-8 h-8 p-0 rounded-[6px] relative bg-surface-secondary hover:bg-surface-secondary-hover" // Modifiez ici
           aria-label={totalSelectedFilters > 0 ? `Filters (${totalSelectedFilters} selected)` : 'Filters'}
         >
-          <Filter className="h-4 w-4" />
+          <Filter className="h-3 w-3" />
           {totalSelectedFilters > 0 && (
             <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-xs rounded-full w-4 h-4 flex items-center justify-center">
               {totalSelectedFilters}
@@ -95,10 +106,15 @@ export const FilterPopover: React.FC<FilterPopoverProps> = ({selectedFilters, se
           )}
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[250px] p-0" align="start">
+      <PopoverContent
+        className={`w-[250px] p-0 ${isOpen ? 'bg-surface-secondary' : ''}`} // Modifiez ici
+        align="start"
+      >
         <div className="p-4 border-b">
           <div className="flex items-center justify-between">
-            <h2 className="text-lg font-bold">Filter</h2>
+            <h2 className="text-lg font-bold">
+              {activeCategory ? activeCategory : "Filter"}
+            </h2>
             <Button
               variant="ghost"
               size="sm"
@@ -112,29 +128,32 @@ export const FilterPopover: React.FC<FilterPopoverProps> = ({selectedFilters, se
           </div>
         </div>
         {activeCategory ? (
-          <div>
+          <div className="p-2">
             <Button
               variant="ghost"
-              className="flex w-full justify-start font-normal"
+              className="flex w-full justify-start font-normal px-2 hover:bg-surface-secondary-hover" // Ajoutez ici
               onClick={() => setActiveCategory(null)}
             >
               <ChevronLeft className="mr-2 h-4 w-4" />
-              Back
+              Retour
             </Button>
             <div className="p-4">
-              <h3 className="font-semibold mb-2">{activeCategory}</h3>
-              {filterCategories.find(cat => cat.name === activeCategory)?.options.map((option) => (
-                <div key={option.id} className="flex items-center space-x-2 mb-2">
-                  <Checkbox
-                    id={option.id}
-                    checked={selectedFilters[activeCategory]?.includes(option.id)}
-                    onCheckedChange={() => handleCheckboxChange(activeCategory, option.id)}
-                  />
-                  <label htmlFor={option.id} className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
-                    {option.label}
-                  </label>
-                </div>
-              ))}
+              {/* Supprimez ou commentez la ligne suivante pour ne pas afficher le titre */}
+              {/* <h3 className="font-semibold mb-2">{activeCategory}</h3> */}
+              <div className="space-y-4">
+                {filterCategories.find(cat => cat.name === activeCategory)?.options.map((option) => (
+                  <div key={option.id} className="flex items-center space-x-2">
+                    <Checkbox
+                      id={option.id}
+                      checked={selectedFilters[activeCategory]?.includes(option.id)}
+                      onCheckedChange={() => handleCheckboxChange(activeCategory, option.id)}
+                    />
+                    <label htmlFor={option.id} className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                      {option.label}
+                    </label>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         ) : (
@@ -143,7 +162,7 @@ export const FilterPopover: React.FC<FilterPopoverProps> = ({selectedFilters, se
               <Button
                 key={category.name}
                 variant="ghost"
-                className="flex w-full justify-start font-normal"
+                className="flex w-full justify-start font-normal hover:bg-surface-secondary-hover" // Modifiez ici
                 onClick={() => handleCategoryClick(category.name)}
               >
                 {category.name}

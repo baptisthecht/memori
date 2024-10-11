@@ -128,3 +128,8 @@ html, body {
   }
 }
 
+.custom-size {
+  width: 32px;
+  height: 32px;
+}
+
