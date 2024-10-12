@@ -48,7 +48,7 @@ export const HelpPopover: FC<HelpPopoverProps> = ({ translations }) => {
           className="group-hover:text-[var(--icones-brand)] select-none cursor-pointer"
         />
       </PopoverTrigger>
-      <PopoverContent className="ml-20 w-auto bg-surface-secondary" side="right">
+      <PopoverContent className="translate-y-9 mt-1 translate-x-3 w-auto bg-surface-secondary" side="right">
         <div className="grid gap-2">
           {/* Affiche les traductions passées en prop */}
           {Object.entries(translations).map(([key, value]) => (
