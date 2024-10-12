@@ -1,5 +1,4 @@
-
- export const words = [
+export const words = [
         {
             "francais": "Aimer",
             "hiragana": "あいする",
@@ -519,5 +518,101 @@
             "kanji": "車",
             "categorie 1": "Nom",
             "categorie 2": "Objet"
+        },
+        {
+            "francais": "Lundi",
+            "hiragana": "げつようび",
+            "romaji": "Getsuyoubi",
+            "kanji": "月曜日",
+            "categorie 1": "Nom",
+            "categorie 2": "Jours"
+        },
+        {
+            "francais": "Mardi",
+            "hiragana": "かようび",
+            "romaji": "Kayoubi",
+            "kanji": "火曜日",
+            "categorie 1": "Nom",
+            "categorie 2": "Jours"
+        },
+        {
+            "francais": "Mercredi",
+            "hiragana": "すいようび",
+            "romaji": "Suiyoubi",
+            "kanji": "水曜日",
+            "categorie 1": "Nom",
+            "categorie 2": "Jours"
+        },
+        {
+            "francais": "Jeudi",
+            "hiragana": "もくようび",
+            "romaji": "Mokuyoubi",
+            "kanji": "木曜日",
+            "categorie 1": "Nom",
+            "categorie 2": "Jours"
+        },
+        {
+            "francais": "Vendredi",
+            "hiragana": "きんようび",
+            "romaji": "Kinyoubi",
+            "kanji": "金曜日",
+            "categorie 1": "Nom",
+            "categorie 2": "Jours"
+        },
+        {
+            "francais": "Samedi",
+            "hiragana": "どようび",
+            "romaji": "Doyoubi",
+            "kanji": "土曜日",
+            "categorie 1": "Nom",
+            "categorie 2": "Jours"
+        },
+        {
+            "francais": "Dimanche",
+            "hiragana": "にちようび",
+            "romaji": "Nichiyoubi",
+            "kanji": "日曜日",
+            "categorie 1": "Nom",
+            "categorie 2": "Jours"
+        },
+        {
+            "francais": "Avant-hier",
+            "hiragana": "おととい",
+            "romaji": "Ototoi",
+            "kanji": "一昨日",
+            "categorie 1": "Nom",
+            "categorie 2": "Jours"
+        },
+        {
+            "francais": "Hier",
+            "hiragana": "きのう",
+            "romaji": "Kinou",
+            "kanji": "昨日",
+            "categorie 1": "Nom",
+            "categorie 2": "Jours"
+        },
+        {
+            "francais": "Aujourd'hui",
+            "hiragana": "きょう",
+            "romaji": "Kyou",
+            "kanji": "今日",
+            "categorie 1": "Nom",
+            "categorie 2": "Jours"
+        },
+        {
+            "francais": "Demain",
+            "hiragana": "あした",
+            "romaji": "Ashita",
+            "kanji": "明日",
+            "categorie 1": "Nom",
+            "categorie 2": "Jours"
+        },
+        {
+            "francais": "Après-demain",
+            "hiragana": "あさって",
+            "romaji": "Asatte",
+            "kanji": "明後日",
+            "categorie 1": "Nom",
+            "categorie 2": "Jours"
         }
     ]

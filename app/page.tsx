@@ -8,9 +8,25 @@ import { FilterPopover } from "@/components/filter-popover";
 export type selectFiltersType = {
   [key: string]: string[] | undefined; 
   Langues?: ("francais" | "hiragana" | "romaji" | "kanji")[], // Assurez-vous que cela correspond aux valeurs de "categorie 1"
-  Type?: ("Verbe" | "Nom" | "Adjectif")[], // Ajoutez cette ligne
+  Type?: ("Verbe" | "Nom" | "Adjectif" | "Heures")[], // Ajoutez "Heures" ici
   Thèmes?: ("Action" | "Objet" | "Nature" | "Métiers" | "Animaux")[]
 }
+
+// Fonction pour générer une heure aléatoire
+const generateRandomTime = (): string => {
+  const hours = Math.floor(Math.random() * 24).toString().padStart(2, '0');
+  const minutes = Math.floor(Math.random() * 60).toString().padStart(2, '0');
+  return `${hours}:${minutes}`;
+};
+
+// Fonction pour générer un horaire aléatoire avec formatage
+const generateRandomSchedule = (): string => {
+  const startHours = Math.floor(Math.random() * 24).toString().padStart(2, '0');
+  const startMinutes = Math.floor(Math.random() * 60).toString().padStart(2, '0');
+  const endHours = Math.floor(Math.random() * 24).toString().padStart(2, '0');
+  const endMinutes = Math.floor(Math.random() * 60).toString().padStart(2, '0');
+  return `<span style="font-weight: normal;">de</span> ${startHours}:${startMinutes} <span style="font-weight: normal;">à</span> ${endHours}:${endMinutes}`;
+};
 
 export default function Home() {
   const [randomWord, setRandomWord] = useState("");
@@ -72,49 +88,71 @@ export default function Home() {
   useEffect(() => generateRandomWord(), [selectedFilters])
 
   const generateRandomWord = () => {
-    
-    const filteredWords = words.filter(word => {
-      // Vérification du filtre "Thèmes"
-      if (selectedFilters.Thèmes && selectedFilters.Thèmes.length > 0) {
-        if (!selectedFilters.Thèmes.includes(word["categorie 2"] as "Action" | "Objet" | "Nature" | "Métiers" | "Animaux")) {
-          return false;
-        }
-      }
-      // Vérification du filtre "Type"
-      if (selectedFilters.Type && selectedFilters.Type.length > 0) {
-        if (!selectedFilters.Type.includes(word["categorie 1"] as "Verbe" | "Nom" | "Adjectif")) {
-          return false;
-        }
-      }
-      return true;
-    });
+    // Vérifier si le filtre "Heures" est le seul actif
+    const isOnlyHeuresSelected = selectedFilters.Type?.length === 1 && selectedFilters.Type.includes("Heures");
 
-    if (filteredWords.length === 0) {
-      setRandomWord("🦍"); // Assurez-vous que cette ligne est bien modifiée
+    let pool = [];
+
+    if (isOnlyHeuresSelected) {
+      // Générer des heures simples et des horaires
+      const randomTimes = Array.from({ length: 5 }, () => ({
+        word: generateRandomTime(),
+        type: "Heures"
+      }));
+
+      const randomSchedules = Array.from({ length: 5 }, () => ({
+        word: generateRandomSchedule(),
+        type: "Heures"
+      }));
+
+      pool = [...randomTimes, ...randomSchedules];
+    } else {
+      // Filtrer les mots selon les autres critères
+      const filteredWords = words.filter(word => {
+        // Vérification du filtre "Thèmes"
+        if (selectedFilters.Thèmes && selectedFilters.Thèmes.length > 0) {
+          if (!selectedFilters.Thèmes.includes(word["categorie 2"] as "Action" | "Objet" | "Nature" | "Métiers" | "Animaux")) {
+            return false;
+          }
+        }
+        // Vérification du filtre "Type"
+        if (selectedFilters.Type && selectedFilters.Type.length > 0) {
+          if (!selectedFilters.Type.includes(word["categorie 1"] as "Verbe" | "Nom" | "Adjectif")) {
+            return false;
+          }
+        }
+        return true;
+      });
+
+      pool = filteredWords.map(word => {
+        let properties: (keyof typeof word)[];
+
+        if (selectedFilters.Langues && selectedFilters.Langues.length > 0) {
+          properties = selectedFilters.Langues;
+        } else {
+          properties = ["francais", "hiragana", "romaji", "kanji"];
+        }
+
+        const randomProperty = properties[Math.floor(Math.random() * properties.length)];
+        return { word: word[randomProperty], type: randomProperty.charAt(0).toUpperCase() + randomProperty.slice(1) };
+      });
+    }
+
+    if (pool.length === 0) {
+      setRandomWord("🦍");
       setWordType("");
       return;
     }
 
-    const randomIndex = Math.floor(Math.random() * filteredWords.length);
-    const selectedWord = filteredWords[randomIndex];
-    
-    let properties: (keyof typeof selectedWord)[];
+    // Sélectionner un mot, une heure ou un horaire aléatoire
+    const randomIndex = Math.floor(Math.random() * pool.length);
+    const selectedEntry = pool[randomIndex];
 
-    if (selectedFilters.Langues && selectedFilters.Langues.length > 0) {
-      properties = selectedFilters.Langues;
-    } else {
-      properties = ["francais", "hiragana", "romaji", "kanji"];
-    }
-
-    const randomProperty = properties[Math.floor(Math.random() * properties.length)];
-    const newWord = selectedWord[randomProperty];
-    const newWordType = randomProperty.charAt(0).toUpperCase() + randomProperty.slice(1);
-
-    const updatedHistory = [...history.slice(0, currentIndex + 1), { word: newWord, type: newWordType }];
+    const updatedHistory = [...history.slice(0, currentIndex + 1), selectedEntry];
     setHistory(updatedHistory);
     setCurrentIndex(updatedHistory.length - 1);
-    setRandomWord(newWord);
-    setWordType(newWordType);
+    setRandomWord(selectedEntry.word);
+    setWordType(selectedEntry.type);
   };
 
   const handleNextWord = () => {
@@ -169,7 +207,7 @@ export default function Home() {
           </div>
         )}
         {randomWord && (
-          <div className="text-center text-[48px] font-bold self-center">{randomWord}</div>
+          <div className="text-center text-[48px] font-bold self-center" dangerouslySetInnerHTML={{ __html: randomWord }}></div>
         )}
         <div className="div_boutons flex flex-row gap-6 w-full">
           <button

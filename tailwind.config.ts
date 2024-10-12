@@ -25,6 +25,7 @@ const config: Config = {
         'surface-brand-highlights': 'var(--surface-brand-highlights)',
         'surface-popup': 'var(--surface-popup)',
         'border-primary': 'var(--border-primary)',
+        'border-secondary': 'var(--border-secondary)',
         'border-brand': 'var(--border-brand)',
         'icones-primary': 'var(--icones-primary)',
         'icones-brand': 'var(--icones-brand)',
