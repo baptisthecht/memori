@@ -1895,7 +1895,27 @@ export const words = [
         "romaji": "Miru",
         "kanji": "見る",
         "categorie1": "Verbe",
-        "categorie2": "Action"
+        "categorie2": "Action",
+        "phrases_exemples": [
+            {
+                "kanji": "映画を見るのが好きです。",
+                "hiragana": "えいがをみるのがすきです。",
+                "romaji": "Eiga o miru no ga suki desu.",
+                "francais": "J'aime regarder des films."
+            },
+            {
+                "kanji": "窓から外を見る。",
+                "hiragana": "まどからそとをみる。",
+                "romaji": "Mado kara soto o miru.",
+                "francais": "Je regarde dehors par la fenêtre."
+            },
+            {
+                "kanji": "先生は生徒を見る。",
+                "hiragana": "せんせいはせいとをみる。",
+                "romaji": "Sensei wa seito o miru.",
+                "francais": "Le professeur regarde les élèves."
+            }
+        ]
     },
     {
         "id": 65,
@@ -1904,7 +1924,27 @@ export const words = [
         "romaji": "Kuruma",
         "kanji": "車",
         "categorie1": "Nom",
-        "categorie2": "Objet"
+        "categorie2": "Objet",
+        "phrases_exemples": [
+            {
+                "kanji": "父の車は黒いです。",
+                "hiragana": "ちちのくるまはくろいです。",
+                "romaji": "Chichi no kuruma wa kuroi desu.",
+                "francais": "La voiture de mon père est noire."
+            },
+            {
+                "kanji": "私は車を運転できます。",
+                "hiragana": "わたしはくるまをうんてんできます。",
+                "romaji": "Watashi wa kuruma o unten dekimasu.",
+                "francais": "Je peux conduire une voiture."
+            },
+            {
+                "kanji": "新しい車が欲しいです。",
+                "hiragana": "あたらしいくるまがほしいです。",
+                "romaji": "Atarashii kuruma ga hoshii desu.",
+                "francais": "Je veux une nouvelle voiture."
+            }
+        ]
     },
     {
         "id": 66,
@@ -1913,7 +1953,27 @@ export const words = [
         "romaji": "Getsuyoubi",
         "kanji": "月曜日",
         "categorie1": "Nom",
-        "categorie2": "Jours"
+        "categorie2": "Jours",
+        "phrases_exemples": [
+            {
+                "kanji": "月曜日に学校が始まります。",
+                "hiragana": "げつようびにがっこうがはじまります。",
+                "romaji": "Getsuyoubi ni gakkou ga hajimarimasu.",
+                "francais": "L'école commence lundi."
+            },
+            {
+                "kanji": "次の月曜日は休みです。",
+                "hiragana": "つぎのげつようびはやすみです。",
+                "romaji": "Tsugi no getsuyoubi wa yasumi desu.",
+                "francais": "Le prochain lundi est un jour férié."
+            },
+            {
+                "kanji": "月曜日に会いましょう。",
+                "hiragana": "げつようびにあいましょう。",
+                "romaji": "Getsuyoubi ni aimashou.",
+                "francais": "Rencontrons-nous lundi."
+            }
+        ]
     },
     {
         "id": 67,
@@ -1922,7 +1982,27 @@ export const words = [
         "romaji": "Kayoubi",
         "kanji": "火曜日",
         "categorie1": "Nom",
-        "categorie2": "Jours"
+        "categorie2": "Jours",
+        "phrases_exemples": [
+            {
+                "kanji": "火曜日は忙しいです。",
+                "hiragana": "かようびはいそがしいです。",
+                "romaji": "Kayoubi wa isogashii desu.",
+                "francais": "Mardi est une journée chargée."
+            },
+            {
+                "kanji": "火曜日にテストがあります。",
+                "hiragana": "かようびにテストがあります。",
+                "romaji": "Kayoubi ni tesuto ga arimasu.",
+                "francais": "Il y a un test mardi."
+            },
+            {
+                "kanji": "火曜日は何をしますか？",
+                "hiragana": "かようびはなにをしますか？",
+                "romaji": "Kayoubi wa nani o shimasu ka?",
+                "francais": "Que fais-tu mardi ?"
+            }
+        ]
     },
     {
         "id": 68,
@@ -1931,7 +2011,27 @@ export const words = [
         "romaji": "Suiyoubi",
         "kanji": "水曜日",
         "categorie1": "Nom",
-        "categorie2": "Jours"
+        "categorie2": "Jours",
+        "phrases_exemples": [
+            {
+                "kanji": "水曜日に映画を見ます。",
+                "hiragana": "すいようびにえいがをみます。",
+                "romaji": "Suiyoubi ni eiga o mimasu.",
+                "francais": "Je regarde un film mercredi."
+            },
+            {
+                "kanji": "水曜日は天気がいいです。",
+                "hiragana": "すいようびはてんきがいいです。",
+                "romaji": "Suiyoubi wa tenki ga ii desu.",
+                "francais": "Il fait beau mercredi."
+            },
+            {
+                "kanji": "水曜日に友達と会います。",
+                "hiragana": "すいようびにともだちとあいます。",
+                "romaji": "Suiyoubi ni tomodachi to aimasu.",
+                "francais": "Je rencontre un ami mercredi."
+            }
+        ]
     },
     {
         "id": 69,
@@ -1940,7 +2040,27 @@ export const words = [
         "romaji": "Mokuyoubi",
         "kanji": "木曜日",
         "categorie1": "Nom",
-        "categorie2": "Jours"
+        "categorie2": "Jours",
+        "phrases_exemples": [
+            {
+                "kanji": "木曜日に会議があります。",
+                "hiragana": "もくようびにかいぎがあります。",
+                "romaji": "Mokuyoubi ni kaigi ga arimasu.",
+                "francais": "Il y a une réunion jeudi."
+            },
+            {
+                "kanji": "木曜日は暇です。",
+                "hiragana": "もくようびはひまです。",
+                "romaji": "Mokuyoubi wa hima desu.",
+                "francais": "Je suis libre jeudi."
+            },
+            {
+                "kanji": "木曜日に買い物します。",
+                "hiragana": "もくようびにかいものします。",
+                "romaji": "Mokuyoubi ni kaimono shimasu.",
+                "francais": "Je fais du shopping jeudi."
+            }
+        ]
     },
     {
         "id": 70,
@@ -1949,7 +2069,27 @@ export const words = [
         "romaji": "Kinyoubi",
         "kanji": "金曜日",
         "categorie1": "Nom",
-        "categorie2": "Jours"
+        "categorie2": "Jours",
+        "phrases_exemples": [
+            {
+                "kanji": "金曜日はパーティーです。",
+                "hiragana": "きんようびはパーティーです。",
+                "romaji": "Kinyoubi wa paatii desu.",
+                "francais": "Il y a une fête vendredi."
+            },
+            {
+                "kanji": "金曜日に休みます。",
+                "hiragana": "きんようびにやすみます。",
+                "romaji": "Kinyoubi ni yasumimasu.",
+                "francais": "Je me repose vendredi."
+            },
+            {
+                "kanji": "金曜日は仕事が終わります。",
+                "hiragana": "きんようびはしごとがおわります。",
+                "romaji": "Kinyoubi wa shigoto ga owarimasu.",
+                "francais": "Le travail se termine vendredi."
+            }
+        ]
     },
     {
         "id": 71,
@@ -1958,7 +2098,27 @@ export const words = [
         "romaji": "Doyoubi",
         "kanji": "土曜日",
         "categorie1": "Nom",
-        "categorie2": "Jours"
+        "categorie2": "Jours",
+        "phrases_exemples": [
+            {
+                "kanji": "土曜日は友達と遊びます。",
+                "hiragana": "どようびはともだちとあそびます。",
+                "romaji": "Doyoubi wa tomodachi to asobimasu.",
+                "francais": "Je sors avec des amis samedi."
+            },
+            {
+                "kanji": "土曜日に掃除します。",
+                "hiragana": "どようびにそうじします。",
+                "romaji": "Doyoubi ni souji shimasu.",
+                "francais": "Je fais le ménage samedi."
+            },
+            {
+                "kanji": "土曜日は忙しくないです。",
+                "hiragana": "どようびはいそがしくないです。",
+                "romaji": "Doyoubi wa isogashikunai desu.",
+                "francais": "Je ne suis pas occupé samedi."
+            }
+        ]
     },
     {
         "id": 72,
@@ -1967,7 +2127,27 @@ export const words = [
         "romaji": "Nichiyoubi",
         "kanji": "日曜日",
         "categorie1": "Nom",
-        "categorie2": "Jours"
+        "categorie2": "Jours",
+        "phrases_exemples": [
+            {
+                "kanji": "日曜日に公園へ行きます。",
+                "hiragana": "にちようびにこうえんへいきます。",
+                "romaji": "Nichiyoubi ni kouen e ikimasu.",
+                "francais": "Je vais au parc dimanche."
+            },
+            {
+                "kanji": "日曜日は家で休みます。",
+                "hiragana": "にちようびはいえでやすみます。",
+                "romaji": "Nichiyoubi wa ie de yasumimasu.",
+                "francais": "Je me repose à la maison dimanche."
+            },
+            {
+                "kanji": "日曜日に家族と食事します。",
+                "hiragana": "にちようびにかぞくとしょくじします。",
+                "romaji": "Nichiyoubi ni kazoku to shokuji shimasu.",
+                "francais": "Je dîne avec ma famille dimanche."
+            }
+        ]
     },
     {
         "id": 73,
@@ -1976,7 +2156,27 @@ export const words = [
         "romaji": "Ototoi",
         "kanji": "一昨日",
         "categorie1": "Nom",
-        "categorie2": "Temps"
+        "categorie2": "Temps",
+        "phrases_exemples": [
+            {
+                "kanji": "一昨日、映画を見ました。",
+                "hiragana": "おととい、えいがをみました。",
+                "romaji": "Ototoi, eiga o mimashita.",
+                "francais": "J'ai regardé un film avant-hier."
+            },
+            {
+                "kanji": "一昨日は雨でした。",
+                "hiragana": "おとといはあめでした。",
+                "romaji": "Ototoi wa ame deshita.",
+                "francais": "Il a plu avant-hier."
+            },
+            {
+                "kanji": "一昨日のニュースを聞きましたか？",
+                "hiragana": "おとといのニュースをききましたか？",
+                "romaji": "Ototoi no nyuusu o kikimashita ka?",
+                "francais": "Avez-vous entendu les nouvelles d'avant-hier ?"
+            }
+        ]
     },
     {
         "id": 74,
@@ -1985,7 +2185,27 @@ export const words = [
         "romaji": "Kinou",
         "kanji": "昨日",
         "categorie1": "Nom",
-        "categorie2": "Temps"
+        "categorie2": "Temps",
+        "phrases_exemples": [
+            {
+                "kanji": "昨日、友達に会いました。",
+                "hiragana": "きのう、ともだちにあいました。",
+                "romaji": "Kinou, tomodachi ni aimashita.",
+                "francais": "J'ai rencontré un ami hier."
+            },
+            {
+                "kanji": "昨日はとても暑かったです。",
+                "hiragana": "きのうはとてもあつかったです。",
+                "romaji": "Kinou wa totemo atsukatta desu.",
+                "francais": "Il a fait très chaud hier."
+            },
+            {
+                "kanji": "昨日の宿題をしました。",
+                "hiragana": "きのうのしゅくだいをしました。",
+                "romaji": "Kinou no shukudai o shimashita.",
+                "francais": "J'ai fait les devoirs d'hier."
+            }
+        ]
     },
     {
         "id": 75,
@@ -1994,7 +2214,27 @@ export const words = [
         "romaji": "Kyou",
         "kanji": "今日",
         "categorie1": "Nom",
-        "categorie2": "Temps"
+        "categorie2": "Temps",
+        "phrases_exemples": [
+            {
+                "kanji": "今日は学校に行きます。",
+                "hiragana": "きょうはがっこうにいきます。",
+                "romaji": "Kyou wa gakkou ni ikimasu.",
+                "francais": "Je vais à l'école aujourd'hui."
+            },
+            {
+                "kanji": "今日は雨が降っています。",
+                "hiragana": "きょうはあめがふっています。",
+                "romaji": "Kyou wa ame ga futte imasu.",
+                "francais": "Il pleut aujourd'hui."
+            },
+            {
+                "kanji": "今日は忙しいですか？",
+                "hiragana": "きょうはいそがしいですか？",
+                "romaji": "Kyou wa isogashii desu ka?",
+                "francais": "Es-tu occupé aujourd'hui ?"
+            }
+        ]
     },
     {
         "id": 76,
@@ -2003,7 +2243,27 @@ export const words = [
         "romaji": "Ashita",
         "kanji": "明日",
         "categorie1": "Nom",
-        "categorie2": "Temps"
+        "categorie2": "Temps",
+        "phrases_exemples": [
+            {
+                "kanji": "明日は休みです。",
+                "hiragana": "あしたはやすみです。",
+                "romaji": "Ashita wa yasumi desu.",
+                "francais": "Demain est un jour de repos."
+            },
+            {
+                "kanji": "明日、映画を見に行きます。",
+                "hiragana": "あした、えいがをみにいきます。",
+                "romaji": "Ashita, eiga o mi ni ikimasu.",
+                "francais": "Je vais voir un film demain."
+            },
+            {
+                "kanji": "明日の天気はどうですか？",
+                "hiragana": "あしたのてんきはどうですか？",
+                "romaji": "Ashita no tenki wa dou desu ka?",
+                "francais": "Quel temps fera-t-il demain ?"
+            }
+        ]
     },
     {
         "id": 77,
@@ -2012,7 +2272,27 @@ export const words = [
         "romaji": "Asatte",
         "kanji": "明後日",
         "categorie1": "Nom",
-        "categorie2": "Temps"
+        "categorie2": "Temps",
+        "phrases_exemples": [
+            {
+                "kanji": "明後日、旅行に行きます。",
+                "hiragana": "あさって、りょこうにいきます。",
+                "romaji": "Asatte, ryokou ni ikimasu.",
+                "francais": "Je pars en voyage après-demain."
+            },
+            {
+                "kanji": "明後日は試験があります。",
+                "hiragana": "あさってはしけんがあります。",
+                "romaji": "Asatte wa shiken ga arimasu.",
+                "francais": "Il y a un examen après-demain."
+            },
+            {
+                "kanji": "明後日に会いましょう。",
+                "hiragana": "あさってにあいましょう。",
+                "romaji": "Asatte ni aimashou.",
+                "francais": "Rencontrons-nous après-demain."
+            }
+        ]
     },
     {
         "id": 78,
@@ -2021,7 +2301,27 @@ export const words = [
         "romaji": "Mado",
         "kanji": "窓",
         "categorie1": "Nom",
-        "categorie2": "Objet"
+        "categorie2": "Objet",
+        "phrases_exemples": [
+            {
+                "kanji": "窓を開けてください。",
+                "hiragana": "まどをあけてください。",
+                "romaji": "Mado o akete kudasai.",
+                "francais": "Veuillez ouvrir la fenêtre."
+            },
+            {
+                "kanji": "窓から風が入ります。",
+                "hiragana": "まどからかぜがはいります。",
+                "romaji": "Mado kara kaze ga hairimasu.",
+                "francais": "Le vent entre par la fenêtre."
+            },
+            {
+                "kanji": "窓の外に鳥がいます。",
+                "hiragana": "まどのそとにとりがいます。",
+                "romaji": "Mado no soto ni tori ga imasu.",
+                "francais": "Il y a un oiseau dehors de la fenêtre."
+            }
+        ]
     },
     {
         "id": 79,
@@ -2030,7 +2330,27 @@ export const words = [
         "romaji": "Zeikanin",
         "kanji": "税関員",
         "categorie1": "Nom",
-        "categorie2": "Métiers"
+        "categorie2": "Métiers",
+        "phrases_exemples": [
+            {
+                "kanji": "税関員がパスポートをチェックします。",
+                "hiragana": "ぜいかんいんがパスポートをチェックします。",
+                "romaji": "Zeikanin ga pasupooto o chekku shimasu.",
+                "francais": "Le douanier vérifie le passeport."
+            },
+            {
+                "kanji": "税関員に質問されました。",
+                "hiragana": "ぜいかんいんにしつもんされました。",
+                "romaji": "Zeikanin ni shitsumon saremashita.",
+                "francais": "Le douanier m'a posé des questions."
+            },
+            {
+                "kanji": "荷物を税関員に見せます。",
+                "hiragana": "にもつをぜいかんいんにみせます。",
+                "romaji": "Nimotsu o zeikanin ni misemasu.",
+                "francais": "Je montre mes bagages au douanier."
+            }
+        ]
     },
     {
         "id": 80,
@@ -2039,7 +2359,27 @@ export const words = [
         "romaji": "Zeikan",
         "kanji": "税関",
         "categorie1": "Nom",
-        "categorie2": "Lieu"
+        "categorie2": "Lieu",
+        "phrases_exemples": [
+            {
+                "kanji": "税関を通ります。",
+                "hiragana": "ぜいかんをとおります。",
+                "romaji": "Zeikan o toorimasu.",
+                "francais": "Je passe la douane."
+            },
+            {
+                "kanji": "空港の税関で止められました。",
+                "hiragana": "くうこうのぜいかんでとめられました。",
+                "romaji": "Kuukou no zeikan de tomeraremashita.",
+                "francais": "J'ai été arrêté à la douane de l'aéroport."
+            },
+            {
+                "kanji": "税関で申告します。",
+                "hiragana": "ぜいかんでしんこくします。",
+                "romaji": "Zeikan de shinkoku shimasu.",
+                "francais": "Je déclare à la douane."
+            }
+        ]
     },
     {
         "id": 81,
@@ -2048,7 +2388,27 @@ export const words = [
         "romaji": "Shitsurei shimasu",
         "kanji": "失礼します",
         "categorie1": "Expression",
-        "categorie2": "Salutations"
+        "categorie2": "Salutations",
+        "phrases_exemples": [
+            {
+                "kanji": "先に失礼します。",
+                "hiragana": "さきにしつれいします。",
+                "romaji": "Saki ni shitsurei shimasu.",
+                "francais": "Je m'excuse de partir avant vous."
+            },
+            {
+                "kanji": "電話中に失礼します。",
+                "hiragana": "でんわちゅうにしつれいします。",
+                "romaji": "Denwachuu ni shitsurei shimasu.",
+                "francais": "Excusez-moi de vous interrompre pendant l'appel."
+            },
+            {
+                "kanji": "失礼します、質問があります。",
+                "hiragana": "しつれいします、しつもんがあります。",
+                "romaji": "Shitsurei shimasu, shitsumon ga arimasu.",
+                "francais": "Excusez-moi, j'ai une question."
+            }
+        ]
     },
     {
         "id": 82,
@@ -2057,7 +2417,27 @@ export const words = [
         "romaji": "Mata",
         "kanji": "又",
         "categorie1": "Adverbe",
-        "categorie2": "Temps"
+        "categorie2": "Temps",
+        "phrases_exemples": [
+            {
+                "kanji": "また会いましょう。",
+                "hiragana": "またあいましょう。",
+                "romaji": "Mata aimashou.",
+                "francais": "Rencontrons-nous à nouveau."
+            },
+            {
+                "kanji": "彼はまた遅れました。",
+                "hiragana": "かれはまたおくれました。",
+                "romaji": "Kare wa mata okuremashita.",
+                "francais": "Il est encore en retard."
+            },
+            {
+                "kanji": "また雨が降っています。",
+                "hiragana": "またあめがふっています。",
+                "romaji": "Mata ame ga futte imasu.",
+                "francais": "Il pleut encore."
+            }
+        ]
     },
     {
         "id": 83,
@@ -2066,7 +2446,27 @@ export const words = [
         "romaji": "Kutsu",
         "kanji": "靴",
         "categorie1": "Nom",
-        "categorie2": "Vêtement"
+        "categorie2": "Vêtement",
+        "phrases_exemples": [
+            {
+                "kanji": "新しい靴を買いました。",
+                "hiragana": "あたらしいくつをかいました。",
+                "romaji": "Atarashii kutsu o kaimashita.",
+                "francais": "J'ai acheté de nouvelles chaussures."
+            },
+            {
+                "kanji": "靴を脱いでください。",
+                "hiragana": "くつをぬいでください。",
+                "romaji": "Kutsu o nuide kudasai.",
+                "francais": "Veuillez enlever vos chaussures."
+            },
+            {
+                "kanji": "この靴はとても軽いです。",
+                "hiragana": "このくつはとてもかるいです。",
+                "romaji": "Kono kutsu wa totemo karui desu.",
+                "francais": "Ces chaussures sont très légères."
+            }
+        ]
     },
     {
         "id": 84,
@@ -2075,7 +2475,27 @@ export const words = [
         "romaji": "Toshokan",
         "kanji": "図書館",
         "categorie1": "Nom",
-        "categorie2": "Lieu"
+        "categorie2": "Lieu",
+        "phrases_exemples": [
+            {
+                "kanji": "図書館で本を借ります。",
+                "hiragana": "としょかんでほんをかります。",
+                "romaji": "Toshokan de hon o karimasu.",
+                "francais": "J'emprunte des livres à la bibliothèque."
+            },
+            {
+                "kanji": "図書館は静かです。",
+                "hiragana": "としょかんはしずかです。",
+                "romaji": "Toshokan wa shizuka desu.",
+                "francais": "La bibliothèque est silencieuse."
+            },
+            {
+                "kanji": "図書館で勉強します。",
+                "hiragana": "としょかんでべんきょうします。",
+                "romaji": "Toshokan de benkyou shimasu.",
+                "francais": "J'étudie à la bibliothèque."
+            }
+        ]
     },
     {
         "id": 85,
@@ -2084,7 +2504,27 @@ export const words = [
         "romaji": "Kissaten",
         "kanji": "喫茶店",
         "categorie1": "Nom",
-        "categorie2": "Lieu"
+        "categorie2": "Lieu",
+        "phrases_exemples": [
+            {
+                "kanji": "喫茶店でコーヒーを飲みます。",
+                "hiragana": "きっさてんでコーヒーをのみます。",
+                "romaji": "Kissaten de koohii o nomimasu.",
+                "francais": "Je bois un café au café."
+            },
+            {
+                "kanji": "喫茶店で友達と話します。",
+                "hiragana": "きっさてんでともだちとはなします。",
+                "romaji": "Kissaten de tomodachi to hanashimasu.",
+                "francais": "Je parle avec un ami au café."
+            },
+            {
+                "kanji": "この喫茶店はおしゃれです。",
+                "hiragana": "このきっさてんはおしゃれです。",
+                "romaji": "Kono kissaten wa oshare desu.",
+                "francais": "Ce café est chic."
+            }
+        ]
     },
     {
         "id": 86,
@@ -2093,7 +2533,27 @@ export const words = [
         "romaji": "Dou itashimashite",
         "kanji": "どう致しまして",
         "categorie1": "Expression",
-        "categorie2": "Salutations"
+        "categorie2": "Salutations",
+        "phrases_exemples": [
+            {
+                "kanji": "ありがとう。—どう致しまして。",
+                "hiragana": "ありがとう。—どういたしまして。",
+                "romaji": "Arigatou. — Dou itashimashite.",
+                "francais": "Merci. — Je vous en prie."
+            },
+            {
+                "kanji": "助けてくれてありがとう。—どう致しまして。",
+                "hiragana": "たすけてくれてありがとう。—どういたしまして。",
+                "romaji": "Tasukete kurete arigatou. — Dou itashimashite.",
+                "francais": "Merci de m'avoir aidé. — Je vous en prie."
+            },
+            {
+                "kanji": "お礼はいりません。—どう致しまして。",
+                "hiragana": "おれいはいりません。—どういたしまして。",
+                "romaji": "Orei wa irimasen. — Dou itashimashite.",
+                "francais": "Pas besoin de me remercier. — Je vous en prie."
+            }
+        ]
     },
     {
         "id": 87,
@@ -2102,7 +2562,27 @@ export const words = [
         "romaji": "Bangou",
         "kanji": "番号",
         "categorie1": "Nom",
-        "categorie2": "Objet"
+        "categorie2": "Objet",
+        "phrases_exemples": [
+            {
+                "kanji": "電話番号を教えてください。",
+                "hiragana": "でんわばんごうをおしえてください。",
+                "romaji": "Denwa bangou o oshiete kudasai.",
+                "francais": "Veuillez me donner votre numéro de téléphone."
+            },
+            {
+                "kanji": "彼の部屋番号は何ですか？",
+                "hiragana": "かれのへやばんごうはなんですか？",
+                "romaji": "Kare no heya bangou wa nan desu ka?",
+                "francais": "Quel est son numéro de chambre ?"
+            },
+            {
+                "kanji": "番号札を取ってください。",
+                "hiragana": "ばんごうふだをとってください。",
+                "romaji": "Bangoufuda o totte kudasai.",
+                "francais": "Veuillez prendre un ticket numéroté."
+            }
+        ]
     },
     {
         "id": 88,
@@ -2111,7 +2591,27 @@ export const words = [
         "romaji": "Mo",
         "kanji": "も",
         "categorie1": "Particule",
-        "categorie2": "Expression"
+        "categorie2": "Expression",
+        "phrases_exemples": [
+            {
+                "kanji": "私も行きます。",
+                "hiragana": "わたしもいきます。",
+                "romaji": "Watashi mo ikimasu.",
+                "francais": "J'y vais aussi."
+            },
+            {
+                "kanji": "彼も学生です。",
+                "hiragana": "かれもがくせいです。",
+                "romaji": "Kare mo gakusei desu.",
+                "francais": "Il est aussi étudiant."
+            },
+            {
+                "kanji": "猫も犬も好きです。",
+                "hiragana": "ねこもいぬもすきです。",
+                "romaji": "Neko mo inu mo suki desu.",
+                "francais": "J'aime les chats et aussi les chiens."
+            }
+        ]
     },
     {
         "id": 89,
@@ -2120,7 +2620,27 @@ export const words = [
         "romaji": "Onna",
         "kanji": "女",
         "categorie1": "Nom",
-        "categorie2": "Personne"
+        "categorie2": "Personne",
+        "phrases_exemples": [
+            {
+                "kanji": "彼女は美しい女です。",
+                "hiragana": "かのじょはうつくしいおんなです。",
+                "romaji": "Kanojo wa utsukushii onna desu.",
+                "francais": "Elle est une belle femme."
+            },
+            {
+                "kanji": "女の子が公園で遊んでいます。",
+                "hiragana": "おんなのこがこうえんであそんでいます。",
+                "romaji": "Onnanoko ga kouen de asonde imasu.",
+                "francais": "Une fille joue dans le parc."
+            },
+            {
+                "kanji": "あの女は誰ですか？",
+                "hiragana": "あのおんなはだれですか？",
+                "romaji": "Ano onna wa dare desu ka?",
+                "francais": "Qui est cette femme ?"
+            }
+        ]
     },
     {
         "id": 90,
@@ -2129,7 +2649,27 @@ export const words = [
         "romaji": "Arigatou",
         "kanji": "有り難う",
         "categorie1": "Expression",
-        "categorie2": "Salutations"
+        "categorie2": "Salutations",
+        "phrases_exemples": [
+            {
+                "kanji": "手伝ってくれてありがとう。",
+                "hiragana": "てつだってくれてありがとう。",
+                "romaji": "Tetsudatte kurete arigatou.",
+                "francais": "Merci de m'avoir aidé."
+            },
+            {
+                "kanji": "プレゼントをありがとう。",
+                "hiragana": "プレゼントをありがとう。",
+                "romaji": "Purezento o arigatou.",
+                "francais": "Merci pour le cadeau."
+            },
+            {
+                "kanji": "今日はありがとう。",
+                "hiragana": "きょうはありがとう。",
+                "romaji": "Kyou wa arigatou.",
+                "francais": "Merci pour aujourd'hui."
+            }
+        ]
     },
     {
         "id": 91,
@@ -2138,7 +2678,27 @@ export const words = [
         "romaji": "Hiruyasumi",
         "kanji": "昼休み",
         "categorie1": "Nom",
-        "categorie2": "Temps"
+        "categorie2": "Temps",
+        "phrases_exemples": [
+            {
+                "kanji": "昼休みに食堂へ行きます。",
+                "hiragana": "ひるやすみにしょくどうへいきます。",
+                "romaji": "Hiruyasumi ni shokudou e ikimasu.",
+                "francais": "Je vais à la cantine pendant la pause déjeuner."
+            },
+            {
+                "kanji": "昼休みは12時からです。",
+                "hiragana": "ひるやすみは12じからです。",
+                "romaji": "Hiruyasumi wa juu ni ji kara desu.",
+                "francais": "La pause déjeuner commence à 12 heures."
+            },
+            {
+                "kanji": "昼休みに散歩します。",
+                "hiragana": "ひるやすみにさんぽします。",
+                "romaji": "Hiruyasumi ni sanpo shimasu.",
+                "francais": "Je me promène pendant la pause déjeuner."
+            }
+        ]
     },
     {
         "id": 92,
@@ -2147,7 +2707,27 @@ export const words = [
         "romaji": "Kouen",
         "kanji": "公園",
         "categorie1": "Nom",
-        "categorie2": "Lieu"
+        "categorie2": "Lieu",
+        "phrases_exemples": [
+            {
+                "kanji": "公園でジョギングします。",
+                "hiragana": "こうえんでジョギングします。",
+                "romaji": "Kouen de jogingu shimasu.",
+                "francais": "Je fais du jogging au parc."
+            },
+            {
+                "kanji": "子供たちが公園で遊んでいます。",
+                "hiragana": "こどもたちがこうえんであそんでいます。",
+                "romaji": "Kodomotachi ga kouen de asonde imasu.",
+                "francais": "Les enfants jouent au parc."
+            },
+            {
+                "kanji": "公園は静かです。",
+                "hiragana": "こうえんはしずかです。",
+                "romaji": "Kouen wa shizuka desu.",
+                "francais": "Le parc est calme."
+            }
+        ]
     },
     {
         "id": 93,
@@ -2156,7 +2736,27 @@ export const words = [
         "romaji": "Eigakan",
         "kanji": "映画館",
         "categorie1": "Nom",
-        "categorie2": "Lieu"
+        "categorie2": "Lieu",
+        "phrases_exemples": [
+            {
+                "kanji": "映画館で新しい映画を見ました。",
+                "hiragana": "えいがかんであたらしいえいがをみました。",
+                "romaji": "Eigakan de atarashii eiga o mimashita.",
+                "francais": "J'ai vu un nouveau film au cinéma."
+            },
+            {
+                "kanji": "映画館はここから近いです。",
+                "hiragana": "えいがかんはここからちかいです。",
+                "romaji": "Eigakan wa koko kara chikai desu.",
+                "francais": "Le cinéma est proche d'ici."
+            },
+            {
+                "kanji": "友達と映画館へ行きます。",
+                "hiragana": "ともだちとえいがかんへいきます。",
+                "romaji": "Tomodachi to eigakan e ikimasu.",
+                "francais": "Je vais au cinéma avec un ami."
+            }
+        ]
     },
     {
         "id": 94,
@@ -2165,7 +2765,27 @@ export const words = [
         "romaji": "Otoko",
         "kanji": "男",
         "categorie1": "Nom",
-        "categorie2": "Personne"
+        "categorie2": "Personne",
+        "phrases_exemples": [
+            {
+                "kanji": "彼は親切な男です。",
+                "hiragana": "かれはしんせつなおとこです。",
+                "romaji": "Kare wa shinsetsu na otoko desu.",
+                "francais": "C'est un homme gentil."
+            },
+            {
+                "kanji": "男の子がボールを投げます。",
+                "hiragana": "おとこのこがボールをなげます。",
+                "romaji": "Otoko no ko ga booru o nagemasu.",
+                "francais": "Le garçon lance la balle."
+            },
+            {
+                "kanji": "あの男は誰ですか？",
+                "hiragana": "あのおとこはだれですか？",
+                "romaji": "Ano otoko wa dare desu ka?",
+                "francais": "Qui est cet homme ?"
+            }
+        ]
     },
     {
         "id": 95,
@@ -2174,7 +2794,27 @@ export const words = [
         "romaji": "Depaato",
         "kanji": "",
         "categorie1": "Nom",
-        "categorie2": "Lieu"
+        "categorie2": "Lieu",
+        "phrases_exemples": [
+            {
+                "kanji": "デパートで買い物します。",
+                "hiragana": "デパートでかいものします。",
+                "romaji": "Depaato de kaimono shimasu.",
+                "francais": "Je fais du shopping au grand magasin."
+            },
+            {
+                "kanji": "新しいデパートが開店しました。",
+                "hiragana": "あたらしいデパートがかいてんしました。",
+                "romaji": "Atarashii depaato ga kaiten shimashita.",
+                "francais": "Un nouveau grand magasin a ouvert."
+            },
+            {
+                "kanji": "デパートは駅の近くにあります。",
+                "hiragana": "デパートはえきのちかくにあります。",
+                "romaji": "Depaato wa eki no chikaku ni arimasu.",
+                "francais": "Le grand magasin est près de la gare."
+            }
+        ]
     },
     {
         "id": 96,
@@ -2183,7 +2823,27 @@ export const words = [
         "romaji": "Byouin",
         "kanji": "病院",
         "categorie1": "Nom",
-        "categorie2": "Lieu"
+        "categorie2": "Lieu",
+        "phrases_exemples": [
+            {
+                "kanji": "病院へ行きます。",
+                "hiragana": "びょういんへいきます。",
+                "romaji": "Byouin e ikimasu.",
+                "francais": "Je vais à l'hôpital."
+            },
+            {
+                "kanji": "彼は病院で働いています。",
+                "hiragana": "かれはびょういんではたらいています。",
+                "romaji": "Kare wa byouin de hataraite imasu.",
+                "francais": "Il travaille à l'hôpital."
+            },
+            {
+                "kanji": "病院はここから遠いです。",
+                "hiragana": "びょういんはここからとおいです。",
+                "romaji": "Byouin wa koko kara tooi desu.",
+                "francais": "L'hôpital est loin d'ici."
+            }
+        ]
     },
     {
         "id": 97,
@@ -2192,7 +2852,27 @@ export const words = [
         "romaji": "Sou desu ka?",
         "kanji": "そうですか",
         "categorie1": "Expression",
-        "categorie2": "Question"
+        "categorie2": "Question",
+        "phrases_exemples": [
+            {
+                "kanji": "明日は雨です。—そうですか。",
+                "hiragana": "あしたはあめです。—そうですか。",
+                "romaji": "Ashita wa ame desu. — Sou desu ka.",
+                "francais": "Il pleuvra demain. — Ah bon ?"
+            },
+            {
+                "kanji": "彼は学生です。—そうですか。",
+                "hiragana": "かれはがくせいです。—そうですか。",
+                "romaji": "Kare wa gakusei desu. — Sou desu ka.",
+                "francais": "Il est étudiant. — Ah bon ?"
+            },
+            {
+                "kanji": "この本は面白いです。—そうですか。",
+                "hiragana": "このほんはおもしろいです。—そうですか。",
+                "romaji": "Kono hon wa omoshiroi desu. — Sou desu ka.",
+                "francais": "Ce livre est intéressant. — Ah bon ?"
+            }
+        ]
     },
     {
         "id": 98,
@@ -2201,7 +2881,27 @@ export const words = [
         "romaji": "To",
         "kanji": "と",
         "categorie1": "Particule",
-        "categorie2": "Conjonction"
+        "categorie2": "Conjonction",
+        "phrases_exemples": [
+            {
+                "kanji": "りんごとバナナを買いました。",
+                "hiragana": "りんごとバナナをかいました。",
+                "romaji": "Ringo to banana o kaimashita.",
+                "francais": "J'ai acheté des pommes et des bananes."
+            },
+            {
+                "kanji": "友達と映画を見ます。",
+                "hiragana": "ともだちとえいがをみます。",
+                "romaji": "Tomodachi to eiga o mimasu.",
+                "francais": "Je regarde un film avec un ami."
+            },
+            {
+                "kanji": "猫と犬が好きです。",
+                "hiragana": "ねこといぬがすきです。",
+                "romaji": "Neko to inu ga suki desu.",
+                "francais": "J'aime les chats et les chiens."
+            }
+        ]
     },
     {
         "id": 99,
@@ -2210,7 +2910,27 @@ export const words = [
         "romaji": "Shitagi",
         "kanji": "下着",
         "categorie1": "Nom",
-        "categorie2": "Vêtement"
+        "categorie2": "Vêtement",
+        "phrases_exemples": [
+            {
+                "kanji": "新しい下着を買いました。",
+                "hiragana": "あたらしいしたぎをかいました。",
+                "romaji": "Atarashii shitagi o kaimashita.",
+                "francais": "J'ai acheté de nouveaux sous-vêtements."
+            },
+            {
+                "kanji": "下着を洗濯します。",
+                "hiragana": "したぎをせんたくします。",
+                "romaji": "Shitagi o sentaku shimasu.",
+                "francais": "Je lave les sous-vêtements."
+            },
+            {
+                "kanji": "下着は引き出しにあります。",
+                "hiragana": "したぎはひきだしにあります。",
+                "romaji": "Shitagi wa hikidashi ni arimasu.",
+                "francais": "Les sous-vêtements sont dans le tiroir."
+            }
+        ]
     },
     {
         "id": 100,
@@ -2219,7 +2939,27 @@ export const words = [
         "romaji": "Uisukii",
         "kanji": "-",
         "categorie1": "Nom",
-        "categorie2": "Nourriture"
+        "categorie2": "Nourriture",
+        "phrases_exemples": [
+            {
+                "kanji": "彼はウイスキーを飲みます。",
+                "hiragana": "かれはウイスキーをのみます。",
+                "romaji": "Kare wa uisukii o nomimasu.",
+                "francais": "Il boit du whisky."
+            },
+            {
+                "kanji": "ウイスキーを一杯ください。",
+                "hiragana": "ウイスキーをいっぱいください。",
+                "romaji": "Uisukii o ippai kudasai.",
+                "francais": "Un verre de whisky, s'il vous plaît."
+            },
+            {
+                "kanji": "ウイスキーは強いお酒です。",
+                "hiragana": "ウイスキーはつよいおさけです。",
+                "romaji": "Uisukii wa tsuyoi osake desu.",
+                "francais": "Le whisky est un alcool fort."
+            }
+        ]
     },
     {
         "id": 101,
@@ -2228,7 +2968,27 @@ export const words = [
         "romaji": "Made",
         "kanji": "迄",
         "categorie1": "Particule",
-        "categorie2": "Expression"
+        "categorie2": "Expression",
+        "phrases_exemples": [
+            {
+                "kanji": "駅まで歩きます。",
+                "hiragana": "えきまであるきます。",
+                "romaji": "Eki made arukimasu.",
+                "francais": "Je marche jusqu'à la gare."
+            },
+            {
+                "kanji": "午後5時まで働きます。",
+                "hiragana": "ごごごじまではたらきます。",
+                "romaji": "Gogo goji made hatarakimasu.",
+                "francais": "Je travaille jusqu'à 17 heures."
+            },
+            {
+                "kanji": "明日までに終わらせます。",
+                "hiragana": "あしたまでにおわらせます。",
+                "romaji": "Ashita made ni owarasemasu.",
+                "francais": "Je le finirai d'ici demain."
+            }
+        ]
     },
     {
         "id": 102,
@@ -2237,7 +2997,27 @@ export const words = [
         "romaji": "Asoko",
         "kanji": "彼処",
         "categorie1": "Pronom",
-        "categorie2": "Direction"
+        "categorie2": "Direction",
+        "phrases_exemples": [
+            {
+                "kanji": "あそこに山があります。",
+                "hiragana": "あそこにやまがあります。",
+                "romaji": "Asoko ni yama ga arimasu.",
+                "francais": "Il y a une montagne là-bas."
+            },
+            {
+                "kanji": "あそこは図書館です。",
+                "hiragana": "あそこはとしょかんです。",
+                "romaji": "Asoko wa toshokan desu.",
+                "francais": "Là-bas, c'est la bibliothèque."
+            },
+            {
+                "kanji": "あそこへ行きましょう。",
+                "hiragana": "あそこへいきましょう。",
+                "romaji": "Asoko e ikimashou.",
+                "francais": "Allons là-bas."
+            }
+        ]
     },
     {
         "id": 103,
@@ -2246,7 +3026,27 @@ export const words = [
         "romaji": "Soko",
         "kanji": "其処",
         "categorie1": "Pronom",
-        "categorie2": "Direction"
+        "categorie2": "Direction",
+        "phrases_exemples": [
+            {
+                "kanji": "そこに本があります。",
+                "hiragana": "そこにほんがあります。",
+                "romaji": "Soko ni hon ga arimasu.",
+                "francais": "Il y a un livre là."
+            },
+            {
+                "kanji": "そこは私の席です。",
+                "hiragana": "そこはわたしのせきです。",
+                "romaji": "Soko wa watashi no seki desu.",
+                "francais": "C'est ma place là."
+            },
+            {
+                "kanji": "そこに座ってください。",
+                "hiragana": "そこにすわってください。",
+                "romaji": "Soko ni suwatte kudasai.",
+                "francais": "Veuillez vous asseoir là."
+            }
+        ]
     },
     {
         "id": 104,
@@ -2255,7 +3055,27 @@ export const words = [
         "romaji": "Kara",
         "kanji": "から",
         "categorie1": "Particule",
-        "categorie2": "Expression"
+        "categorie2": "Expression",
+        "phrases_exemples": [
+            {
+                "kanji": "日本から来ました。",
+                "hiragana": "にほんからきました。",
+                "romaji": "Nihon kara kimashita.",
+                "francais": "Je viens du Japon."
+            },
+            {
+                "kanji": "朝から雨が降っています。",
+                "hiragana": "あさからあめがふっています。",
+                "romaji": "Asa kara ame ga futte imasu.",
+                "francais": "Il pleut depuis ce matin."
+            },
+            {
+                "kanji": "ここから駅まで遠いです。",
+                "hiragana": "ここからえきまでとおいです。",
+                "romaji": "Koko kara eki made tooi desu.",
+                "francais": "C'est loin d'ici à la gare."
+            }
+        ]
     },
     {
         "id": 105,
@@ -2264,7 +3084,27 @@ export const words = [
         "romaji": "Dore",
         "kanji": "何れ",
         "categorie1": "Pronom",
-        "categorie2": "Question"
+        "categorie2": "Question",
+        "phrases_exemples": [
+            {
+                "kanji": "どれがあなたの本ですか？",
+                "hiragana": "どれがあなたのほんですか？",
+                "romaji": "Dore ga anata no hon desu ka?",
+                "francais": "Lequel est votre livre ?"
+            },
+            {
+                "kanji": "どれを選びますか？",
+                "hiragana": "どれをえらびますか？",
+                "romaji": "Dore o erabimasu ka?",
+                "francais": "Lequel choisissez-vous ?"
+            },
+            {
+                "kanji": "どれが好きですか？",
+                "hiragana": "どれがすきですか？",
+                "romaji": "Dore ga suki desu ka?",
+                "francais": "Lequel aimez-vous ?"
+            }
+        ]
     },
     {
         "id": 106,
@@ -2273,7 +3113,27 @@ export const words = [
         "romaji": "Kyoukai",
         "kanji": "教会",
         "categorie1": "Nom",
-        "categorie2": "Lieu"
+        "categorie2": "Lieu",
+        "phrases_exemples": [
+            {
+                "kanji": "日曜日に教会へ行きます。",
+                "hiragana": "にちようびにきょうかいへいきます。",
+                "romaji": "Nichiyoubi ni kyoukai e ikimasu.",
+                "francais": "Je vais à l'église le dimanche."
+            },
+            {
+                "kanji": "教会で結婚式があります。",
+                "hiragana": "きょうかいでけっこんしきがあります。",
+                "romaji": "Kyoukai de kekkonshiki ga arimasu.",
+                "francais": "Il y a un mariage à l'église."
+            },
+            {
+                "kanji": "美しい教会を見ました。",
+                "hiragana": "うつくしいきょうかいをみました。",
+                "romaji": "Utsukushii kyoukai o mimashita.",
+                "francais": "J'ai vu une belle église."
+            }
+        ]
     },
     {
         "id": 107,
@@ -2282,7 +3142,27 @@ export const words = [
         "romaji": "Kagi",
         "kanji": "鍵",
         "categorie1": "Nom",
-        "categorie2": "Objet"
+        "categorie2": "Objet",
+        "phrases_exemples": [
+            {
+                "kanji": "鍵を忘れました。",
+                "hiragana": "かぎをわすれました。",
+                "romaji": "Kagi o wasuremashita.",
+                "francais": "J'ai oublié mes clés."
+            },
+            {
+                "kanji": "鍵をかけてください。",
+                "hiragana": "かぎをかけてください。",
+                "romaji": "Kagi o kakete kudasai.",
+                "francais": "Veuillez fermer à clé."
+            },
+            {
+                "kanji": "これは車の鍵です。",
+                "hiragana": "これはくるまのかぎです。",
+                "romaji": "Kore wa kuruma no kagi desu.",
+                "francais": "Ceci est la clé de la voiture."
+            }
+        ]
     },
     {
         "id": 108,
@@ -2291,7 +3171,27 @@ export const words = [
         "romaji": "Mae",
         "kanji": "前",
         "categorie1": "Nom",
-        "categorie2": "Temps"
+        "categorie2": "Temps",
+        "phrases_exemples": [
+            {
+                "kanji": "ご飯の前に手を洗います。",
+                "hiragana": "ごはんのまえにてをあらいます。",
+                "romaji": "Gohan no mae ni te o araimasu.",
+                "francais": "Je me lave les mains avant de manger."
+            },
+            {
+                "kanji": "駅の前で待ちます。",
+                "hiragana": "えきのまえでまちます。",
+                "romaji": "Eki no mae de machimasu.",
+                "francais": "Je vous attends devant la gare."
+            },
+            {
+                "kanji": "寝る前に本を読みます。",
+                "hiragana": "ねるまえにほんをよみます。",
+                "romaji": "Neru mae ni hon o yomimasu.",
+                "francais": "Je lis un livre avant de dormir."
+            }
+        ]
     },
     {
         "id": 109,
@@ -2300,7 +3200,27 @@ export const words = [
         "romaji": "Tokei",
         "kanji": "時計",
         "categorie1": "Nom",
-        "categorie2": "Objet"
+        "categorie2": "Objet",
+        "phrases_exemples": [
+            {
+                "kanji": "新しい時計を買いました。",
+                "hiragana": "あたらしいとけいをかいました。",
+                "romaji": "Atarashii tokei o kaimashita.",
+                "francais": "J'ai acheté une nouvelle montre."
+            },
+            {
+                "kanji": "時計を見てください。",
+                "hiragana": "とけいをみてください。",
+                "romaji": "Tokei o mite kudasai.",
+                "francais": "Veuillez regarder l'heure."
+            },
+            {
+                "kanji": "この時計は高いです。",
+                "hiragana": "このとけいはたかいです。",
+                "romaji": "Kono tokei wa takai desu.",
+                "francais": "Cette montre est chère."
+            }
+        ]
     },
     {
         "id": 110,
@@ -2309,7 +3229,27 @@ export const words = [
         "romaji": "Kaban",
         "kanji": "鞄",
         "categorie1": "Nom",
-        "categorie2": "Objet"
+        "categorie2": "Objet",
+        "phrases_exemples": [
+            {
+                "kanji": "大きな鞄があります。",
+                "hiragana": "おおきなかばんがあります。",
+                "romaji": "Ookina kaban ga arimasu.",
+                "francais": "J'ai une grande valise."
+            },
+            {
+                "kanji": "鞄を忘れないでください。",
+                "hiragana": "かばんをわすれないでください。",
+                "romaji": "Kaban o wasurenaide kudasai.",
+                "francais": "N'oubliez pas votre valise."
+            },
+            {
+                "kanji": "鞄に本を入れます。",
+                "hiragana": "かばんにほんをいれます。",
+                "romaji": "Kaban ni hon o iremasu.",
+                "francais": "Je mets le livre dans la valise."
+            }
+        ]
     },
     {
         "id": 111,
@@ -2318,7 +3258,27 @@ export const words = [
         "romaji": "Suupaa",
         "kanji": "-",
         "categorie1": "Nom",
-        "categorie2": "Lieu"
+        "categorie2": "Lieu",
+        "phrases_exemples": [
+            {
+                "kanji": "スーパーで野菜を買います。",
+                "hiragana": "スーパーでやさいをかいます。",
+                "romaji": "Suupaa de yasai o kaimasu.",
+                "francais": "J'achète des légumes au supermarché."
+            },
+            {
+                "kanji": "このスーパーは安いです。",
+                "hiragana": "このスーパーはやすいです。",
+                "romaji": "Kono suupaa wa yasui desu.",
+                "francais": "Ce supermarché est bon marché."
+            },
+            {
+                "kanji": "スーパーは何時に閉まりますか？",
+                "hiragana": "スーパーはなんじにしまりますか？",
+                "romaji": "Suupaa wa nanji ni shimarimasu ka?",
+                "francais": "À quelle heure ferme le supermarché ?"
+            }
+        ]
     },
     {
         "id": 112,
@@ -2327,7 +3287,27 @@ export const words = [
         "romaji": "Wain",
         "kanji": "-",
         "categorie1": "Nom",
-        "categorie2": "Nourriture"
+        "categorie2": "Nourriture",
+        "phrases_exemples": [
+            {
+                "kanji": "ワインを飲みます。",
+                "hiragana": "ワインをのみます。",
+                "romaji": "Wain o nomimasu.",
+                "francais": "Je bois du vin."
+            },
+            {
+                "kanji": "このワインは美味しいです。",
+                "hiragana": "このワインはおいしいです。",
+                "romaji": "Kono wain wa oishii desu.",
+                "francais": "Ce vin est délicieux."
+            },
+            {
+                "kanji": "ワインを買いに行きます。",
+                "hiragana": "ワインをかいにいきます。",
+                "romaji": "Wain o kai ni ikimasu.",
+                "francais": "Je vais acheter du vin."
+            }
+        ]
     },
     {
         "id": 113,
@@ -2336,7 +3316,27 @@ export const words = [
         "romaji": "Jisho",
         "kanji": "辞書",
         "categorie1": "Nom",
-        "categorie2": "Objet"
+        "categorie2": "Objet",
+        "phrases_exemples": [
+            {
+                "kanji": "辞書を使います。",
+                "hiragana": "じしょをつかいます。",
+                "romaji": "Jisho o tsukaimasu.",
+                "francais": "J'utilise un dictionnaire."
+            },
+            {
+                "kanji": "新しい辞書を買いました。",
+                "hiragana": "あたらしいじしょをかいました。",
+                "romaji": "Atarashii jisho o kaimashita.",
+                "francais": "J'ai acheté un nouveau dictionnaire."
+            },
+            {
+                "kanji": "辞書は机の上にあります。",
+                "hiragana": "じしょはつくえのうえにあります。",
+                "romaji": "Jisho wa tsukue no ue ni arimasu.",
+                "francais": "Le dictionnaire est sur le bureau."
+            }
+        ]
     },
     {
         "id": 114,
@@ -2345,7 +3345,27 @@ export const words = [
         "romaji": "Ima",
         "kanji": "今",
         "categorie1": "Adverbe",
-        "categorie2": "Temps"
+        "categorie2": "Temps",
+        "phrases_exemples": [
+            {
+                "kanji": "今、何時ですか？",
+                "hiragana": "いま、なんじですか？",
+                "romaji": "Ima, nanji desu ka?",
+                "francais": "Quelle heure est-il maintenant ?"
+            },
+            {
+                "kanji": "私は今、忙しいです。",
+                "hiragana": "わたしはいま、いそがしいです。",
+                "romaji": "Watashi wa ima, isogashii desu.",
+                "francais": "Je suis occupé maintenant."
+            },
+            {
+                "kanji": "今、出かけます。",
+                "hiragana": "いま、でかけます。",
+                "romaji": "Ima, dekakemasu.",
+                "francais": "Je pars maintenant."
+            }
+        ]
     },
     {
         "id": 115,
@@ -2354,7 +3374,27 @@ export const words = [
         "romaji": "Sutokkingu",
         "kanji": "-",
         "categorie1": "Nom",
-        "categorie2": "Vêtement"
+        "categorie2": "Vêtement",
+        "phrases_exemples": [
+            {
+                "kanji": "新しいストッキングを買いました。",
+                "hiragana": "あたらしいストッキングをかいました。",
+                "romaji": "Atarashii sutokkingu o kaimashita.",
+                "francais": "J'ai acheté de nouveaux collants."
+            },
+            {
+                "kanji": "ストッキングが破れました。",
+                "hiragana": "ストッキングがやぶれました。",
+                "romaji": "Sutokkingu ga yaburemashita.",
+                "francais": "Mes collants se sont déchirés."
+            },
+            {
+                "kanji": "ストッキングを履きます。",
+                "hiragana": "ストッキングをはきます。",
+                "romaji": "Sutokkingu o hakimasu.",
+                "francais": "Je porte des collants."
+            }
+        ]
     },
     {
         "id": 116,
@@ -2363,7 +3403,27 @@ export const words = [
         "romaji": "Beruto",
         "kanji": "-",
         "categorie1": "Nom",
-        "categorie2": "Vêtement"
+        "categorie2": "Vêtement",
+        "phrases_exemples": [
+            {
+                "kanji": "ベルトを締めてください。",
+                "hiragana": "ベルトをしめてください。",
+                "romaji": "Beruto o shimete kudasai.",
+                "francais": "Veuillez attacher votre ceinture."
+            },
+            {
+                "kanji": "新しいベルトが欲しいです。",
+                "hiragana": "あたらしいベルトがほしいです。",
+                "romaji": "Atarashii beruto ga hoshii desu.",
+                "francais": "Je veux une nouvelle ceinture."
+            },
+            {
+                "kanji": "ベルトが長すぎます。",
+                "hiragana": "ベルトがながすぎます。",
+                "romaji": "Beruto ga nagasugimasu.",
+                "francais": "La ceinture est trop longue."
+            }
+        ]
     },
     {
         "id": 117,
@@ -2372,7 +3432,27 @@ export const words = [
         "romaji": "Koko",
         "kanji": "此処",
         "categorie1": "Pronom",
-        "categorie2": "Direction"
+        "categorie2": "Direction",
+        "phrases_exemples": [
+            {
+                "kanji": "ここは私の家です。",
+                "hiragana": "ここはわたしのいえです。",
+                "romaji": "Koko wa watashi no ie desu.",
+                "francais": "Ici, c'est ma maison."
+            },
+            {
+                "kanji": "ここに座ってください。",
+                "hiragana": "ここにすわってください。",
+                "romaji": "Koko ni suwatte kudasai.",
+                "francais": "Veuillez vous asseoir ici."
+            },
+            {
+                "kanji": "ここから見えます。",
+                "hiragana": "ここからみえます。",
+                "romaji": "Koko kara miemasu.",
+                "francais": "On peut voir d'ici."
+            }
+        ]
     },
     {
         "id": 118,
@@ -2381,7 +3461,27 @@ export const words = [
         "romaji": "Shinbun",
         "kanji": "新聞",
         "categorie1": "Nom",
-        "categorie2": "Objet"
+        "categorie2": "Objet",
+        "phrases_exemples": [
+            {
+                "kanji": "新聞を読みます。",
+                "hiragana": "しんぶんをよみます。",
+                "romaji": "Shinbun o yomimasu.",
+                "francais": "Je lis le journal."
+            },
+            {
+                "kanji": "毎朝、新聞を買います。",
+                "hiragana": "まいあさ、しんぶんをかいます。",
+                "romaji": "Maiasa, shinbun o kaimasu.",
+                "francais": "J'achète le journal tous les matins."
+            },
+            {
+                "kanji": "新聞はテーブルの上にあります。",
+                "hiragana": "しんぶんはテーブルのうえにあります。",
+                "romaji": "Shinbun wa teeburu no ue ni arimasu.",
+                "francais": "Le journal est sur la table."
+            }
+        ]
     },
     {
         "id": 119,
@@ -2390,7 +3490,27 @@ export const words = [
         "romaji": "Chiizu",
         "kanji": "-",
         "categorie1": "Nom",
-        "categorie2": "Nourriture"
+        "categorie2": "Nourriture",
+        "phrases_exemples": [
+            {
+                "kanji": "チーズを食べます。",
+                "hiragana": "チーズをたべます。",
+                "romaji": "Chiizu o tabemasu.",
+                "francais": "Je mange du fromage."
+            },
+            {
+                "kanji": "このチーズは美味しいです。",
+                "hiragana": "このチーズはおいしいです。",
+                "romaji": "Kono chiizu wa oishii desu.",
+                "francais": "Ce fromage est délicieux."
+            },
+            {
+                "kanji": "チーズを買いに行きます。",
+                "hiragana": "チーズをかいにいきます。",
+                "romaji": "Chiizu o kai ni ikimasu.",
+                "francais": "Je vais acheter du fromage."
+            }
+        ]
     },
     {
         "id": 120,
@@ -2399,7 +3519,27 @@ export const words = [
         "romaji": "Sumimasen",
         "kanji": "済みません",
         "categorie1": "Expression",
-        "categorie2": "Salutations"
+        "categorie2": "Salutations",
+        "phrases_exemples": [
+            {
+                "kanji": "すみません、お水をください。",
+                "hiragana": "すみません、おみずをください。",
+                "romaji": "Sumimasen, omizu o kudasai.",
+                "francais": "Excusez-moi, de l'eau s'il vous plaît."
+            },
+            {
+                "kanji": "道に迷いました。—すみません。",
+                "hiragana": "みちにまよいました。—すみません。",
+                "romaji": "Michi ni mayoimashita. — Sumimasen.",
+                "francais": "Je suis perdu. — Excusez-moi."
+            },
+            {
+                "kanji": "すみませんが、手伝ってください。",
+                "hiragana": "すみませんが、てつだってください。",
+                "romaji": "Sumimasen ga, tetsudatte kudasai.",
+                "francais": "Excusez-moi, pouvez-vous m'aider ?"
+            }
+        ]
     },
     {
         "id": 121,
@@ -2408,7 +3548,27 @@ export const words = [
         "romaji": "Hito",
         "kanji": "人",
         "categorie1": "Nom",
-        "categorie2": "Personne"
+        "categorie2": "Personne",
+        "phrases_exemples": [
+            {
+                "kanji": "あの人は誰ですか？",
+                "hiragana": "あのひとはだれですか？",
+                "romaji": "Ano hito wa dare desu ka?",
+                "francais": "Qui est cette personne ?"
+            },
+            {
+                "kanji": "多くの人が集まりました。",
+                "hiragana": "おおくのひとがあつまりました。",
+                "romaji": "Ooku no hito ga atsumarimashita.",
+                "francais": "Beaucoup de personnes se sont rassemblées."
+            },
+            {
+                "kanji": "優しい人が好きです。",
+                "hiragana": "やさしいひとがすきです。",
+                "romaji": "Yasashii hito ga suki desu.",
+                "francais": "J'aime les personnes gentilles."
+            }
+        ]
     },
     {
         "id": 122,
@@ -2417,7 +3577,27 @@ export const words = [
         "romaji": "Hoteru",
         "kanji": "-",
         "categorie1": "Nom",
-        "categorie2": "Lieu"
+        "categorie2": "Lieu",
+        "phrases_exemples": [
+            {
+                "kanji": "ホテルに泊まります。",
+                "hiragana": "ホテルにとまります。",
+                "romaji": "Hoteru ni tomarimasu.",
+                "francais": "Je séjourne à l'hôtel."
+            },
+            {
+                "kanji": "このホテルは高いです。",
+                "hiragana": "このホテルはたかいです。",
+                "romaji": "Kono hoteru wa takai desu.",
+                "francais": "Cet hôtel est cher."
+            },
+            {
+                "kanji": "ホテルの予約をしました。",
+                "hiragana": "ホテルのよやくをしました。",
+                "romaji": "Hoteru no yoyaku o shimashita.",
+                "francais": "J'ai réservé une chambre d'hôtel."
+            }
+        ]
     },
     {
         "id": 123,
@@ -2426,7 +3606,27 @@ export const words = [
         "romaji": "Tabako",
         "kanji": "-",
         "categorie1": "Nom",
-        "categorie2": "Objet"
+        "categorie2": "Objet",
+        "phrases_exemples": [
+            {
+                "kanji": "たばこを吸いますか？",
+                "hiragana": "たばこをすいますか？",
+                "romaji": "Tabako o suimasu ka?",
+                "francais": "Fumez-vous des cigarettes ?"
+            },
+            {
+                "kanji": "たばこは体に悪いです。",
+                "hiragana": "たばこはからだにわるいです。",
+                "romaji": "Tabako wa karada ni warui desu.",
+                "francais": "Les cigarettes sont mauvaises pour la santé."
+            },
+            {
+                "kanji": "たばこをやめたいです。",
+                "hiragana": "たばこをやめたいです。",
+                "romaji": "Tabako o yametai desu.",
+                "francais": "Je veux arrêter de fumer."
+            }
+        ]
     },
     {
         "id": 124,
@@ -2435,7 +3635,27 @@ export const words = [
         "romaji": "Denwa",
         "kanji": "電話",
         "categorie1": "Nom",
-        "categorie2": "Objet"
+        "categorie2": "Objet",
+        "phrases_exemples": [
+            {
+                "kanji": "電話をかけます。",
+                "hiragana": "でんわをかけます。",
+                "romaji": "Denwa o kakemasu.",
+                "francais": "Je passe un appel téléphonique."
+            },
+            {
+                "kanji": "電話番号を教えてください。",
+                "hiragana": "でんわばんごうをおしえてください。",
+                "romaji": "Denwa bangou o oshiete kudasai.",
+                "francais": "Veuillez me donner votre numéro de téléphone."
+            },
+            {
+                "kanji": "電話が鳴っています。",
+                "hiragana": "でんわがなっています。",
+                "romaji": "Denwa ga natte imasu.",
+                "francais": "Le téléphone sonne."
+            }
+        ]
     },
     {
         "id": 125,
