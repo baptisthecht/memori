@@ -18,6 +18,9 @@
     "incremental": true,
     "target": "es2015",
     "downlevelIteration": true,
+    "types": [
+      "node"
+    ],
     "paths": {
       "@/*": [
         "./*"

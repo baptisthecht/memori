@@ -1,15 +1,16 @@
 "use client";
 
+import React from "react";
 import { useEffect, useState } from "react";
-import { words } from "@/public/data/data";
+import {words } from "@/public/data/data";
 import { HelpPopover } from "@/components/HelpPopover";
 import { FilterPopover } from "@/components/filter-popover";
 
 export type selectFiltersType = {
-  [key: string]: string[] | undefined;
+  [key: string]: string[] | undefined; 
   Langues?: ("francais" | "hiragana" | "romaji" | "kanji")[],
-  Type?: ("Verbe" | "Nom" | "Adjectif" | "Heures" | "Expression" | "Adverbe" | "Particule" | "Pronom")[], // Ajout des nouvelles catégories
-  Thèmes?: ("Action" | "Objet" | "Nature" | "Métiers" | "Animaux" | "Salutations" | "Temps" | "Vêtement" | "Lieu" | "Personne" | "Question" | "Direction" | "Nourriture")[] // Ajout des nouvelles catégories
+  Type?: ("Verbe" | "Nom" | "Adjectif" | "Adverbe" | "Particule" | "Expression" | "Pronom" | "Heures")[], // Ajout de "Heures"
+  Thèmes?: ("Action" | "Objet" | "Nature" | "Métiers" | "Animaux" | "Jours" | "Temps" | "Nourriture" | "Vêtement" | "Salutations" | "Question" | "Direction" | "Conjonction" | "Expression")[]
 }
 
 // Fonction pour générer une heure aléatoire
@@ -38,23 +39,23 @@ export default function Home() {
 
   const getFilteredTranslations = () => {
     if (!randomWord) return {};
-
+  
     const selectedWord = words.find(
       (word) => Object.values(word).includes(randomWord)
     );
     if (!selectedWord) return {};
-
+  
     const allowedKeys = ["francais", "hiragana", "romaji", "kanji"];
     const filteredTranslations = Object.entries(selectedWord).reduce(
       (acc, [key, value]) => {
         if (key !== wordType.toLowerCase() && allowedKeys.includes(key)) {
-          acc[key] = String(value); // Conversion de la valeur en chaîne
+          acc[key] = value as string;
         }
         return acc;
       },
       {} as Record<string, string>
     );
-
+  
     return filteredTranslations;
   };
 
@@ -88,43 +89,41 @@ export default function Home() {
   useEffect(() => generateRandomWord(), [selectedFilters])
 
   const generateRandomWord = () => {
-    // Vérifier si le filtre "Heures" est le seul actif
-    const isOnlyHeuresSelected = selectedFilters.Type?.length === 1 && selectedFilters.Type.includes("Heures");
-
     let pool = [];
 
-    if (isOnlyHeuresSelected) {
-      // Générer des heures simples et des horaires
-      const randomTimes = Array.from({ length: 5 }, () => ({
-        word: generateRandomTime(),
-        type: "Heures"
-      }));
+    // Augmenter le nombre d'heures générées
+    const randomTimes = Array.from({ length: 20 }, () => ({
+      word: generateRandomTime(),
+      type: "Heures"
+    }));
 
-      const randomSchedules = Array.from({ length: 5 }, () => ({
-        word: generateRandomSchedule(),
-        type: "Heures"
-      }));
+    const randomSchedules = Array.from({ length: 10 }, () => ({
+      word: generateRandomSchedule(),
+      type: "Heures"
+    }));
 
-      pool = [...randomTimes, ...randomSchedules];
-    } else {
-      // Filtrer les mots selon les autres critères
-      const filteredWords = words.filter(word => {
-        // Vérification du filtre "Thèmes"
-        if (selectedFilters.Thèmes && selectedFilters.Thèmes.length > 0) {
-          if (!selectedFilters.Thèmes.includes(word["categorie2"] as "Action" | "Objet" | "Nature" | "Métiers" | "Animaux" | "Salutations" | "Temps" | "Vêtement" | "Lieu" | "Personne" | "Question" | "Direction" | "Nourriture")) {
-            return false;
-          }
+    // Ajouter les heures au pool
+    pool = [...randomTimes, ...randomSchedules];
+
+    // Filtrer les mots selon les autres critères
+    const filteredWords = words.filter(word => {
+      if (selectedFilters.Thèmes && selectedFilters.Thèmes.length > 0) {
+        if (!selectedFilters.Thèmes.includes(word.categorie2 as "Action" | "Objet" | "Nature" | "Métiers" | "Animaux")) {
+          return false;
         }
-        // Vérification du filtre "Type"
-        if (selectedFilters.Type && selectedFilters.Type.length > 0) {
-          if (!selectedFilters.Type.includes(word["categorie1"] as "Verbe" | "Nom" | "Adjectif" | "Heures" | "Expression" | "Adverbe" | "Particule" | "Pronom")) {
-            return false;
-          }
+      }
+      if (selectedFilters.Type && selectedFilters.Type.length > 0) {
+        if (!selectedFilters.Type.includes(word.categorie1 as "Verbe" | "Nom" | "Adjectif" | "Adverbe" | "Particule" | "Expression" | "Pronom")) {
+          return false;
         }
-        return true;
-      });
+      }
+      return true;
+    });
 
-      pool = filteredWords.map(word => {
+    // Ajouter les mots filtrés au pool
+    pool = [
+      ...pool,
+      ...filteredWords.map(word => {
         let properties: (keyof typeof word)[];
 
         if (selectedFilters.Langues && selectedFilters.Langues.length > 0) {
@@ -133,10 +132,15 @@ export default function Home() {
           properties = ["francais", "hiragana", "romaji", "kanji"];
         }
 
-        const randomProperty = properties[Math.floor(Math.random() * properties.length)];
-        return { word: word[randomProperty], type: randomProperty.charAt(0).toUpperCase() + randomProperty.slice(1) };
-      });
-    }
+        const randomProperty = properties[Math.floor(Math.random() * properties.length)] as keyof typeof word;
+        const wordValue = word[randomProperty];
+        if (!wordValue) {
+          console.error(`Missing value for property ${randomProperty} in word`, word);
+          return { word: "Erreur", type: "Erreur" };
+        }
+        return { word: String(wordValue), type: randomProperty.charAt(0).toUpperCase() + randomProperty.slice(1) };
+      })
+    ];
 
     if (pool.length === 0) {
       setRandomWord("🦍");
@@ -144,14 +148,13 @@ export default function Home() {
       return;
     }
 
-    // Sélectionner un mot, une heure ou un horaire aléatoire
     const randomIndex = Math.floor(Math.random() * pool.length);
     const selectedEntry = pool[randomIndex];
 
-    const updatedHistory = [...history.slice(0, currentIndex + 1), { word: String(selectedEntry.word), type: selectedEntry.type }];
+    const updatedHistory = [...history.slice(0, currentIndex + 1), selectedEntry];
     setHistory(updatedHistory);
     setCurrentIndex(updatedHistory.length - 1);
-    setRandomWord(String(selectedEntry.word)); // Conversion en chaîne
+    setRandomWord(String(selectedEntry.word));
     setWordType(selectedEntry.type);
   };
 
@@ -175,60 +178,37 @@ export default function Home() {
     }
   };
 
-  // const getTranslations = () => {
-  //   if (!randomWord) return "";
-  //   const selectedWord = words.find(
-  //     (word) => Object.values(word).includes(randomWord)
-  //   );
-  //   if (!selectedWord) return "";
-
-  //   const translations = Object.entries(selectedWord)
-  //     .filter(([key]) => key !== wordType.toLowerCase() && ["francais", "hiragana", "romaji", "kanji"].includes(key))
-  //     .map(([key, value]) => `<strong>${key.charAt(0).toUpperCase() + key.slice(1)}</strong>: ${value}`)
-  //     .join("<br><div style='margin-top: 4px;'></div>");
-
-  //   return translations;
-  // };
-
   return (
     <div className="flex justify-center min-h-screen">
-      <div className="div_quiz w-[704px] h-[380px] rounded-[16px] bg-[var(--surface-primary)] p-8 flex flex-col justify-between">
-        {randomWord && (
-          <div className="header_quiz w-full flex flex-row justify-between items-center p-auto">
-            <FilterPopover selectedFilters={selectedFilters} setSelectedFilters={setSelectedFilters} />
-            <div className="text-lg font-semibold">
-              {randomWord === "🦍" ? "Aucun mot trouvé" : wordType}
-            </div>
-            <div
-              className="div_reponse w-8 h-8 bg-[var(--surface-secondary)] cursor-pointer rounded-[6px] flex items-center justify-center hover:bg-[var(--surface-secondary-hover)] group relative"
-            >
-              <HelpPopover translations={getFilteredTranslations()} />
-            </div>
+      <div className="w-[704px] h-[380px] rounded-[16px] bg-[var(--surface-primary)] p-8 flex flex-col justify-between">
+        <div className="w-full flex flex-row justify-between items-center p-auto">
+          <FilterPopover selectedFilters={selectedFilters} setSelectedFilters={setSelectedFilters} />
+          <div className="text-lg font-semibold">
+            {randomWord === "🦍" ? "Aucun mot trouvé" : wordType}
           </div>
-        )}
+          <div
+            className="div_reponse w-8 h-8 bg-[var(--surface-secondary)] cursor-pointer rounded-[6px] flex items-center justify-center hover:bg-[var(--surface-secondary-hover)] group relative"
+          >
+            <HelpPopover translations={getFilteredTranslations()} />
+          </div>
+        </div>
         {randomWord && (
           <div className="text-center text-[48px] font-bold self-center" dangerouslySetInnerHTML={{ __html: randomWord }}></div>
         )}
         <div className="div_boutons flex flex-row gap-6 w-full">
-          <div className="div_boutons_gauche flex flex-row gap-2 w-full">
-
-
-            <button
-              onClick={handlePreviousWord}
-              className={`h-9 rounded-lg w-full ${currentIndex <= 0 ? 'bg-[var(--surface-secondary)] text-[var(--text-primary)] opacity-50 cursor-not-allowed' : 'bg-[var(--surface-secondary)] hover:bg-[var(--surface-secondary-hover)]'}`}
-              disabled={currentIndex <= 0}
-            >
-              Mot précédent
-            </button>
-          </div>
-
+          <button
+            onClick={handlePreviousWord}
+            className={`h-9 rounded-lg w-full ${currentIndex <= 0 ? 'bg-[var(--surface-secondary)] text-[var(--text-primary)] opacity-50 cursor-not-allowed' : 'bg-[var(--surface-secondary)] hover:bg-[var(--surface-secondary-hover)]'}`}
+            disabled={currentIndex <= 0}
+          >
+            Mot précédent
+          </button>
           <button
             onClick={handleNextWord}
             className="h-9 rounded-lg bg-[var(--surface-brand)] w-full text-white hover:bg-[var(--surface-brand-hover)]"
           >
             Mot suivant
           </button>
-
         </div>
       </div>
     </div>

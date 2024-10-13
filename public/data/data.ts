@@ -769,7 +769,7 @@ export const words = [
         "francais": "Je vous en prie",
         "hiragana": "どういたしまして",
         "romaji": "Dou itashimashite",
-        "kanji": "",
+        "kanji": "どう致しまして",
         "categorie1": "Expression",
         "categorie2": "Salutations"
     },
@@ -787,7 +787,7 @@ export const words = [
         "francais": "Aussi",
         "hiragana": "も",
         "romaji": "Mo",
-        "kanji": "",
+        "kanji": "も",
         "categorie1": "Particule",
         "categorie2": "Expression"
     },
@@ -805,7 +805,7 @@ export const words = [
         "francais": "Merci",
         "hiragana": "ありがとう",
         "romaji": "Arigatou",
-        "kanji": "",
+        "kanji": "有り難う",
         "categorie1": "Expression",
         "categorie2": "Salutations"
     },
@@ -868,7 +868,7 @@ export const words = [
         "francais": "Ah bon ?",
         "hiragana": "そうですか",
         "romaji": "Sou desu ka?",
-        "kanji": "",
+        "kanji": "そうですか",
         "categorie1": "Expression",
         "categorie2": "Question"
     },
@@ -877,9 +877,9 @@ export const words = [
         "francais": "Et",
         "hiragana": "と",
         "romaji": "To",
-        "kanji": "",
+        "kanji": "と",
         "categorie1": "Particule",
-        "categorie2": "Expression"
+        "categorie2": "Conjonction"
     },
     {
         "id": 99,
@@ -895,7 +895,7 @@ export const words = [
         "francais": "Whisky",
         "hiragana": "ウイスキー",
         "romaji": "Uisukii",
-        "kanji": "",
+        "kanji": "-",
         "categorie1": "Nom",
         "categorie2": "Nourriture"
     },
@@ -904,7 +904,7 @@ export const words = [
         "francais": "Jusqu'à",
         "hiragana": "まで",
         "romaji": "Made",
-        "kanji": "",
+        "kanji": "迄",
         "categorie1": "Particule",
         "categorie2": "Expression"
     },
@@ -913,7 +913,7 @@ export const words = [
         "francais": "Là-bas",
         "hiragana": "あそこ",
         "romaji": "Asoko",
-        "kanji": "",
+        "kanji": "彼処",
         "categorie1": "Pronom",
         "categorie2": "Direction"
     },
@@ -922,7 +922,7 @@ export const words = [
         "francais": "Là",
         "hiragana": "そこ",
         "romaji": "Soko",
-        "kanji": "",
+        "kanji": "其処",
         "categorie1": "Pronom",
         "categorie2": "Direction"
     },
@@ -931,7 +931,7 @@ export const words = [
         "francais": "Depuis",
         "hiragana": "から",
         "romaji": "Kara",
-        "kanji": "",
+        "kanji": "から",
         "categorie1": "Particule",
         "categorie2": "Expression"
     },
@@ -940,7 +940,7 @@ export const words = [
         "francais": "Lequel",
         "hiragana": "どれ",
         "romaji": "Dore",
-        "kanji": "",
+        "kanji": "何れ",
         "categorie1": "Pronom",
         "categorie2": "Question"
     },
@@ -994,7 +994,7 @@ export const words = [
         "francais": "Supermarché",
         "hiragana": "スーパー",
         "romaji": "Suupaa",
-        "kanji": "",
+        "kanji": "-",
         "categorie1": "Nom",
         "categorie2": "Lieu"
     },
@@ -1003,7 +1003,7 @@ export const words = [
         "francais": "Vin",
         "hiragana": "ワイン",
         "romaji": "Wain",
-        "kanji": "",
+        "kanji": "-",
         "categorie1": "Nom",
         "categorie2": "Nourriture"
     },
@@ -1030,7 +1030,7 @@ export const words = [
         "francais": "Collants",
         "hiragana": "ストッキング",
         "romaji": "Sutokkingu",
-        "kanji": "",
+        "kanji": "-",
         "categorie1": "Nom",
         "categorie2": "Vêtement"
     },
@@ -1039,7 +1039,7 @@ export const words = [
         "francais": "Ceinture",
         "hiragana": "ベルト",
         "romaji": "Beruto",
-        "kanji": "",
+        "kanji": "-",
         "categorie1": "Nom",
         "categorie2": "Vêtement"
     },
@@ -1048,7 +1048,7 @@ export const words = [
         "francais": "Ici",
         "hiragana": "ここ",
         "romaji": "Koko",
-        "kanji": "",
+        "kanji": "此処",
         "categorie1": "Pronom",
         "categorie2": "Direction"
     },
@@ -1066,7 +1066,7 @@ export const words = [
         "francais": "Fromage",
         "hiragana": "チーズ",
         "romaji": "Chiizu",
-        "kanji": "",
+        "kanji": "-",
         "categorie1": "Nom",
         "categorie2": "Nourriture"
     },
@@ -1075,7 +1075,7 @@ export const words = [
         "francais": "Excusez-moi",
         "hiragana": "すみません",
         "romaji": "Sumimasen",
-        "kanji": "",
+        "kanji": "済みません",
         "categorie1": "Expression",
         "categorie2": "Salutations"
     },
@@ -1093,7 +1093,7 @@ export const words = [
         "francais": "Hôtel",
         "hiragana": "ホテル",
         "romaji": "Hoteru",
-        "kanji": "",
+        "kanji": "-",
         "categorie1": "Nom",
         "categorie2": "Lieu"
     },
@@ -1102,7 +1102,7 @@ export const words = [
         "francais": "Cigarettes",
         "hiragana": "たばこ",
         "romaji": "Tabako",
-        "kanji": "",
+        "kanji": "-",
         "categorie1": "Nom",
         "categorie2": "Objet"
     },
@@ -1120,7 +1120,7 @@ export const words = [
         "francais": "Pull-over",
         "hiragana": "セーター",
         "romaji": "Seetaa",
-        "kanji": "",
+        "kanji": "-",
         "categorie1": "Nom",
         "categorie2": "Vêtement"
     },
@@ -1129,7 +1129,7 @@ export const words = [
         "francais": "Pantalon",
         "hiragana": "ズボン",
         "romaji": "Zubon",
-        "kanji": "",
+        "kanji": "-",
         "categorie1": "Nom",
         "categorie2": "Vêtement"
     },
@@ -1138,7 +1138,7 @@ export const words = [
         "francais": "Mouchoir",
         "hiragana": "ハンカチ",
         "romaji": "Hankachi",
-        "kanji": "",
+        "kanji": "-",
         "categorie1": "Nom",
         "categorie2": "Objet"
     },
@@ -1147,7 +1147,7 @@ export const words = [
         "francais": "Ça (loin)",
         "hiragana": "あれ",
         "romaji": "Are",
-        "kanji": "",
+        "kanji": "-",
         "categorie1": "Pronom",
         "categorie2": "Direction"
     },
@@ -1156,7 +1156,7 @@ export const words = [
         "francais": "Ça (moyen proche)",
         "hiragana": "それ",
         "romaji": "Sore",
-        "kanji": "",
+        "kanji": "-",
         "categorie1": "Pronom",
         "categorie2": "Direction"
     },
@@ -1165,7 +1165,7 @@ export const words = [
         "francais": "Ça (proche)",
         "hiragana": "これ",
         "romaji": "Kore",
-        "kanji": "",
+        "kanji": "-",
         "categorie1": "Pronom",
         "categorie2": "Direction"
     },
@@ -1192,7 +1192,7 @@ export const words = [
         "francais": "Cravate",
         "hiragana": "ネクタイ",
         "romaji": "Nekutai",
-        "kanji": "",
+        "kanji": "-",
         "categorie1": "Nom",
         "categorie2": "Vêtement"
     },
@@ -1237,7 +1237,7 @@ export const words = [
         "francais": "Restaurant",
         "hiragana": "レストラン",
         "romaji": "Resutoran",
-        "kanji": "",
+        "kanji": "-",
         "categorie1": "Nom",
         "categorie2": "Lieu"
     },
@@ -1246,7 +1246,7 @@ export const words = [
         "francais": "Où",
         "hiragana": "どこ",
         "romaji": "Doko",
-        "kanji": "",
+        "kanji": "-",
         "categorie1": "Pronom",
         "categorie2": "Question"
     }
