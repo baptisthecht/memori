@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useEffect, useState } from "react";
-import {words } from "@/public/data/data";
+import { words, heures, minutes } from "@/public/data/data"; // Assurez-vous que le chemin est correct
 import { HelpPopover } from "@/components/HelpPopover";
 import { FilterPopover } from "@/components/filter-popover";
 
@@ -13,21 +13,6 @@ export type selectFiltersType = {
   Thèmes?: ("Action" | "Objet" | "Nature" | "Métiers" | "Animaux" | "Jours" | "Temps" | "Nourriture" | "Vêtement" | "Salutations" | "Question" | "Direction" | "Conjonction" | "Expression")[]
 }
 
-// Fonction pour générer une heure aléatoire
-const generateRandomTime = (): string => {
-  const hours = Math.floor(Math.random() * 24).toString().padStart(2, '0');
-  const minutes = Math.floor(Math.random() * 60).toString().padStart(2, '0');
-  return `${hours}:${minutes}`;
-};
-
-// Fonction pour générer un horaire aléatoire avec formatage
-const generateRandomSchedule = (): string => {
-  const startHours = Math.floor(Math.random() * 24).toString().padStart(2, '0');
-  const startMinutes = Math.floor(Math.random() * 60).toString().padStart(2, '0');
-  const endHours = Math.floor(Math.random() * 24).toString().padStart(2, '0');
-  const endMinutes = Math.floor(Math.random() * 60).toString().padStart(2, '0');
-  return `<span style="font-weight: normal;">de</span> ${startHours}:${startMinutes} <span style="font-weight: normal;">à</span> ${endHours}:${endMinutes}`;
-};
 
 export default function Home() {
   const [randomWord, setRandomWord] = useState("");
@@ -39,12 +24,25 @@ export default function Home() {
 
   const getFilteredTranslations = () => {
     if (!randomWord) return {};
-  
+
+    if (wordType === "Heures") {
+      const [heure, minute] = randomWord.split(":");
+      const heureObj = heures.find(h => h.heure === heure);
+      const minuteObj = minutes.find(m => m.minute === minute);
+
+      if (heureObj && minuteObj) {
+        return {
+          romaji: `${heureObj.romaji} ${minuteObj.romaji}`
+        };
+      }
+      return {};
+    }
+
     const selectedWord = words.find(
       (word) => Object.values(word).includes(randomWord)
     );
     if (!selectedWord) return {};
-  
+
     const allowedKeys = ["francais", "hiragana", "romaji", "kanji"];
     const filteredTranslations = Object.entries(selectedWord).reduce(
       (acc, [key, value]) => {
@@ -55,11 +53,20 @@ export default function Home() {
       },
       {} as Record<string, string>
     );
-  
+
     return filteredTranslations;
   };
 
   const getExampleSentence = () => {
+    if (wordType === "Heures") {
+      const translations = getFilteredTranslations();
+      return {
+        sentence: translations.romaji || "Pas de traduction",
+        translation: translations.romaji || "Pas de traduction",
+        romaji: translations.romaji || "Pas de traduction"
+      };
+    }
+
     const selectedWord = words.find(
       (word) => Object.values(word).includes(randomWord)
     );
@@ -116,63 +123,50 @@ export default function Home() {
   const generateRandomWord = () => {
     let pool: { word: string; type: string }[] = [];
 
-    // Vérifier si "Heures" est sélectionné et aucun autre thème n'est actif
-    const isHeuresSelected = selectedFilters.Type?.includes("Heures");
-    const areOtherTypesSelected = selectedFilters.Type && selectedFilters.Type.length > 1;
-    const areThemesSelected = selectedFilters.Thèmes && selectedFilters.Thèmes.length > 0;
+    // Vérifiez si le filtre "Heures" est sélectionné
+    if (selectedFilters.Type && selectedFilters.Type.includes("Heures")) {
+      const randomHeure = heures[Math.floor(Math.random() * heures.length)];
+      const randomMinute = minutes[Math.floor(Math.random() * minutes.length)];
+      const formattedTime = `${randomHeure.heure}:${randomMinute.minute}`;
+      pool.push({ word: formattedTime, type: "Heures" });
+    } else {
+      // Filtrer les mots selon les autres critères
+      const filteredWords = words.filter(word => {
+        if (selectedFilters.Thèmes && selectedFilters.Thèmes.length > 0) {
+          if (!selectedFilters.Thèmes.includes(word.categorie2 as "Action" | "Objet" | "Nature" | "Métiers" | "Animaux")) {
+            return false;
+          }
+        }
+        if (selectedFilters.Type && selectedFilters.Type.length > 0) {
+          if (!selectedFilters.Type.includes(word.categorie1 as "Verbe" | "Nom" | "Adjectif" | "Adverbe" | "Particule" | "Expression" | "Pronom")) {
+            return false;
+          }
+        }
+        return true;
+      });
 
-    if (isHeuresSelected && !areOtherTypesSelected && !areThemesSelected) {
-      // Générer des heures simples et des horaires
-      const randomTimes = Array.from({ length: 20 }, () => ({
-        word: generateRandomTime(),
-        type: "Heures"
-      }));
+      // Ajouter les mots filtrés au pool
+      pool = [
+        ...pool,
+        ...filteredWords.map(word => {
+          let properties: (keyof typeof word)[];
 
-      const randomSchedules = Array.from({ length: 10 }, () => ({
-        word: generateRandomSchedule(),
-        type: "Heures"
-      }));
+          if (selectedFilters.Langues && selectedFilters.Langues.length > 0) {
+            properties = selectedFilters.Langues;
+          } else {
+            properties = ["francais", "hiragana", "romaji", "kanji"];
+          }
 
-      // Ajouter les heures au pool
-      pool = [...randomTimes, ...randomSchedules];
+          const randomProperty = properties[Math.floor(Math.random() * properties.length)] as keyof typeof word;
+          const wordValue = word[randomProperty];
+          if (!wordValue) {
+            console.error(`Missing value for property ${randomProperty} in word`, word);
+            return { word: "Erreur", type: "Erreur" };
+          }
+          return { word: String(wordValue), type: randomProperty.charAt(0).toUpperCase() + randomProperty.slice(1) };
+        })
+      ];
     }
-
-    // Filtrer les mots selon les autres critères
-    const filteredWords = words.filter(word => {
-      if (selectedFilters.Thèmes && selectedFilters.Thèmes.length > 0) {
-        if (!selectedFilters.Thèmes.includes(word.categorie2 as "Action" | "Objet" | "Nature" | "Métiers" | "Animaux")) {
-          return false;
-        }
-      }
-      if (selectedFilters.Type && selectedFilters.Type.length > 0) {
-        if (!selectedFilters.Type.includes(word.categorie1 as "Verbe" | "Nom" | "Adjectif" | "Adverbe" | "Particule" | "Expression" | "Pronom")) {
-          return false;
-        }
-      }
-      return true;
-    });
-
-    // Ajouter les mots filtrés au pool
-    pool = [
-      ...pool,
-      ...filteredWords.map(word => {
-        let properties: (keyof typeof word)[];
-
-        if (selectedFilters.Langues && selectedFilters.Langues.length > 0) {
-          properties = selectedFilters.Langues;
-        } else {
-          properties = ["francais", "hiragana", "romaji", "kanji"];
-        }
-
-        const randomProperty = properties[Math.floor(Math.random() * properties.length)] as keyof typeof word;
-        const wordValue = word[randomProperty];
-        if (!wordValue) {
-          console.error(`Missing value for property ${randomProperty} in word`, word);
-          return { word: "Erreur", type: "Erreur" };
-        }
-        return { word: String(wordValue), type: randomProperty.charAt(0).toUpperCase() + randomProperty.slice(1) };
-      })
-    ];
 
     if (pool.length === 0) {
       setRandomWord("🦍");

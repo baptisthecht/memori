@@ -12,6 +12,17 @@ export const heures = [
     { "heure": "10", "romaji": "juuji" },
     { "heure": "11", "romaji": "juuichiji" },
     { "heure": "12", "romaji": "juuniji" },
+    { "heure": "13", "romaji": "ichiji" },
+    { "heure": "14", "romaji": "niji" },
+    { "heure": "15", "romaji": "sanji" },
+    { "heure": "16", "romaji": "yoji" },
+    { "heure": "17", "romaji": "goji" },
+    { "heure": "18", "romaji": "rokuji" },
+    { "heure": "19", "romaji": "shichiji" },
+    { "heure": "20", "romaji": "hatchiji" },
+    { "heure": "21", "romaji": "kuji" },
+    { "heure": "22", "romaji": "juuji" },
+    { "heure": "23", "romaji": "juuichiji" }
   ];
 
   export const minutes = [
