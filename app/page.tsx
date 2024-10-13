@@ -210,6 +210,17 @@ export default function Home() {
     }
   };
 
+  const [showTranslation, setShowTranslation] = useState(false);
+  const [currentExample, setCurrentExample] = useState(getExampleSentence());
+
+  const handlePhraseClick = () => {
+    setShowTranslation(!showTranslation);
+  };
+
+  useEffect(() => {
+    setCurrentExample(getExampleSentence());
+  }, [randomWord]);
+
   return (
     <div className="flex justify-center min-h-screen">
       <div className="div_quiz w-[704px] h-[400px] rounded-[16px] bg-[var(--surface-primary)] p-8 flex flex-col justify-between">
@@ -223,23 +234,30 @@ export default function Home() {
           >
             <HelpPopover translations={getFilteredTranslations()} />
           </div>
-
         </div>
         {randomWord && (
           <div className="div_mot_phrase flex flex-col items-center">
             <div className="text-center text-[48px] font-bold" dangerouslySetInnerHTML={{ __html: randomWord }}>
             </div>
-            <div className="text-center text-[14px] font-regular inline-block h-auto p-2 px-8 rounded-[6px] hover:bg-[var(--surface-secondary)] relative group">
-              {getExampleSentence().sentence}
-              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-max max-w-xs p-2 px-8 bg-[var(--surface-secondary-hover)] text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity">
-                {getExampleSentence().translation}
-                <br />
-                {getExampleSentence().romaji}
-              </div>
+            <div
+              className="text-center text-[14px] font-regular inline-block h-auto p-2 px-8 rounded-[6px] hover:bg-[var(--surface-secondary)] relative group cursor-pointer"
+              onClick={handlePhraseClick}
+            >
+              <div>{currentExample.sentence}</div>
+              {showTranslation && (
+                <div className="mt-2">
+                  {currentExample.sentence !== currentExample.translation && (
+                    <div>{currentExample.translation}</div>
+                  )}
+                  {currentExample.sentence !== currentExample.romaji && (
+                    <div>{currentExample.romaji}</div>
+                  )}
+                </div>
+              )}
             </div>
           </div>
         )}
-          
+        
         <div className="div_boutons flex flex-row gap-6 w-full">
           <button
             onClick={handlePreviousWord}
