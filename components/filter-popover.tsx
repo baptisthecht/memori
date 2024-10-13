@@ -37,6 +37,10 @@ const filterCategories: FilterCategory[] = [
       { id: "Nom", label: "Nom" },
       { id: "Adjectif", label: "Adjectif" },
       { id: "Heures", label: "Heures" },
+      { id: "Expression", label: "Expression" }, // Nouvelle catégorie
+      { id: "Adverbe", label: "Adverbe" }, // Nouvelle catégorie
+      { id: "Particule", label: "Particule" }, // Nouvelle catégorie
+      { id: "Pronom", label: "Pronom" } // Nouvelle catégorie
     ],
   },
   {
@@ -47,7 +51,14 @@ const filterCategories: FilterCategory[] = [
       { id: "Nature", label: "Nature" },
       { id: "Métiers", label: "Métiers" },
       { id: "Animaux", label: "Animaux" },
-      { id: "Jours", label: "Jours" } // Ajout de l'option "Jours"
+      { id: "Salutations", label: "Salutations" }, // Nouvelle catégorie
+      { id: "Temps", label: "Temps" }, // Nouvelle catégorie
+      { id: "Vêtement", label: "Vêtement" }, // Nouvelle catégorie
+      { id: "Lieu", label: "Lieu" }, // Nouvelle catégorie
+      { id: "Personne", label: "Personne" }, // Nouvelle catégorie
+      { id: "Question", label: "Question" }, // Nouvelle catégorie
+      { id: "Direction", label: "Direction" }, // Nouvelle catégorie
+      { id: "Nourriture", label: "Nourriture" } // Nouvelle catégorie
     ],
   },
 ]

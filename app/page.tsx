@@ -1,15 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import {words } from "@/public/data/data";
+import { words } from "@/public/data/data";
 import { HelpPopover } from "@/components/HelpPopover";
 import { FilterPopover } from "@/components/filter-popover";
 
 export type selectFiltersType = {
-  [key: string]: string[] | undefined; 
-  Langues?: ("francais" | "hiragana" | "romaji" | "kanji")[], // Assurez-vous que cela correspond aux valeurs de "categorie 1"
-  Type?: ("Verbe" | "Nom" | "Adjectif" | "Heures")[], // Ajoutez "Heures" ici
-  Thèmes?: ("Action" | "Objet" | "Nature" | "Métiers" | "Animaux")[]
+  [key: string]: string[] | undefined;
+  Langues?: ("francais" | "hiragana" | "romaji" | "kanji")[],
+  Type?: ("Verbe" | "Nom" | "Adjectif" | "Heures" | "Expression" | "Adverbe" | "Particule" | "Pronom")[], // Ajout des nouvelles catégories
+  Thèmes?: ("Action" | "Objet" | "Nature" | "Métiers" | "Animaux" | "Salutations" | "Temps" | "Vêtement" | "Lieu" | "Personne" | "Question" | "Direction" | "Nourriture")[] // Ajout des nouvelles catégories
 }
 
 // Fonction pour générer une heure aléatoire
@@ -38,23 +38,23 @@ export default function Home() {
 
   const getFilteredTranslations = () => {
     if (!randomWord) return {};
-  
+
     const selectedWord = words.find(
       (word) => Object.values(word).includes(randomWord)
     );
     if (!selectedWord) return {};
-  
+
     const allowedKeys = ["francais", "hiragana", "romaji", "kanji"];
     const filteredTranslations = Object.entries(selectedWord).reduce(
       (acc, [key, value]) => {
         if (key !== wordType.toLowerCase() && allowedKeys.includes(key)) {
-          acc[key] = value;
+          acc[key] = String(value); // Conversion de la valeur en chaîne
         }
         return acc;
       },
       {} as Record<string, string>
     );
-  
+
     return filteredTranslations;
   };
 
@@ -111,13 +111,13 @@ export default function Home() {
       const filteredWords = words.filter(word => {
         // Vérification du filtre "Thèmes"
         if (selectedFilters.Thèmes && selectedFilters.Thèmes.length > 0) {
-          if (!selectedFilters.Thèmes.includes(word["categorie 2"] as "Action" | "Objet" | "Nature" | "Métiers" | "Animaux")) {
+          if (!selectedFilters.Thèmes.includes(word["categorie2"] as "Action" | "Objet" | "Nature" | "Métiers" | "Animaux" | "Salutations" | "Temps" | "Vêtement" | "Lieu" | "Personne" | "Question" | "Direction" | "Nourriture")) {
             return false;
           }
         }
         // Vérification du filtre "Type"
         if (selectedFilters.Type && selectedFilters.Type.length > 0) {
-          if (!selectedFilters.Type.includes(word["categorie 1"] as "Verbe" | "Nom" | "Adjectif")) {
+          if (!selectedFilters.Type.includes(word["categorie1"] as "Verbe" | "Nom" | "Adjectif" | "Heures" | "Expression" | "Adverbe" | "Particule" | "Pronom")) {
             return false;
           }
         }
@@ -148,10 +148,10 @@ export default function Home() {
     const randomIndex = Math.floor(Math.random() * pool.length);
     const selectedEntry = pool[randomIndex];
 
-    const updatedHistory = [...history.slice(0, currentIndex + 1), selectedEntry];
+    const updatedHistory = [...history.slice(0, currentIndex + 1), { word: String(selectedEntry.word), type: selectedEntry.type }];
     setHistory(updatedHistory);
     setCurrentIndex(updatedHistory.length - 1);
-    setRandomWord(selectedEntry.word);
+    setRandomWord(String(selectedEntry.word)); // Conversion en chaîne
     setWordType(selectedEntry.type);
   };
 
@@ -210,19 +210,25 @@ export default function Home() {
           <div className="text-center text-[48px] font-bold self-center" dangerouslySetInnerHTML={{ __html: randomWord }}></div>
         )}
         <div className="div_boutons flex flex-row gap-6 w-full">
-          <button
-            onClick={handlePreviousWord}
-            className={`h-9 rounded-lg w-full ${currentIndex <= 0 ? 'bg-[var(--surface-secondary)] text-[var(--text-primary)] opacity-50 cursor-not-allowed' : 'bg-[var(--surface-secondary)] hover:bg-[var(--surface-secondary-hover)]'}`}
-            disabled={currentIndex <= 0}
-          >
-            Mot précédent
-          </button>
+          <div className="div_boutons_gauche flex flex-row gap-2 w-full">
+
+
+            <button
+              onClick={handlePreviousWord}
+              className={`h-9 rounded-lg w-full ${currentIndex <= 0 ? 'bg-[var(--surface-secondary)] text-[var(--text-primary)] opacity-50 cursor-not-allowed' : 'bg-[var(--surface-secondary)] hover:bg-[var(--surface-secondary-hover)]'}`}
+              disabled={currentIndex <= 0}
+            >
+              Mot précédent
+            </button>
+          </div>
+
           <button
             onClick={handleNextWord}
             className="h-9 rounded-lg bg-[var(--surface-brand)] w-full text-white hover:bg-[var(--surface-brand-hover)]"
           >
             Mot suivant
           </button>
+
         </div>
       </div>
     </div>
