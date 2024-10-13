@@ -59,6 +59,31 @@ export default function Home() {
     return filteredTranslations;
   };
 
+  const getExampleSentence = () => {
+    const selectedWord = words.find(
+      (word) => Object.values(word).includes(randomWord)
+    );
+
+    if (!selectedWord || !selectedWord.phrases_exemples) {
+      return { sentence: "Hello world", translation: "Hello world", romaji: "Hello world" };
+    }
+
+    const languageKey = wordType.toLowerCase() as keyof typeof selectedWord.phrases_exemples[0];
+    const examples = selectedWord.phrases_exemples.map((example) => ({
+      sentence: example[languageKey],
+      translation: example.francais,
+      romaji: example.romaji
+    }));
+
+    const validExamples = examples.filter((example) => example.sentence);
+    if (validExamples.length === 0) {
+      return { sentence: "Hello world", translation: "Hello world", romaji: "Hello world" };
+    }
+
+    const randomIndex = Math.floor(Math.random() * validExamples.length);
+    return validExamples[randomIndex];
+  };
+
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Control") {
@@ -89,21 +114,28 @@ export default function Home() {
   useEffect(() => generateRandomWord(), [selectedFilters])
 
   const generateRandomWord = () => {
-    let pool = [];
+    let pool: { word: string; type: string }[] = [];
 
-    // Augmenter le nombre d'heures générées
-    const randomTimes = Array.from({ length: 20 }, () => ({
-      word: generateRandomTime(),
-      type: "Heures"
-    }));
+    // Vérifier si "Heures" est sélectionné et aucun autre thème n'est actif
+    const isHeuresSelected = selectedFilters.Type?.includes("Heures");
+    const areOtherTypesSelected = selectedFilters.Type && selectedFilters.Type.length > 1;
+    const areThemesSelected = selectedFilters.Thèmes && selectedFilters.Thèmes.length > 0;
 
-    const randomSchedules = Array.from({ length: 10 }, () => ({
-      word: generateRandomSchedule(),
-      type: "Heures"
-    }));
+    if (isHeuresSelected && !areOtherTypesSelected && !areThemesSelected) {
+      // Générer des heures simples et des horaires
+      const randomTimes = Array.from({ length: 20 }, () => ({
+        word: generateRandomTime(),
+        type: "Heures"
+      }));
 
-    // Ajouter les heures au pool
-    pool = [...randomTimes, ...randomSchedules];
+      const randomSchedules = Array.from({ length: 10 }, () => ({
+        word: generateRandomSchedule(),
+        type: "Heures"
+      }));
+
+      // Ajouter les heures au pool
+      pool = [...randomTimes, ...randomSchedules];
+    }
 
     // Filtrer les mots selon les autres critères
     const filteredWords = words.filter(word => {
@@ -180,8 +212,8 @@ export default function Home() {
 
   return (
     <div className="flex justify-center min-h-screen">
-      <div className="w-[704px] h-[380px] rounded-[16px] bg-[var(--surface-primary)] p-8 flex flex-col justify-between">
-        <div className="w-full flex flex-row justify-between items-center p-auto">
+      <div className="div_quiz w-[704px] h-[400px] rounded-[16px] bg-[var(--surface-primary)] p-8 flex flex-col justify-between">
+        <div className="div_header_quiz w-full flex flex-row justify-between items-center p-auto">
           <FilterPopover selectedFilters={selectedFilters} setSelectedFilters={setSelectedFilters} />
           <div className="text-lg font-semibold">
             {randomWord === "🦍" ? "Aucun mot trouvé" : wordType}
@@ -191,10 +223,23 @@ export default function Home() {
           >
             <HelpPopover translations={getFilteredTranslations()} />
           </div>
+
         </div>
         {randomWord && (
-          <div className="text-center text-[48px] font-bold self-center" dangerouslySetInnerHTML={{ __html: randomWord }}></div>
+          <div className="div_mot_phrase flex flex-col items-center">
+            <div className="text-center text-[48px] font-bold" dangerouslySetInnerHTML={{ __html: randomWord }}>
+            </div>
+            <div className="text-center text-[14px] font-regular inline-block h-auto p-2 px-8 rounded-[6px] hover:bg-[var(--surface-secondary)] relative group">
+              {getExampleSentence().sentence}
+              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-max max-w-xs p-2 px-8 bg-[var(--surface-secondary-hover)] text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                {getExampleSentence().translation}
+                <br />
+                {getExampleSentence().romaji}
+              </div>
+            </div>
+          </div>
         )}
+          
         <div className="div_boutons flex flex-row gap-6 w-full">
           <button
             onClick={handlePreviousWord}
