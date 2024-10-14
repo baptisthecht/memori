@@ -5,6 +5,9 @@ import { useEffect, useState } from "react";
 import { words, heures, minutes } from "@/public/data/data"; // Assurez-vous que le chemin est correct
 import { HelpPopover } from "@/components/HelpPopover";
 import { FilterPopover } from "@/components/filter-popover";
+import leftArrow from "@/public/fleche_gauche.svg"
+import rightArrow from "@/public/fleche_droite.svg"
+import Image from "next/image";
 
 export type selectFiltersType = {
   [key: string]: string[] | undefined; 
@@ -14,7 +17,9 @@ export type selectFiltersType = {
 }
 
 
+
 export default function Home() {
+
   const [randomWord, setRandomWord] = useState("");
   const [wordType, setWordType] = useState("");
   const [history, setHistory] = useState<{ word: string; type: string }[]>([]);
@@ -252,20 +257,36 @@ export default function Home() {
           </div>
         )}
         
-        <div className="div_boutons flex flex-row gap-6 w-full">
-          <button
-            onClick={handlePreviousWord}
-            className={`h-9 rounded-lg w-full ${currentIndex <= 0 ? 'bg-[var(--surface-secondary)] text-[var(--text-primary)] opacity-50 cursor-not-allowed' : 'bg-[var(--surface-secondary)] hover:bg-[var(--surface-secondary-hover)]'}`}
-            disabled={currentIndex <= 0}
-          >
-            Mot précédent
-          </button>
-          <button
-            onClick={handleNextWord}
-            className="h-9 rounded-lg bg-[var(--surface-brand)] w-full text-white hover:bg-[var(--surface-brand-hover)]"
-          >
-            Mot suivant
-          </button>
+        <div className="div_boutons flex flex-row gap-2 w-full">
+          <div className="div_boutons_gauche w-full align-top gap-2 flex flex-row">
+            <button
+              onClick={() => console.log("Button clicked")}
+              className="h-9 min-w-9 rounded-lg bg-[var(--surface-secondary)] text-[var(--text-primary)] hover:bg-[var(--surface-secondary-hover)] flex items-center justify-center"
+            >
+              <Image src={leftArrow} alt="Fleche Gauche" className="w-3 h-3 inline-block" />
+              </button>
+            <button
+              onClick={handlePreviousWord}
+              className={`h-9 rounded-lg w-full ${currentIndex <= 0 ? 'bg-[var(--surface-secondary)] text-[var(--text-primary)] opacity-50 cursor-not-allowed' : 'bg-[var(--surface-secondary)] hover:bg-[var(--surface-secondary-hover)]'}`}
+              disabled={currentIndex <= 0}
+            >
+              Mauvaise réponse
+            </button>
+          </div>
+          <div className="div_boutons_droits w-full align-top gap-2 flex flex-row">
+            <button
+              onClick={handleNextWord}
+              className="h-9 rounded-lg bg-[var(--surface-brand)] w-full text-white hover:bg-[var(--surface-brand-hover)]"
+            >
+              Bonne réponse
+            </button>
+            <button
+              onClick={() => console.log("Button clicked")}
+              className="h-9 min-w-9 rounded-lg bg-[var(--surface-brand)] hover:bg-[var(--surface-brand-hover)]  flex items-center justify-center"
+            >
+              <Image src={rightArrow} alt="Fleche Droite" className="w-3 h-3 inline-block" />
+              </button>
+          </div>
         </div>
       </div>
     </div>
