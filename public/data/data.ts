@@ -98,6 +98,10 @@ export const words = [
         "kanji": "愛する",
         "categorie1": "Verbe",
         "categorie2": "Action",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "私は音楽を愛する。",
@@ -127,6 +131,10 @@ export const words = [
         "kanji": "行く",
         "categorie1": "Verbe",
         "categorie2": "Action",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "学校に行く。",
@@ -156,6 +164,10 @@ export const words = [
         "kanji": "友達",
         "categorie1": "Nom",
         "categorie2": "Personne",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "私の友達は優しい。",
@@ -185,6 +197,10 @@ export const words = [
         "kanji": "木",
         "categorie1": "Nom",
         "categorie2": "Nature",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "庭に大きな木がある。",
@@ -214,6 +230,10 @@ export const words = [
         "kanji": "建築家",
         "categorie1": "Nom",
         "categorie2": "Métiers",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "彼は有名な建築家です。",
@@ -243,6 +263,10 @@ export const words = [
         "kanji": "画家",
         "categorie1": "Nom",
         "categorie2": "Métiers",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "彼は有名な画家です。",
@@ -272,6 +296,10 @@ export const words = [
         "kanji": "弁護士",
         "categorie1": "Nom",
         "categorie2": "Métiers",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "彼は弁護士として働いている。",
@@ -301,6 +329,10 @@ export const words = [
         "kanji": "飲む",
         "categorie1": "Verbe",
         "categorie2": "Action",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "水を飲む。",
@@ -330,6 +362,10 @@ export const words = [
         "kanji": "珈琲",
         "categorie1": "Nom",
         "categorie2": "Nourriture",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "朝にコーヒーを飲む。",
@@ -359,6 +395,10 @@ export const words = [
         "kanji": "猫",
         "categorie1": "Nom",
         "categorie2": "Animaux",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "この猫はとても小さいです。",
@@ -388,6 +428,10 @@ export const words = [
         "kanji": "暑い",
         "categorie1": "Adjectif",
         "categorie2": "Nature",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "今日はとても暑いです。",
@@ -417,6 +461,10 @@ export const words = [
         "kanji": "道",
         "categorie1": "Nom",
         "categorie2": "Objet",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "この道をまっすぐ行く。",
@@ -446,6 +494,10 @@ export const words = [
         "kanji": "犬",
         "categorie1": "Nom",
         "categorie2": "Animaux",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "犬が走っている。",
@@ -475,6 +527,10 @@ export const words = [
         "kanji": "空",
         "categorie1": "Nom",
         "categorie2": "Nature",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "今日は空が青い。",
@@ -504,6 +560,10 @@ export const words = [
         "kanji": "会計士",
         "categorie1": "Nom",
         "categorie2": "Métiers",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "彼は会計士です。",
@@ -533,6 +593,10 @@ export const words = [
         "kanji": "医者",
         "categorie1": "Nom",
         "categorie2": "Métiers",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "彼は医者です。",
@@ -562,6 +626,10 @@ export const words = [
         "kanji": "寝る",
         "categorie1": "Verbe",
         "categorie2": "Action",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "早く寝る。",
@@ -591,6 +659,10 @@ export const words = [
         "kanji": "学校",
         "categorie1": "Nom",
         "categorie2": "Lieu",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "私は学校に行く。",
@@ -620,6 +692,10 @@ export const words = [
         "kanji": "聞く",
         "categorie1": "Verbe",
         "categorie2": "Action",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "音楽を聞く。",
@@ -649,6 +725,10 @@ export const words = [
         "kanji": "会社員",
         "categorie1": "Nom",
         "categorie2": "Métiers",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "彼は会社員です。",
@@ -678,6 +758,10 @@ export const words = [
         "kanji": "銀行員",
         "categorie1": "Nom",
         "categorie2": "Métiers",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "彼は銀行員です。",
@@ -707,6 +791,10 @@ export const words = [
         "kanji": "星",
         "categorie1": "Nom",
         "categorie2": "Nature",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "夜に星を見る。",
@@ -736,6 +824,10 @@ export const words = [
         "kanji": "学生",
         "categorie1": "Nom",
         "categorie2": "Personne",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "彼は学生です。",
@@ -765,6 +857,10 @@ export const words = [
         "kanji": "勉強する",
         "categorie1": "Verbe",
         "categorie2": "Action",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "日本語を勉強する。",
@@ -794,6 +890,10 @@ export const words = [
         "kanji": "家族",
         "categorie1": "Nom",
         "categorie2": "Personne",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "家族と一緒に住んでいる。",
@@ -823,6 +923,10 @@ export const words = [
         "kanji": "花",
         "categorie1": "Nom",
         "categorie2": "Nature",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "花が咲いている。",
@@ -852,6 +956,10 @@ export const words = [
         "kanji": "寒い",
         "categorie1": "Adjectif",
         "categorie2": "Nature",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "今日はとても寒いです。",
@@ -881,6 +989,10 @@ export const words = [
         "kanji": "アイスクリーム",
         "categorie1": "Nom",
         "categorie2": "Nourriture",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "アイスクリームが好きです。",
@@ -910,6 +1022,10 @@ export const words = [
         "kanji": "ケーキ",
         "categorie1": "Nom",
         "categorie2": "Nourriture",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "誕生日にケーキを食べる。",
@@ -939,6 +1055,10 @@ export const words = [
         "kanji": "看護師",
         "categorie1": "Nom",
         "categorie2": "Métiers",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "彼女は看護師です。",
@@ -968,6 +1088,10 @@ export const words = [
         "kanji": "技師",
         "categorie1": "Nom",
         "categorie2": "Métiers",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "彼は技師として働いている。",
@@ -997,6 +1121,10 @@ export const words = [
         "kanji": "遊ぶ",
         "categorie1": "Verbe",
         "categorie2": "Action",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "公園で遊ぶ。",
@@ -1026,6 +1154,10 @@ export const words = [
         "kanji": "日",
         "categorie1": "Nom",
         "categorie2": "Jours",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "今日は何日ですか。",
@@ -1055,6 +1187,10 @@ export const words = [
         "kanji": "牛乳",
         "categorie1": "Nom",
         "categorie2": "Nourriture",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "朝に牛乳を飲む。",
@@ -1084,6 +1220,10 @@ export const words = [
         "kanji": "読む",
         "categorie1": "Verbe",
         "categorie2": "Action",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "本を読む。",
@@ -1113,6 +1253,10 @@ export const words = [
         "kanji": "本",
         "categorie1": "Nom",
         "categorie2": "Objet",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "新しい本を買った。",
@@ -1142,6 +1286,10 @@ export const words = [
         "kanji": "光",
         "categorie1": "Nom",
         "categorie2": "Nature",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "太陽の光が眩しい。",
@@ -1171,6 +1319,10 @@ export const words = [
         "kanji": "月",
         "categorie1": "Nom",
         "categorie2": "Nature",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "夜空に月が輝いている。",
@@ -1200,6 +1352,10 @@ export const words = [
         "kanji": "手",
         "categorie1": "Nom",
         "categorie2": "Objet",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "手を洗う。",
@@ -1229,6 +1385,10 @@ export const words = [
         "kanji": "家",
         "categorie1": "Nom",
         "categorie2": "Objet",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "私の家はここです。",
@@ -1258,6 +1418,10 @@ export const words = [
         "kanji": "食べる",
         "categorie1": "Verbe",
         "categorie2": "Action",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "朝ごはんを食べる。",
@@ -1287,6 +1451,10 @@ export const words = [
         "kanji": "海",
         "categorie1": "Nom",
         "categorie2": "Nature",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "夏に海に行く。",
@@ -1316,6 +1484,10 @@ export const words = [
         "kanji": "山",
         "categorie1": "Nom",
         "categorie2": "Nature",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "山に登る。",
@@ -1345,6 +1517,10 @@ export const words = [
         "kanji": "雪",
         "categorie1": "Nom",
         "categorie2": "Nature",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "雪が降っている。",
@@ -1374,6 +1550,10 @@ export const words = [
         "kanji": "新しい",
         "categorie1": "Adjectif",
         "categorie2": "Nature",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "新しい靴を買った。",
@@ -1403,6 +1583,10 @@ export const words = [
         "kanji": "夜",
         "categorie1": "Nom",
         "categorie2": "Temps",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "夜に星を見る。",
@@ -1432,6 +1616,10 @@ export const words = [
         "kanji": "オレンジ",
         "categorie1": "Nom",
         "categorie2": "Nourriture",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "オレンジを食べる。",
@@ -1461,6 +1649,10 @@ export const words = [
         "kanji": "パン",
         "categorie1": "Nom",
         "categorie2": "Nourriture",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "朝ごはんにパンを食べる。",
@@ -1490,6 +1682,10 @@ export const words = [
         "kanji": "話す",
         "categorie1": "Verbe",
         "categorie2": "Action",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "友達と話す。",
@@ -1519,6 +1715,10 @@ export const words = [
         "kanji": "足",
         "categorie1": "Nom",
         "categorie2": "Objet",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "足が痛い。",
@@ -1548,6 +1748,10 @@ export const words = [
         "kanji": "警官",
         "categorie1": "Nom",
         "categorie2": "Métiers",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "彼は警官です。",
@@ -1577,6 +1781,10 @@ export const words = [
         "kanji": "林檎",
         "categorie1": "Nom",
         "categorie2": "Nourriture",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "りんごを食べる。",
@@ -1606,6 +1814,10 @@ export const words = [
         "kanji": "先生",
         "categorie1": "Nom",
         "categorie2": "Métiers",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "彼は日本語の先生です。",
@@ -1635,6 +1847,10 @@ export const words = [
         "kanji": "仕事",
         "categorie1": "Nom",
         "categorie2": "Métiers",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "彼の仕事は医者です。",
@@ -1664,6 +1880,10 @@ export const words = [
         "kanji": "笑う",
         "categorie1": "Verbe",
         "categorie2": "Action",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "彼はよく笑う。",
@@ -1693,6 +1913,10 @@ export const words = [
         "kanji": "笑顔",
         "categorie1": "Nom",
         "categorie2": "Objet",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "彼女の笑顔が好きです。",
@@ -1722,6 +1946,10 @@ export const words = [
         "kanji": "時間",
         "categorie1": "Nom",
         "categorie2": "Temps",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "時間がありますか。",
@@ -1751,6 +1979,10 @@ export const words = [
         "kanji": "皆",
         "categorie1": "Nom",
         "categorie2": "Personne",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "皆が集まった。",
@@ -1780,6 +2012,10 @@ export const words = [
         "kanji": "働く",
         "categorie1": "Verbe",
         "categorie2": "Action",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "会社で働く。",
@@ -1809,6 +2045,10 @@ export const words = [
         "kanji": "来る",
         "categorie1": "Verbe",
         "categorie2": "Action",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "友達が家に来る。",
@@ -1838,6 +2078,10 @@ export const words = [
         "kanji": "風",
         "categorie1": "Nom",
         "categorie2": "Nature",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "風が強い。",
@@ -1867,6 +2111,10 @@ export const words = [
         "kanji": "古い",
         "categorie1": "Adjectif",
         "categorie2": "Nature",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "この家は古いです。",
@@ -1896,6 +2144,10 @@ export const words = [
         "kanji": "見る",
         "categorie1": "Verbe",
         "categorie2": "Action",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "映画を見るのが好きです。",
@@ -1925,6 +2177,10 @@ export const words = [
         "kanji": "車",
         "categorie1": "Nom",
         "categorie2": "Objet",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "父の車は黒いです。",
@@ -1954,6 +2210,10 @@ export const words = [
         "kanji": "月曜日",
         "categorie1": "Nom",
         "categorie2": "Jours",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "月曜日に学校が始まります。",
@@ -1983,6 +2243,10 @@ export const words = [
         "kanji": "火曜日",
         "categorie1": "Nom",
         "categorie2": "Jours",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "火曜日は忙しいです。",
@@ -2012,6 +2276,10 @@ export const words = [
         "kanji": "水曜日",
         "categorie1": "Nom",
         "categorie2": "Jours",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "水曜日に映画を見ます。",
@@ -2041,6 +2309,10 @@ export const words = [
         "kanji": "木曜日",
         "categorie1": "Nom",
         "categorie2": "Jours",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "木曜日に会議があります。",
@@ -2070,6 +2342,10 @@ export const words = [
         "kanji": "金曜日",
         "categorie1": "Nom",
         "categorie2": "Jours",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "金曜日はパーティーです。",
@@ -2099,6 +2375,10 @@ export const words = [
         "kanji": "土曜日",
         "categorie1": "Nom",
         "categorie2": "Jours",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "土曜日は友達と遊びます。",
@@ -2128,6 +2408,10 @@ export const words = [
         "kanji": "日曜日",
         "categorie1": "Nom",
         "categorie2": "Jours",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "日曜日に公園へ行きます。",
@@ -2157,6 +2441,10 @@ export const words = [
         "kanji": "一昨日",
         "categorie1": "Nom",
         "categorie2": "Temps",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "一昨日、映画を見ました。",
@@ -2186,6 +2474,10 @@ export const words = [
         "kanji": "昨日",
         "categorie1": "Nom",
         "categorie2": "Temps",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "昨日、友達に会いました。",
@@ -2215,6 +2507,10 @@ export const words = [
         "kanji": "今日",
         "categorie1": "Nom",
         "categorie2": "Temps",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "今日は学校に行きます。",
@@ -2244,6 +2540,10 @@ export const words = [
         "kanji": "明日",
         "categorie1": "Nom",
         "categorie2": "Temps",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "明日は休みです。",
@@ -2273,6 +2573,10 @@ export const words = [
         "kanji": "明後日",
         "categorie1": "Nom",
         "categorie2": "Temps",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "明後日、旅行に行きます。",
@@ -2302,6 +2606,10 @@ export const words = [
         "kanji": "窓",
         "categorie1": "Nom",
         "categorie2": "Objet",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "窓を開けてください。",
@@ -2331,6 +2639,10 @@ export const words = [
         "kanji": "税関員",
         "categorie1": "Nom",
         "categorie2": "Métiers",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "税関員がパスポートをチェックします。",
@@ -2360,6 +2672,10 @@ export const words = [
         "kanji": "税関",
         "categorie1": "Nom",
         "categorie2": "Lieu",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "税関を通ります。",
@@ -2389,6 +2705,10 @@ export const words = [
         "kanji": "失礼します",
         "categorie1": "Expression",
         "categorie2": "Salutations",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "先に失礼します。",
@@ -2418,6 +2738,10 @@ export const words = [
         "kanji": "又",
         "categorie1": "Adverbe",
         "categorie2": "Temps",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "また会いましょう。",
@@ -2447,6 +2771,10 @@ export const words = [
         "kanji": "靴",
         "categorie1": "Nom",
         "categorie2": "Vêtement",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "新しい靴を買いました。",
@@ -2476,6 +2804,10 @@ export const words = [
         "kanji": "図書館",
         "categorie1": "Nom",
         "categorie2": "Lieu",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "図書館で本を借ります。",
@@ -2505,6 +2837,10 @@ export const words = [
         "kanji": "喫茶店",
         "categorie1": "Nom",
         "categorie2": "Lieu",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "喫茶店でコーヒーを飲みます。",
@@ -2534,6 +2870,10 @@ export const words = [
         "kanji": "どう致しまして",
         "categorie1": "Expression",
         "categorie2": "Salutations",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "ありがとう。—どう致しまして。",
@@ -2563,6 +2903,10 @@ export const words = [
         "kanji": "番号",
         "categorie1": "Nom",
         "categorie2": "Objet",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "電話番号を教えてください。",
@@ -2592,6 +2936,10 @@ export const words = [
         "kanji": "も",
         "categorie1": "Particule",
         "categorie2": "Expression",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "私も行きます。",
@@ -2621,6 +2969,10 @@ export const words = [
         "kanji": "女",
         "categorie1": "Nom",
         "categorie2": "Personne",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "彼女は美しい女です。",
@@ -2650,6 +3002,10 @@ export const words = [
         "kanji": "有り難う",
         "categorie1": "Expression",
         "categorie2": "Salutations",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "手伝ってくれてありがとう。",
@@ -2679,6 +3035,10 @@ export const words = [
         "kanji": "昼休み",
         "categorie1": "Nom",
         "categorie2": "Temps",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "昼休みに食堂へ行きます。",
@@ -2708,6 +3068,10 @@ export const words = [
         "kanji": "公園",
         "categorie1": "Nom",
         "categorie2": "Lieu",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "公園でジョギングします。",
@@ -2737,6 +3101,10 @@ export const words = [
         "kanji": "映画館",
         "categorie1": "Nom",
         "categorie2": "Lieu",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "映画館で新しい映画を見ました。",
@@ -2766,6 +3134,10 @@ export const words = [
         "kanji": "男",
         "categorie1": "Nom",
         "categorie2": "Personne",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "彼は親切な男です。",
@@ -2795,6 +3167,10 @@ export const words = [
         "kanji": "",
         "categorie1": "Nom",
         "categorie2": "Lieu",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "デパートで買い物します。",
@@ -2824,6 +3200,10 @@ export const words = [
         "kanji": "病院",
         "categorie1": "Nom",
         "categorie2": "Lieu",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "病院へ行きます。",
@@ -2853,6 +3233,10 @@ export const words = [
         "kanji": "そうですか",
         "categorie1": "Expression",
         "categorie2": "Question",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "明日は雨です。—そうですか。",
@@ -2882,6 +3266,10 @@ export const words = [
         "kanji": "と",
         "categorie1": "Particule",
         "categorie2": "Conjonction",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "りんごとバナナを買いました。",
@@ -2911,6 +3299,10 @@ export const words = [
         "kanji": "下着",
         "categorie1": "Nom",
         "categorie2": "Vêtement",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "新しい下着を買いました。",
@@ -2940,6 +3332,10 @@ export const words = [
         "kanji": "-",
         "categorie1": "Nom",
         "categorie2": "Nourriture",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "彼はウイスキーを飲みます。",
@@ -2969,6 +3365,10 @@ export const words = [
         "kanji": "迄",
         "categorie1": "Particule",
         "categorie2": "Expression",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "駅まで歩きます。",
@@ -2998,6 +3398,10 @@ export const words = [
         "kanji": "彼処",
         "categorie1": "Pronom",
         "categorie2": "Direction",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "あそこに山があります。",
@@ -3027,6 +3431,10 @@ export const words = [
         "kanji": "其処",
         "categorie1": "Pronom",
         "categorie2": "Direction",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "そこに本があります。",
@@ -3056,6 +3464,10 @@ export const words = [
         "kanji": "から",
         "categorie1": "Particule",
         "categorie2": "Expression",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "日本から来ました。",
@@ -3085,6 +3497,10 @@ export const words = [
         "kanji": "何れ",
         "categorie1": "Pronom",
         "categorie2": "Question",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "どれがあなたの本ですか？",
@@ -3114,6 +3530,10 @@ export const words = [
         "kanji": "教会",
         "categorie1": "Nom",
         "categorie2": "Lieu",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "日曜日に教会へ行きます。",
@@ -3143,6 +3563,10 @@ export const words = [
         "kanji": "鍵",
         "categorie1": "Nom",
         "categorie2": "Objet",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "鍵を忘れました。",
@@ -3172,6 +3596,10 @@ export const words = [
         "kanji": "前",
         "categorie1": "Nom",
         "categorie2": "Temps",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "ご飯の前に手を洗います。",
@@ -3201,6 +3629,10 @@ export const words = [
         "kanji": "時計",
         "categorie1": "Nom",
         "categorie2": "Objet",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "新しい時計を買いました。",
@@ -3230,6 +3662,10 @@ export const words = [
         "kanji": "鞄",
         "categorie1": "Nom",
         "categorie2": "Objet",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "大きな鞄があります。",
@@ -3259,6 +3695,10 @@ export const words = [
         "kanji": "-",
         "categorie1": "Nom",
         "categorie2": "Lieu",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "スーパーで野菜を買います。",
@@ -3288,6 +3728,10 @@ export const words = [
         "kanji": "-",
         "categorie1": "Nom",
         "categorie2": "Nourriture",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "ワインを飲みます。",
@@ -3317,6 +3761,10 @@ export const words = [
         "kanji": "辞書",
         "categorie1": "Nom",
         "categorie2": "Objet",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "辞書を使います。",
@@ -3346,6 +3794,10 @@ export const words = [
         "kanji": "今",
         "categorie1": "Adverbe",
         "categorie2": "Temps",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "今、何時ですか？",
@@ -3375,6 +3827,10 @@ export const words = [
         "kanji": "-",
         "categorie1": "Nom",
         "categorie2": "Vêtement",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "新しいストッキングを買いました。",
@@ -3404,6 +3860,10 @@ export const words = [
         "kanji": "-",
         "categorie1": "Nom",
         "categorie2": "Vêtement",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "ベルトを締めてください。",
@@ -3433,6 +3893,10 @@ export const words = [
         "kanji": "此処",
         "categorie1": "Pronom",
         "categorie2": "Direction",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "ここは私の家です。",
@@ -3462,6 +3926,10 @@ export const words = [
         "kanji": "新聞",
         "categorie1": "Nom",
         "categorie2": "Objet",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "新聞を読みます。",
@@ -3491,6 +3959,10 @@ export const words = [
         "kanji": "-",
         "categorie1": "Nom",
         "categorie2": "Nourriture",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "チーズを食べます。",
@@ -3520,6 +3992,10 @@ export const words = [
         "kanji": "済みません",
         "categorie1": "Expression",
         "categorie2": "Salutations",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "すみません、お水をください。",
@@ -3549,6 +4025,10 @@ export const words = [
         "kanji": "人",
         "categorie1": "Nom",
         "categorie2": "Personne",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "あの人は誰ですか？",
@@ -3578,6 +4058,10 @@ export const words = [
         "kanji": "-",
         "categorie1": "Nom",
         "categorie2": "Lieu",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "ホテルに泊まります。",
@@ -3607,6 +4091,10 @@ export const words = [
         "kanji": "-",
         "categorie1": "Nom",
         "categorie2": "Objet",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "たばこを吸いますか？",
@@ -3636,6 +4124,10 @@ export const words = [
         "kanji": "電話",
         "categorie1": "Nom",
         "categorie2": "Objet",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "電話をかけます。",
@@ -3665,6 +4157,10 @@ export const words = [
         "kanji": "-",
         "categorie1": "Nom",
         "categorie2": "Vêtement",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "新しいセーターを買いました。",
@@ -3694,6 +4190,10 @@ export const words = [
         "kanji": "-",
         "categorie1": "Nom",
         "categorie2": "Vêtement",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "新しいズボンを履きました。",
@@ -3723,6 +4223,10 @@ export const words = [
         "kanji": "-",
         "categorie1": "Nom",
         "categorie2": "Objet",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "ハンカチを持っていますか。",
@@ -3751,7 +4255,11 @@ export const words = [
         "romaji": "Are",
         "kanji": "-",
         "categorie1": "Pronom",
-        "categorie2": "Direction",
+        "categorie2": "Direction",      
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "あれは何ですか。",
@@ -3781,6 +4289,10 @@ export const words = [
         "kanji": "-",
         "categorie1": "Pronom",
         "categorie2": "Direction",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "それは本ですか。",
@@ -3810,6 +4322,10 @@ export const words = [
         "kanji": "-",
         "categorie1": "Pronom",
         "categorie2": "Direction",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "これはおいしいです。",
@@ -3839,6 +4355,10 @@ export const words = [
         "kanji": "傘",
         "categorie1": "Nom",
         "categorie2": "Objet",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "傘を持って行きます。",
@@ -3868,6 +4388,10 @@ export const words = [
         "kanji": "背広",
         "categorie1": "Nom",
         "categorie2": "Vêtement",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "彼は背広を着ています。",
@@ -3897,6 +4421,10 @@ export const words = [
         "kanji": "-",
         "categorie1": "Nom",
         "categorie2": "Vêtement",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "彼はネクタイをしています。",
@@ -3926,6 +4454,10 @@ export const words = [
         "kanji": "眼鏡",
         "categorie1": "Nom",
         "categorie2": "Objet",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "彼女は眼鏡をかけています。",
@@ -3955,6 +4487,10 @@ export const words = [
         "kanji": "帽子",
         "categorie1": "Nom",
         "categorie2": "Vêtement",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "帽子をかぶります。",
@@ -3984,6 +4520,10 @@ export const words = [
         "kanji": "午前",
         "categorie1": "Nom",
         "categorie2": "Temps",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "午前九時に起きます。",
@@ -4013,6 +4553,10 @@ export const words = [
         "kanji": "午後",
         "categorie1": "Nom",
         "categorie2": "Temps",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "午後三時に会いましょう。",
@@ -4042,6 +4586,10 @@ export const words = [
         "kanji": "-",
         "categorie1": "Nom",
         "categorie2": "Lieu",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "レストランで食事をします。",
@@ -4071,6 +4619,10 @@ export const words = [
         "kanji": "-",
         "categorie1": "Pronom",
         "categorie2": "Question",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
         "phrases_exemples": [
             {
                 "kanji": "駅はどこですか。",

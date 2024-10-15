@@ -16,7 +16,13 @@ export type selectFiltersType = {
   Thèmes?: ("Action" | "Objet" | "Nature" | "Métiers" | "Animaux" | "Jours" | "Temps" | "Nourriture" | "Vêtement" | "Salutations" | "Question" | "Direction" | "Conjonction" | "Expression")[]
 }
 
-
+// Définissez le type pour les mises à jour
+interface WordUpdates {
+  bonnes_reponses?: number;
+  mauvaises_reponses?: number;
+  affichages?: number;
+  niveau_leitner?: number;
+}
 
 export default function Home() {
 
@@ -26,6 +32,14 @@ export default function Home() {
   const [currentIndex, setCurrentIndex] = useState<number>(-1);
 
   const [selectedFilters, setSelectedFilters] = useState<selectFiltersType>({})
+
+  const [affichages, setAffichages] = useState(0);
+  const [bonnesReponses, setBonnesReponses] = useState(0);
+  const [mauvaisesReponses, setMauvaisesReponses] = useState(0);
+  const [niveauLeitner, setNiveauLeitner] = useState(1);
+
+  // Ajoutez un état pour stocker l'ID du mot actuel
+  const [currentWordId, setCurrentWordId] = useState<number | null>(null);
 
   const getFilteredTranslations = () => {
     if (!randomWord) return {};
@@ -150,10 +164,17 @@ export default function Home() {
         return true;
       });
 
-      // Ajouter les mots filtrés au pool
+      // Trier les mots par difficulté (mauvaises_reponses et niveau_leitner)
+      const sortedWords = filteredWords.sort((a, b) => {
+        const difficultyA = (a.mauvaises_reponses ?? 0) - (a.bonnes_reponses ?? 0) - (a.niveau_leitner ?? 0);
+        const difficultyB = (b.mauvaises_reponses ?? 0) - (b.bonnes_reponses ?? 0) - (b.niveau_leitner ?? 0);
+        return difficultyB - difficultyA; // Prioriser les mots plus difficiles
+      });
+
+      // Ajouter les mots triés au pool
       pool = [
         ...pool,
-        ...filteredWords.map(word => {
+        ...sortedWords.map(word => {
           let properties: (keyof typeof word)[];
 
           if (selectedFilters.Langues && selectedFilters.Langues.length > 0) {
@@ -194,9 +215,11 @@ export default function Home() {
       generateRandomWord();
     } else {
       const nextIndex = currentIndex + 1;
-      setCurrentIndex(nextIndex);
-      setRandomWord(history[nextIndex].word);
-      setWordType(history[nextIndex].type);
+      if (nextIndex < history.length) {
+        setCurrentIndex(nextIndex);
+        setRandomWord(history[nextIndex].word);
+        setWordType(history[nextIndex].type);
+      }
     }
   };
 
@@ -209,6 +232,65 @@ export default function Home() {
     }
   };
 
+  const updateWordInDatabase = async (wordId: number, updates: WordUpdates) => {
+    try {
+        console.log('Updating word:', wordId, updates); // Log des données envoyées
+        const response = await fetch('/api/updateWord', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ wordId, updates }),
+        });
+
+        if (!response.ok) {
+            throw new Error('Erreur lors de la mise à jour de la base de données');
+        }
+
+        const data = await response.json();
+        console.log('API response:', data.message); // Log de la réponse de l'API
+    } catch (error) {
+        console.error('Erreur:', error);
+    }
+  };
+
+  const handleBonneReponse = () => {
+    if (currentWordId !== null) {
+        const newBonnesReponses = bonnesReponses + 1;
+        const newAffichages = affichages + 1;
+        const newNiveauLeitner = Math.min(niveauLeitner + 1, 5);
+
+        setBonnesReponses(newBonnesReponses);
+        setAffichages(newAffichages);
+        setNiveauLeitner(newNiveauLeitner);
+
+        updateWordInDatabase(currentWordId, {
+            bonnes_reponses: newBonnesReponses,
+            affichages: newAffichages,
+            niveau_leitner: newNiveauLeitner,
+        });
+    }
+    handleNextWord();
+  };
+
+  const handleMauvaiseReponse = () => {
+    if (currentWordId !== null) {
+        const newMauvaisesReponses = mauvaisesReponses + 1;
+        const newAffichages = affichages + 1;
+
+        setMauvaisesReponses(newMauvaisesReponses);
+        setAffichages(newAffichages);
+        setNiveauLeitner(1);
+
+        updateWordInDatabase(currentWordId, {
+            mauvaises_reponses: newMauvaisesReponses,
+            affichages: newAffichages,
+            niveau_leitner: 1,
+        });
+    }
+    handleNextWord();
+  };
+
   const [showTranslation, setShowTranslation] = useState(false);
   const [currentExample, setCurrentExample] = useState(getExampleSentence());
 
@@ -219,6 +301,36 @@ export default function Home() {
   useEffect(() => {
     setCurrentExample(getExampleSentence());
   }, [randomWord]);
+
+  useEffect(() => {
+    if (randomWord) {
+      // Incrémenter le champ affichages
+      const currentWord = words.find(word => Object.values(word).includes(randomWord));
+      if (currentWord) {
+        currentWord.affichages = (currentWord.affichages ?? 0) + 1;
+      }
+    }
+  }, [randomWord]);
+
+  const getNextWord = () => {
+    const sortedWords = words.sort((a, b) => {
+      // Comparer par niveau Leitner
+      if (a.niveau_leitner !== b.niveau_leitner) {
+        return a.niveau_leitner - b.niveau_leitner;
+      }
+      // Si les niveaux Leitner sont égaux, comparer par affichages
+      return a.affichages - b.affichages;
+    });
+
+    // Sélectionner le premier mot trié
+    const nextWord = sortedWords[0];
+
+    // Mettre à jour l'état avec le mot sélectionné
+    setRandomWord(nextWord.francais);
+    setAffichages(nextWord.affichages + 1);
+
+    // Assurez-vous de mettre à jour la base de données ici si nécessaire
+  };
 
   return (
     <div className="flex justify-center min-h-screen">
@@ -260,13 +372,13 @@ export default function Home() {
         <div className="div_boutons flex flex-row gap-2 w-full">
           <div className="div_boutons_gauche w-full align-top gap-2 flex flex-row">
             <button
-              onClick={() => console.log("Button clicked")}
+              onClick={handlePreviousWord} // Appel de la fonction pour le mot précédent
               className="h-9 min-w-9 rounded-lg bg-[var(--surface-secondary)] text-[var(--text-primary)] hover:bg-[var(--surface-secondary-hover)] flex items-center justify-center"
             >
               <Image src={leftArrow} alt="Fleche Gauche" className="w-3 h-3 inline-block" />
-              </button>
+            </button>
             <button
-              onClick={handlePreviousWord}
+              onClick={handleMauvaiseReponse}
               className={`h-9 rounded-lg w-full ${currentIndex <= 0 ? 'bg-[var(--surface-secondary)] text-[var(--text-primary)] opacity-50 cursor-not-allowed' : 'bg-[var(--surface-secondary)] hover:bg-[var(--surface-secondary-hover)]'}`}
               disabled={currentIndex <= 0}
             >
@@ -275,17 +387,17 @@ export default function Home() {
           </div>
           <div className="div_boutons_droits w-full align-top gap-2 flex flex-row">
             <button
-              onClick={handleNextWord}
+              onClick={handleBonneReponse}
               className="h-9 rounded-lg bg-[var(--surface-brand)] w-full text-white hover:bg-[var(--surface-brand-hover)]"
             >
               Bonne réponse
             </button>
             <button
-              onClick={() => console.log("Button clicked")}
+              onClick={handleNextWord} // Appel de la fonction pour le mot suivant
               className="h-9 min-w-9 rounded-lg bg-[var(--surface-brand)] hover:bg-[var(--surface-brand-hover)]  flex items-center justify-center"
             >
               <Image src={rightArrow} alt="Fleche Droite" className="w-3 h-3 inline-block" />
-              </button>
+            </button>
           </div>
         </div>
       </div>
