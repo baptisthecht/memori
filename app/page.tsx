@@ -9,6 +9,7 @@ import leftArrow from "@/public/fleche_gauche.svg"
 import rightArrow from "@/public/fleche_droite.svg"
 import Image from "next/image";
 
+
 export type selectFiltersType = {
   [key: string]: string[] | undefined; 
   Langues?: ("francais" | "hiragana" | "romaji" | "kanji")[],

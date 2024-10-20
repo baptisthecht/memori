@@ -4644,4 +4644,37 @@ export const words = [
             }
         ]
     },
+    {
+        "id": 140,
+        "francais": "Jardin",
+        "hiragana": "にわ",
+        "romaji": "Niwa",
+        "kanji": "庭",
+        "categorie1": "Nom",
+        "categorie2": "Lieu",
+        "affichages": 0,
+        "bonnes_reponses": 0,
+        "mauvaises_reponses": 0,
+        "niveau_leitner": 1,
+        "phrases_exemples": [
+            {
+                "kanji": "庭で遊びます。",
+                "hiragana": "にわであそびます。",
+                "romaji": "Niwa de asobimasu.",
+                "francais": "Je joue dans le jardin."
+            },
+            {
+                "kanji": "庭に花を植えます。",
+                "hiragana": "にわにはなをうえます。",
+                "romaji": "Niwa ni hana o uemasu.",
+                "francais": "Je plante des fleurs dans le jardin."
+            },
+            {
+                "kanji": "庭はとても広いです。",
+                "hiragana": "にわはとてもひろいです。",
+                "romaji": "Niwa wa totemo hiroi desu.",
+                "francais": "Le jardin est très grand."
+            }
+        ]
+    },
 ]
