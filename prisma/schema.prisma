@@ -47,5 +47,5 @@ model PhraseExemple {
   romaji   String
   francais String
   wordId   Int    // Clé étrangère vers le modèle Word
-  word     Word   @relation(fields: [wordId], references: [id])
+  word     Word   @relation(fields: [wordId], references: [id], onUpdate: Cascade, onDelete: Cascade)
 }

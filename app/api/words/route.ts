@@ -1,5 +1,10 @@
-import { words } from "@/public/data/data";
+import { PrismaClient, Word } from '@prisma/client'
 
 export async function GET() {
-    return Response.json(words);
+    const prisma = new PrismaClient();
+    return Response.json(await prisma.word.findMany({
+        include: {
+            phrasesExemples: true,
+        }
+    }));    
 }
