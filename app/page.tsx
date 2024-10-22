@@ -1,14 +1,11 @@
 "use client";
 
-import React from "react";
-import { useEffect, useState } from "react";
-import { words, heures, minutes } from "@/public/data/data"; // Assurez-vous que le chemin est correct
+import React, { useEffect, useState } from "react";
 import { HelpPopover } from "@/components/HelpPopover";
 import { FilterPopover } from "@/components/filter-popover";
-import leftArrow from "@/public/fleche_gauche.svg"
-import rightArrow from "@/public/fleche_droite.svg"
+import leftArrow from "@/public/fleche_gauche.svg";
+import rightArrow from "@/public/fleche_droite.svg";
 import Image from "next/image";
-
 
 export type selectFiltersType = {
   [key: string]: string[] | undefined; 
@@ -25,14 +22,108 @@ interface WordUpdates {
   niveau_leitner?: number;
 }
 
-export default function Home() {
+// Définir le type pour les mots
+type Word = {
+  francais: string;
+  hiragana?: string; // Ajout de la propriété hiragana
+  romaji?: string;   // Ajout de la propriété romaji
+  kanji?: string;    // Ajout de la propriété kanji
+  categorie1: string;
+  categorie2: string;
+  phrases_exemples?: { [key: string]: string }[];
+  affichages?: number;
+  niveau_leitner?: number;
+};
 
+export default function Home() {
+  const [words, setWords] = useState<Word[]>([]); // Utiliser le type Word
   const [randomWord, setRandomWord] = useState("");
   const [wordType, setWordType] = useState("");
   const [history, setHistory] = useState<{ word: string; type: string }[]>([]);
   const [currentIndex, setCurrentIndex] = useState<number>(-1);
+  const [selectedFilters, setSelectedFilters] = useState<selectFiltersType>({});
 
-  const [selectedFilters, setSelectedFilters] = useState<selectFiltersType>({})
+  useEffect(() => {
+    // Fetch words from the API
+    const fetchWords = async () => {
+      try {
+        const response = await fetch('/api/words');
+        const data = await response.json();
+        setWords(data);
+      } catch (error) {
+        console.error("Erreur lors de la récupération des mots:", error);
+      }
+    };
+
+    fetchWords();
+  }, []);
+
+  const determineWordType = (word: Word): string => {
+    if (word.francais) return "Français";
+    if (word.hiragana) return "Hiragana";
+    if (word.romaji) return "Romaji";
+    if (word.kanji) return "Kanji";
+    return "Inconnu";
+  };
+
+  const generateRandomWord = () => {
+    if (words.length === 0) return;
+
+    // Filtrer les mots selon les critères de filtre
+    const filteredWords = words.filter((word: Word) => {
+      // Filtrage par thèmes
+      if (selectedFilters.Thèmes && selectedFilters.Thèmes.length > 0) {
+        if (!selectedFilters.Thèmes.includes(word.categorie2 as typeof selectedFilters.Thèmes[number])) {
+          return false;
+        }
+      }
+      // Filtrage par type
+      if (selectedFilters.Type && selectedFilters.Type.length > 0) {
+        if (!selectedFilters.Type.includes(word.categorie1 as typeof selectedFilters.Type[number])) {
+          return false;
+        }
+      }
+      // Filtrage par langues
+      if (selectedFilters.Langues && selectedFilters.Langues.length > 0) {
+        const hasSelectedLanguage = selectedFilters.Langues.some(lang => {
+          return word[lang as keyof Word] !== undefined && word[lang as keyof Word] !== "";
+        });
+        if (!hasSelectedLanguage) {
+          return false;
+        }
+      }
+      return true;
+    });
+
+    // Après le filtrage
+    console.log("Filtered Words:", filteredWords);
+
+    if (filteredWords.length === 0) {
+      setRandomWord("🦍");
+      setWordType("");
+      return;
+    }
+
+    // Sélectionner un mot aléatoire
+    const randomIndex = Math.floor(Math.random() * filteredWords.length);
+    const selectedWord = filteredWords[randomIndex];
+
+    // Choisir aléatoirement une propriété parmi francais, hiragana, romaji, kanji
+    const wordProperties = ["francais", "hiragana", "romaji", "kanji"];
+    const availableProperties = wordProperties.filter(prop => selectedWord[prop as keyof Word]);
+    const randomProperty = availableProperties[Math.floor(Math.random() * availableProperties.length)];
+    const selectedValue = selectedWord[randomProperty as keyof Word];
+
+    if (typeof selectedValue === 'string') {
+      setRandomWord(selectedValue);
+      setWordType(randomProperty.charAt(0).toUpperCase() + randomProperty.slice(1)); // Mettre à jour le type de mot
+    } else {
+      setRandomWord("🦍");
+      setWordType(""); // Réinitialiser le type de mot si la valeur n'est pas une chaîne
+    }
+  };
+
+  useEffect(() => generateRandomWord(), [selectedFilters, words]);
 
   const [affichages, setAffichages] = useState(0);
   const [bonnesReponses, setBonnesReponses] = useState(0);
@@ -47,8 +138,8 @@ export default function Home() {
 
     if (wordType === "Heures") {
       const [heure, minute] = randomWord.split(":");
-      const heureObj = heures.find(h => h.heure === heure);
-      const minuteObj = minutes.find(m => m.minute === minute);
+      const heureObj = heures.find((h: { heure: string }) => h.heure === heure);
+      const minuteObj = minutes.find((m: { minute: string }) => m.minute === minute);
 
       if (heureObj && minuteObj) {
         return {
@@ -137,79 +228,6 @@ export default function Home() {
       window.removeEventListener("keyup", handleKeyUp);
     };
   }, [currentIndex]);
-
-  useEffect(() => generateRandomWord(), [selectedFilters])
-
-  const generateRandomWord = () => {
-    let pool: { word: string; type: string }[] = [];
-
-    // Vérifiez si le filtre "Heures" est sélectionné
-    if (selectedFilters.Type && selectedFilters.Type.includes("Heures")) {
-      const randomHeure = heures[Math.floor(Math.random() * heures.length)];
-      const randomMinute = minutes[Math.floor(Math.random() * minutes.length)];
-      const formattedTime = `${randomHeure.heure}:${randomMinute.minute}`;
-      pool.push({ word: formattedTime, type: "Heures" });
-    } else {
-      // Filtrer les mots selon les autres critères
-      const filteredWords = words.filter(word => {
-        if (selectedFilters.Thèmes && selectedFilters.Thèmes.length > 0) {
-          if (!selectedFilters.Thèmes.includes(word.categorie2 as "Action" | "Objet" | "Nature" | "Métiers" | "Animaux")) {
-            return false;
-          }
-        }
-        if (selectedFilters.Type && selectedFilters.Type.length > 0) {
-          if (!selectedFilters.Type.includes(word.categorie1 as "Verbe" | "Nom" | "Adjectif" | "Adverbe" | "Particule" | "Expression" | "Pronom")) {
-            return false;
-          }
-        }
-        return true;
-      });
-
-      // Trier les mots par difficulté (mauvaises_reponses et niveau_leitner)
-      const sortedWords = filteredWords.sort((a, b) => {
-        const difficultyA = (a.mauvaises_reponses ?? 0) - (a.bonnes_reponses ?? 0) - (a.niveau_leitner ?? 0);
-        const difficultyB = (b.mauvaises_reponses ?? 0) - (b.bonnes_reponses ?? 0) - (b.niveau_leitner ?? 0);
-        return difficultyB - difficultyA; // Prioriser les mots plus difficiles
-      });
-
-      // Ajouter les mots triés au pool
-      pool = [
-        ...pool,
-        ...sortedWords.map(word => {
-          let properties: (keyof typeof word)[];
-
-          if (selectedFilters.Langues && selectedFilters.Langues.length > 0) {
-            properties = selectedFilters.Langues;
-          } else {
-            properties = ["francais", "hiragana", "romaji", "kanji"];
-          }
-
-          const randomProperty = properties[Math.floor(Math.random() * properties.length)] as keyof typeof word;
-          const wordValue = word[randomProperty];
-          if (!wordValue) {
-            console.error(`Missing value for property ${randomProperty} in word`, word);
-            return { word: "Erreur", type: "Erreur" };
-          }
-          return { word: String(wordValue), type: randomProperty.charAt(0).toUpperCase() + randomProperty.slice(1) };
-        })
-      ];
-    }
-
-    if (pool.length === 0) {
-      setRandomWord("🦍");
-      setWordType("");
-      return;
-    }
-
-    const randomIndex = Math.floor(Math.random() * pool.length);
-    const selectedEntry = pool[randomIndex];
-
-    const updatedHistory = [...history.slice(0, currentIndex + 1), selectedEntry];
-    setHistory(updatedHistory);
-    setCurrentIndex(updatedHistory.length - 1);
-    setRandomWord(String(selectedEntry.word));
-    setWordType(selectedEntry.type);
-  };
 
   const handleNextWord = () => {
     if (currentIndex === history.length - 1) {
@@ -316,11 +334,13 @@ export default function Home() {
   const getNextWord = () => {
     const sortedWords = words.sort((a, b) => {
       // Comparer par niveau Leitner
-      if (a.niveau_leitner !== b.niveau_leitner) {
-        return a.niveau_leitner - b.niveau_leitner;
+      const niveauLeitnerA = a.niveau_leitner ?? 0;
+      const niveauLeitnerB = b.niveau_leitner ?? 0;
+      if (niveauLeitnerA !== niveauLeitnerB) {
+        return niveauLeitnerA - niveauLeitnerB;
       }
       // Si les niveaux Leitner sont égaux, comparer par affichages
-      return a.affichages - b.affichages;
+      return (a.affichages ?? 0) - (b.affichages ?? 0);
     });
 
     // Sélectionner le premier mot trié
@@ -328,7 +348,7 @@ export default function Home() {
 
     // Mettre à jour l'état avec le mot sélectionné
     setRandomWord(nextWord.francais);
-    setAffichages(nextWord.affichages + 1);
+    setAffichages((nextWord.affichages ?? 0) + 1); // Utilisation de la coalescence nulle pour gérer le cas undefined
 
     // Assurez-vous de mettre à jour la base de données ici si nécessaire
   };
@@ -339,7 +359,7 @@ export default function Home() {
         <div className="div_header_quiz w-full flex flex-row justify-between items-center p-auto">
           <FilterPopover selectedFilters={selectedFilters} setSelectedFilters={setSelectedFilters} />
           <div className="text-lg font-semibold">
-            {randomWord === "🦍" ? "Aucun mot trouvé" : wordType}
+            {randomWord === "🦍" ? "Aucun mot trouvé" : ` ${wordType} `}
           </div>
           <div
             className="div_reponse w-8 h-8 bg-[var(--surface-secondary)] cursor-pointer rounded-[6px] flex items-center justify-center hover:bg-[var(--surface-secondary-hover)] group relative"
@@ -380,8 +400,7 @@ export default function Home() {
             </button>
             <button
               onClick={handleMauvaiseReponse}
-              className={`h-9 rounded-lg w-full ${currentIndex <= 0 ? 'bg-[var(--surface-secondary)] text-[var(--text-primary)] opacity-50 cursor-not-allowed' : 'bg-[var(--surface-secondary)] hover:bg-[var(--surface-secondary-hover)]'}`}
-              disabled={currentIndex <= 0}
+              className="h-9 rounded-lg w-full bg-[var(--surface-secondary)] hover:bg-[var(--surface-secondary-hover)]"
             >
               Mauvaise réponse
             </button>
