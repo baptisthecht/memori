@@ -152,9 +152,10 @@ export const FilterPopover = () => {
                             <AccordionContent className="flex flex-col gap-2">
                                 {category.options.map((option) => (
                                     <Checkbox
+                                        key={option.id}
                                         label={option.label}
                                         aria-label={option.id}
-                                        onCheckedChange={(value) =>
+                                        onCheckedChange={() =>
                                             handleChange(category.id, option.id)
                                         }
                                         checked={filters[category.id].includes(
