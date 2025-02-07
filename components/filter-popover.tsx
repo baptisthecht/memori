@@ -7,7 +7,7 @@ import {
     PopoverTrigger,
 } from "@/components/ui/popover";
 import { useData } from "@/contexts/Data";
-import { ChevronDown, Filter } from "lucide-react";
+import { Filter } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Checkbox } from "./ui/checkbox";
 import {
