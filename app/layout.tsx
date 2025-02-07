@@ -7,25 +7,28 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
-	title: "Quiz - Memori",
+    title: "Quiz - Memori",
+    icons: {
+        icon: "/favicon.ico",
+    },
 };
 
 export default function RootLayout({
-	children,
+    children,
 }: Readonly<{
-	children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-	return (
-		<html lang="en">
-			<DataProvider>
-				<APIProvider>
-					<body
-						className={`${inter.className} antialiased dark w-dvw h-dvh`}>
-						<Header />
-						{children}
-					</body>
-				</APIProvider>
-			</DataProvider>
-		</html>
-	);
+    return (
+        <html lang="en">
+            <DataProvider>
+                <APIProvider>
+                    <body
+                        className={`${inter.className} antialiased dark w-dvw h-dvh`}>
+                        <Header />
+                        {children}
+                    </body>
+                </APIProvider>
+            </DataProvider>
+        </html>
+    );
 }
