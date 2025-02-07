@@ -1,63 +1,65 @@
-import { FC, useEffect, useState } from "react";
+"use client";
 import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
+	Popover,
+	PopoverContent,
+	PopoverTrigger,
 } from "@/components/ui/popover";
-import Image from "next/image";
+import { useData } from "@/contexts/Data";
+import { LifeBuoy } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Button } from "./ui/button";
 
-// Déclarez les props pour le composant
-interface HelpPopoverProps {
-  translations: Record<string, string>;
-}
+export const HelpPopover = () => {
+	const [isPopoverOpen, setIsPopoverOpen] = useState(false);
+	const { activeWord } = useData();
 
-export const HelpPopover: FC<HelpPopoverProps> = ({ translations }) => {
-  const [isPopoverOpen, setIsPopoverOpen] = useState(false);
+	useEffect(() => {
+		const handleKeyDown = (event: KeyboardEvent) => {
+			if (event.key === "Control") {
+				setIsPopoverOpen(true);
+			}
+		};
 
-  // Gérer les événements de clavier pour ouvrir/fermer le popover avec CTRL
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Control") {
-        setIsPopoverOpen(true);
-      }
-    };
+		const handleKeyUp = (event: KeyboardEvent) => {
+			if (event.key === "Control") {
+				setIsPopoverOpen(false);
+			}
+		};
 
-    const handleKeyUp = (event: KeyboardEvent) => {
-      if (event.key === "Control") {
-        setIsPopoverOpen(false);
-      }
-    };
+		window.addEventListener("keydown", handleKeyDown);
+		window.addEventListener("keyup", handleKeyUp);
 
-    window.addEventListener("keydown", handleKeyDown);
-    window.addEventListener("keyup", handleKeyUp);
+		return () => {
+			window.removeEventListener("keydown", handleKeyDown);
+			window.removeEventListener("keyup", handleKeyUp);
+		};
+	}, []);
 
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-      window.removeEventListener("keyup", handleKeyUp);
-    };
-  }, []);
-
-  return (
-    <Popover open={isPopoverOpen} onOpenChange={setIsPopoverOpen}>
-      <PopoverTrigger asChild>
-        <Image
-          src="/reponse.svg"
-          alt="Aide"
-          width={12}
-          height={12}
-          className="group-hover:text-[var(--icones-brand)] select-none cursor-pointer"
-        />
-      </PopoverTrigger>
-      <PopoverContent className="translate-y-9 mt-1 translate-x-3 w-auto bg-surface-secondary" side="right">
-        <div className="grid gap-2">
-          {/* Affiche les traductions passées en prop */}
-          {Object.entries(translations).map(([key, value]) => (
-            <p key={key} className="text-sm">
-            <strong>{key.charAt(0).toUpperCase() + key.slice(1)}:</strong> {value}
-          </p>         
-          ))}
-        </div>
-      </PopoverContent>
-    </Popover>
-  );
+	return (
+		<Popover open={isPopoverOpen} onOpenChange={setIsPopoverOpen}>
+			<PopoverTrigger asChild>
+				<Button className="w-9 p-2">
+					<LifeBuoy />
+				</Button>
+			</PopoverTrigger>
+			<PopoverContent
+				className="w-auto bg-surface-secondary"
+				side="right">
+				<div className="grid gap-2">
+					<p className="text-sm">
+						<strong>FR</strong> {activeWord?.francais}
+					</p>
+					<p className="text-sm">
+						<strong>HI</strong> {activeWord?.hiragana}
+					</p>
+					<p className="text-sm">
+						<strong>RO</strong> {activeWord?.romaji}
+					</p>
+					<p className="text-sm">
+						<strong>KA</strong> {activeWord?.kanji}
+					</p>
+				</div>
+			</PopoverContent>
+		</Popover>
+	);
 };
