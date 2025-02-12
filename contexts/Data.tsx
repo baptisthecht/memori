@@ -1,11 +1,10 @@
 "use client";
 import { LANGUAGES } from "@/lib/types";
 import { languages } from "@/lib/values";
-import { Word } from "@prisma/client";
+import { PhraseExemple, Word } from "@prisma/client";
 import axios from "axios";
 import {
     createContext,
-    Dispatch,
     ReactNode,
     useContext,
     useEffect,
@@ -19,7 +18,7 @@ export const DataContext = createContext<ReturnType<typeof useDataState>>(
 export const useDataState = () => {
     const [loading, setLoading] = useState(true);
     const [words, setWords] = useState<Word[]>([]);
-    const [activeWord, setActiveWord] = useState<Word | null>(null);
+    const [activeWord, setActiveWord] = useState<Word & { phrasesExemples?: PhraseExemple[] } | null>(null);
     const [activeLanguage, setActiveLanguage] = useState<LANGUAGES>("francais");
     const [filters, setFilters] = useState<
         Record<"lang" | "type" | "theme", string[]>

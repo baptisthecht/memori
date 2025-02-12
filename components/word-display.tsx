@@ -3,6 +3,9 @@ import { Skeleton } from "./ui/skeleton";
 
 export function WordDisplay() {
 	const { activeWord, activeLanguage, loading } = useData();
+	const phrasesLength = activeWord?.phrasesExemples?.length;
+	let randomPhrase;
+	if(phrasesLength) randomPhrase = activeWord?.phrasesExemples?.[Math.floor(Math.random() * phrasesLength)];
 	return (
 		<div className="flex flex-col gap-2 items-center justify-center flex-1">
 			{loading ? (
@@ -15,9 +18,12 @@ export function WordDisplay() {
 					<h1 className="text-4xl font-bold">
 						{activeWord?.[activeLanguage]}
 					</h1>
-					<h3 className="text-xs select-none">
-						{activeLanguage.toUpperCase()}
-					</h3>
+					{
+						randomPhrase &&
+							<h3 className="text-xs select-none">
+								{randomPhrase?.[activeLanguage]}
+							</h3>
+					}
 				</>
 			)}
 		</div>
