@@ -39,7 +39,7 @@ export const HelpPopover = () => {
 		<Popover open={isPopoverOpen} onOpenChange={setIsPopoverOpen}>
 			<PopoverTrigger asChild>
 				<Button className="w-9 p-2">
-					<LifeBuoy />
+					<LifeBuoy /> Aide
 				</Button>
 			</PopoverTrigger>
 			<PopoverContent
