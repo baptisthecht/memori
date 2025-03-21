@@ -7,15 +7,9 @@ import {
     PopoverTrigger,
 } from "@/components/ui/popover";
 import { useData } from "@/contexts/Data";
-import { Filter } from "lucide-react";
+import { ArrowLeft, Check, ChevronRight, Filter, RotateCcw } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Checkbox } from "./ui/checkbox";
-import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
-} from "./ui/accordion";
 
 interface FilterOption {
     id: string;
@@ -77,7 +71,16 @@ const filterCategories: FilterCategory[] = [
 
 export const FilterPopover = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [currentView, setCurrentView] = useState<"main" | "types" | "themes" | "lang">("main");
+    const [direction, setDirection] = useState<"forward" | "backward">("forward");
     const { filters, setFilters } = useData();
+
+    const changeView = (view: "main" | "types" | "themes" | "lang", dir: "forward" | "backward") => {
+        setDirection(dir);
+        setTimeout(() => {
+            setCurrentView(view);
+        }, 10);
+    };
 
     useEffect(() => {
         const handleKeyDown = (event: KeyboardEvent) => {
@@ -116,6 +119,117 @@ export const FilterPopover = () => {
         });
     };
 
+    const resetFilters = () => {
+        setFilters({ lang: [], type: [], theme: [] });
+    };
+
+    const selectAllInCategory = (id: "lang" | "type" | "theme", selectAll: boolean) => {
+        const category = filterCategories.find(cat => cat.id === id);
+        if (!category) return;
+
+        if (selectAll) {
+            // Sélectionner tous les items
+            setFilters(prev => ({
+                ...prev,
+                [id]: category.options.map(option => option.id)
+            }));
+        } else {
+            // Désélectionner tous les items
+            setFilters(prev => ({
+                ...prev,
+                [id]: []
+            }));
+        }
+    };
+
+    const areAllSelected = (id: "lang" | "type" | "theme") => {
+        const category = filterCategories.find(cat => cat.id === id);
+        if (!category) return false;
+        return category.options.every(option => filters[id].includes(option.id));
+    };
+
+    const renderMainView = () => (
+        <div className="flex flex-col w-full">
+            <div className="flex items-center justify-between p-4 border-b border-gray-700">
+                <h2 className="text-xl font-semibold">Filtrer</h2>
+                <Button variant="ghost" size="icon" className="h-8 w-8 rounded-full" onClick={resetFilters}>
+                    <RotateCcw className="h-4 w-4" />
+                </Button>
+            </div>
+            <div className={`flex flex-col w-full transition-all duration-300 ease-in-out ${direction === "backward" ? "animate-slide-in-left" : ""}`}>
+                <Button
+                    variant="ghost"
+                    className="flex justify-between items-center px-4 py-6 rounded-none hover:bg-navHover transition-colors"
+                    onClick={() => changeView("lang", "forward")}
+                >
+                    <span className="font-normal">Langues</span>
+                    <ChevronRight className="h-5 w-5" />
+                </Button>
+                <Button
+                    variant="ghost"
+                    className="flex justify-between items-center px-4 py-6 rounded-none hover:bg-navHover transition-colors"
+                    onClick={() => changeView("types", "forward")}
+                >
+                    <span className="font-normal">Types de mot</span>
+                    <ChevronRight className="h-5 w-5" />
+                </Button>
+                <Button
+                    variant="ghost"
+                    className="flex justify-between items-center px-4 py-6 rounded-none hover:bg-navHover transition-colors"
+                    onClick={() => changeView("themes", "forward")}
+                >
+                    <span className="font-normal">Thèmes</span>
+                    <ChevronRight className="h-5 w-5" />
+                </Button>
+            </div>
+        </div>
+    );
+
+    const renderCategoryView = (category: FilterCategory) => (
+        <div className="flex flex-col w-full h-full">
+            <div className="flex items-center p-4 border-b border-gray-700">
+                <Button variant="ghost" size="icon" className="mr-2 h-8 w-8" onClick={() => changeView("main", "backward")}>
+                    <ArrowLeft className="h-5 w-5" />
+                </Button>
+                <h2 className="text-xl font-semibold">{category.name}</h2>
+            </div>
+            <div className="p-4 border-b border-gray-700">
+                <div className="flex items-center space-x-2">
+                    <div 
+                        onClick={() => selectAllInCategory(category.id, !areAllSelected(category.id))}
+                        className="border border-gray-600 rounded-md h-5 w-5 flex items-center justify-center cursor-pointer"
+                    >
+                        {areAllSelected(category.id) && <Check className="h-3.5 w-3.5 text-orange-500" />}
+                    </div>
+                    <Button
+                        variant="ghost"
+                        className="p-0 h-auto font-normal hover:bg-transparent hover:text-white"
+                        onClick={() => selectAllInCategory(category.id, !areAllSelected(category.id))}
+                    >
+                        Tout sélectionner
+                    </Button>
+                </div>
+            </div>
+            <div className={`flex flex-col overflow-y-auto max-h-[calc(600px-120px)] scrollbar-thin pr-1 transition-all duration-300 ease-in-out ${direction === "forward" ? "animate-slide-in-right" : ""}`}>
+                {category.options.map((option) => (
+                    <div 
+                        key={option.id} 
+                        className="flex items-center px-4 h-10 my-[2px] hover:bg-navHover transition-colors cursor-pointer min-h-[40px]"
+                        onClick={() => handleChange(category.id, option.id)}
+                    >
+                        <Checkbox
+                            id={option.id}
+                            label={option.label}
+                            checked={filters[category.id].includes(option.id)}
+                            onCheckedChange={() => handleChange(category.id, option.id)}
+                            className="border-gray-600 data-[state=checked]:bg-orange-500 data-[state=checked]:text-white data-[state=checked]:border-orange-500 h-full"
+                        />
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+
     return (
         <Popover open={isOpen} onOpenChange={setIsOpen}>
             <PopoverTrigger asChild>
@@ -135,39 +249,18 @@ export const FilterPopover = () => {
                     )}
                 </Button>
             </PopoverTrigger>
+        
             <PopoverContent
                 side="left"
-                className="bg-surface-secondary w-auto space-y-2 min-w-48">
-                <h1 className="text-sm font-semibold">Filtres</h1>
-                <Accordion type="single" collapsible>
-                    {filterCategories.map((category) => (
-                        <AccordionItem
-                            value={category.name}
-                            key={category.name}>
-                            <AccordionTrigger className="flex items-center gap-2">
-                                <h2 className="text-sm font-semibold">
-                                    {category.name}
-                                </h2>
-                            </AccordionTrigger>
-                            <AccordionContent className="flex flex-col gap-2">
-                                {category.options.map((option) => (
-                                    <Checkbox
-                                        key={option.id}
-                                        label={option.label}
-                                        aria-label={option.id}
-                                        onCheckedChange={() =>
-                                            handleChange(category.id, option.id)
-                                        }
-                                        checked={filters[category.id].includes(
-                                            option.id
-                                        )}
-                                    />
-                                ))}
-                            </AccordionContent>
-                        </AccordionItem>
-                    ))}
-                </Accordion>
+                align="start"
+                alignOffset={-16}
+                sideOffset={24}
+                className="w-80 p-0 bg-[#1e2130] text-white border-gray-700 max-h-[600px] overflow-hidden rounded-2xl transition-all duration-300 ease-in-out animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95">
+                {currentView === "main" && renderMainView()}
+                {currentView === "types" && renderCategoryView(filterCategories.find(c => c.id === "type")!)}
+                {currentView === "themes" && renderCategoryView(filterCategories.find(c => c.id === "theme")!)}
+                {currentView === "lang" && renderCategoryView(filterCategories.find(c => c.id === "lang")!)}
             </PopoverContent>
         </Popover>
     );
-};
+}; 

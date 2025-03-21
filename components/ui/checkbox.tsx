@@ -12,7 +12,7 @@ const Checkbox = React.forwardRef<
         label: string;
     }
 >(({ className, label, ...props }, ref) => (
-    <div className="flex items-center gap-2 cursor-pointer group">
+    <div className="flex items-center gap-2 cursor-pointer group min-h-[40px] py-2">
         <CheckboxPrimitive.Root
             id={label}
             ref={ref}
@@ -30,7 +30,7 @@ const Checkbox = React.forwardRef<
             </CheckboxPrimitive.Indicator>
         </CheckboxPrimitive.Root>
         <label
-            className="text-sm font-medium leading-none text-muted-foreground cursor-pointer group-hover:text-icones-brand"
+            className="text-sm font-medium leading-tight text-muted-foreground cursor-pointer group-hover:text-icones-brand"
             htmlFor={label}>
             {label}
         </label>
