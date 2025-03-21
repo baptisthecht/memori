@@ -1,5 +1,6 @@
 import { useData } from "@/contexts/Data";
 import { Skeleton } from "./ui/skeleton";
+import { ExemplePhrase } from "./exemple-phrase";
 
 export function WordDisplay() {
 	const { activeWord, activeLanguage, loading } = useData();
@@ -19,10 +20,12 @@ export function WordDisplay() {
 						{activeWord?.[activeLanguage]}
 					</h1>
 					{
-						randomPhrase &&
-							<h3 className="text-xs select-none">
-								{randomPhrase?.[activeLanguage]}
-							</h3>
+						randomPhrase && (
+							<ExemplePhrase 
+								originalPhrase={randomPhrase[activeLanguage]} 
+								frenchTranslation={randomPhrase.francais}
+							/>
+						)
 					}
 				</>
 			)}
