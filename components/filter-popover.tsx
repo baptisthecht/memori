@@ -151,7 +151,7 @@ export const FilterPopover = () => {
     const renderMainView = () => (
         <div className="flex flex-col w-full">
             <div className="flex items-center justify-between p-4 border-b border-gray-700">
-                <h2 className="text-xl font-semibold">Filtrer</h2>
+                <h2 className="text-xl font-semibold">Filtres</h2>
                 <Button variant="ghost" size="icon" className="h-8 w-8 rounded-full" onClick={resetFilters}>
                     <RotateCcw className="h-4 w-4" />
                 </Button>
