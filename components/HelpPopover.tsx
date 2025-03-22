@@ -38,25 +38,38 @@ export const HelpPopover = () => {
 	return (
 		<Popover open={isPopoverOpen} onOpenChange={setIsPopoverOpen}>
 			<PopoverTrigger asChild>
-				<Button className="w-9 p-2">
+				<Button 
+					size="icon"
+					className="w-9 h-9 p-2 rounded-[6px] bg-surface-secondary hover:bg-surface-secondary-hover">
 					<LifeBuoy />
 				</Button>
 			</PopoverTrigger>
 			<PopoverContent
-				className="w-auto bg-surface-secondary"
-				side="right">
-				<div className="grid gap-2">
+				side="right"
+				align="start"
+				alignOffset={-16}
+				sideOffset={24}
+				className="w-auto p-4 bg-[#1e2130] text-white border-gray-700 rounded-2xl transition-all duration-300 ease-in-out animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95">
+				<div className="flex flex-col gap-2">
 					<p className="text-sm">
-						<strong>FR</strong> {activeWord?.francais}
+						<span className="font-bold">Français : </span>
+						<span className="font-normal">{activeWord?.francais}</span>
 					</p>
 					<p className="text-sm">
-						<strong>HI</strong> {activeWord?.hiragana}
+						<span className="font-bold">Romaji : </span>
+						<span className="font-normal">{activeWord?.romaji}</span>
 					</p>
 					<p className="text-sm">
-						<strong>RO</strong> {activeWord?.romaji}
+						<span className="font-bold">Hiragana : </span>
+						<span className="font-normal">{activeWord?.hiragana}</span>
 					</p>
 					<p className="text-sm">
-						<strong>KA</strong> {activeWord?.kanji}
+						<span className="font-bold">Katakana : </span>
+						<span className="font-normal">{activeWord?.katakana}</span>
+					</p>
+					<p className="text-sm">
+						<span className="font-bold">Kanji : </span>
+						<span className="font-normal">{activeWord?.kanji}</span>
 					</p>
 				</div>
 			</PopoverContent>

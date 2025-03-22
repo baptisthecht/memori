@@ -26,6 +26,8 @@ export const useDataState = () => {
 
     function generateRandomWord() {
         if (words.length === 0) return null;
+        
+        // Filtrer les mots selon les filtres sélectionnés
         const filteredWords = words.filter((word) => {
             if (
                 filters.type.length > 0 &&
@@ -39,14 +41,41 @@ export const useDataState = () => {
                 return false;
             return true;
         });
-        setActiveWord(
-            filteredWords[Math.floor(Math.random() * filteredWords.length)]
-        );
+
+        if (filteredWords.length === 0) return null;
+
+        // Implémenter le système Leitner: pondérer les mots selon leur niveau
+        // Plus le niveau est bas, plus le mot a de chances d'apparaître
+        
+        // Créer un tableau pondéré où les mots apparaissent selon leur niveau Leitner inversé
+        const weightedWords: Word[] = [];
+        
+        filteredWords.forEach(word => {
+            // Calculer le poids (inversement proportionnel au niveau)
+            // Max niveau 5 pour éviter des disparités trop grandes
+            const effectiveLevel = Math.min(word.niveauLeitner, 5);
+            
+            // Facteur de pondération: les mots de niveau 1 apparaissent 5 fois plus
+            // que les mots de niveau 5
+            const weight = 6 - effectiveLevel; // Niveau 1 = poids 5, Niveau 5 = poids 1
+            
+            // Ajouter le mot au tableau weightedWords selon son poids
+            for (let i = 0; i < weight; i++) {
+                weightedWords.push(word);
+            }
+        });
+        
+        // Sélectionner un mot aléatoire du tableau pondéré
+        const randomWord = weightedWords[Math.floor(Math.random() * weightedWords.length)];
+        setActiveWord(randomWord);
+        
+        // Sélectionner une langue aléatoire (filtré si nécessaire)
         const filteredLanguages = languages.filter((lang) => {
             if (filters.lang.length > 0 && !filters.lang.includes(lang))
                 return false;
             return true;
         });
+        
         setActiveLanguage(
             filteredLanguages[
                 Math.floor(Math.random() * filteredLanguages.length)
@@ -59,6 +88,7 @@ export const useDataState = () => {
         axios.patch("/api/words", {
             id: activeWord.id,
             bonnesReponses: activeWord.bonnesReponses + 1,
+            niveauLeitner: activeWord.niveauLeitner + 1,
         });
         generateRandomWord();
     }
@@ -67,7 +97,8 @@ export const useDataState = () => {
         if (!activeWord) return;
         axios.patch("/api/words", {
             id: activeWord.id,
-            bonnesReponses: activeWord.mauvaisesReponses + 1,
+            mauvaisesReponses: activeWord.mauvaisesReponses + 1,
+            niveauLeitner: 1, // Reset to level 1 on incorrect answer
         });
         generateRandomWord();
     }
